@@ -1,0 +1,1 @@
+using EventsService as service from '../../srv/EventsService';

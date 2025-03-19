@@ -14,8 +14,8 @@
         "./@cds-models/*"
       ]
     },
-    "types": [
-      "node_modules/@types"
-    ]
-  }
+  },
+  "exclude": [
+    "*.mjs"
+  ]
 }

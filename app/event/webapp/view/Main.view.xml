@@ -11,7 +11,7 @@
                     </content>
                 </OverflowToolbar>
             </headerToolbar>
-            <StandardListItem title="{name}" description="{description}" icon="{image_url}" iconDensityAware="false" iconInset="false" press="handlePress" detailPress="handleDetailPress" />
+            <StandardListItem title="{name}" description="{description}" icon="{image_url}" iconDensityAware="false" iconInset="false" press="handlePress" type="Navigation"/>
         </List>
     </Page>
 </mvc:View>

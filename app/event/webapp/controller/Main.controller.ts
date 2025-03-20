@@ -1,12 +1,20 @@
 import Controller from "sap/ui/core/mvc/Controller";
+import UIComponent from "sap/ui/core/UIComponent";
+import { ListItemBase$PressEvent } from "sap/m/ListItemBase";
 
 /**
  * @namespace com.proallone.event.controller
  */
 export default class Main extends Controller {
+  public onInit() {
+    console.log("init");
+  }
 
-    /*eslint-disable @typescript-eslint/no-empty-function*/
-    public onInit(): void {
-
-    }
+  public handlePress(evt: ListItemBase$PressEvent) {
+    const router = UIComponent.getRouterFor(this);
+    // const ID = evt.getSource().getBindingContext().getObject();
+    const item = evt.getSource();
+    const ID = item.getBindingContext()?.getProperty("ID");
+    router.navTo("RouteEvent", { ID: ID });
+  }
 }

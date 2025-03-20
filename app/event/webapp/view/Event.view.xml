@@ -1,0 +1,7 @@
+<mvc:View controllerName="com.proallone.event.controller.Event"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page id="page" title="Event">
+
+    </Page>
+</mvc:View>

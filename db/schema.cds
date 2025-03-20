@@ -5,19 +5,24 @@ using { cuid, managed } from '@sap/cds/common';
 entity  Events : cuid , managed {
     name: String;
     description: String;
-    startDate: DateTime;
-    endDate : DateTime;
+    start_date: DateTime;
+    end_date : DateTime;
     image_url: String;
     host: Association to many Users;
-    posts: Association to many BlogPosts;
+    posts: Composition of many EventPosts on posts.event = $self;
 };
 
-entity BlogPosts : cuid, managed {
+entity EventPosts {
+    key post: Association to one Posts;
+    key event: Association to one Events;
+};
+
+entity Posts : cuid, managed {
     title: String;
     image_url: String;
     content: String;
     event: Association to one Events;
-    authors: Association to many Users;
+    author: Association to one Users;
 };
 
 entity Users : cuid, managed {

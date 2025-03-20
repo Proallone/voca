@@ -96,12 +96,23 @@
           "target": [
             "TargetMain"
           ]
+        },
+        {
+          "name": "RouteEvent",
+          "pattern": "event/{ID}",
+          "target": [
+            "TargetEvent"
+          ]
         }
       ],
       "targets": {
         "TargetMain": {
           "id": "Main",
           "name": "Main"
+        },
+        "TargetEvent": {
+          "id": "Event",
+          "name": "Event"
         }
       }
     },

@@ -2,5 +2,16 @@
     xmlns:mvc="sap.ui.core.mvc"
     xmlns="sap.m">
     <Page id="page" title="{i18n>title}">
+        <List id="ProductList" items="{/Events}">
+            <headerToolbar>
+                <OverflowToolbar>
+                    <content>
+                        <Title text="Events" level="H2"/>
+                        <ToolbarSpacer />
+                    </content>
+                </OverflowToolbar>
+            </headerToolbar>
+            <StandardListItem title="{name}" description="{description}" icon="{image_url}" iconDensityAware="false" iconInset="false" press="handlePress" detailPress="handleDetailPress" />
+        </List>
     </Page>
 </mvc:View>

@@ -7,6 +7,7 @@ entity  Events : cuid , managed {
     description: String;
     startDate: DateTime;
     endDate : DateTime;
+    image_url: String;
     host: Association to many Users;
     posts: Association to many BlogPosts;
 };

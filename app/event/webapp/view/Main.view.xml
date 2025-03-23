@@ -4,14 +4,14 @@
     <Page id="page" title="{i18n>title}">
         <List id="ProductList" items="{/Events}">
             <headerToolbar>
-                <OverflowToolbar>
+                <OverflowToolbar id="otMain">
                     <content>
-                        <Title text="Events" level="H2"/>
-                        <ToolbarSpacer />
+                        <Title id="ttlMain" text="Events" level="H2"/>
+                        <ToolbarSpacer id="tsMain" />
                     </content>
                 </OverflowToolbar>
             </headerToolbar>
-            <StandardListItem title="{name}" description="{description}" icon="{image_url}" iconDensityAware="false" iconInset="false" press="handlePress" type="Navigation"/>
+            <StandardListItem id="sliMain" title="{name}" description="{description}" icon="{image_url}" iconDensityAware="false" iconInset="false" press="handlePress" type="Navigation"/>
         </List>
     </Page>
 </mvc:View>

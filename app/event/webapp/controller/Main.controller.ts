@@ -12,9 +12,8 @@ export default class Main extends Controller {
 
   public handlePress(evt: ListItemBase$PressEvent) {
     const router = UIComponent.getRouterFor(this);
-    // const ID = evt.getSource().getBindingContext().getObject();
     const item = evt.getSource();
-    const ID = item.getBindingContext()?.getProperty("ID");
+    const ID: string = item.getBindingContext()?.getProperty("ID");
     router.navTo("RouteEvent", { ID: ID });
   }
 }

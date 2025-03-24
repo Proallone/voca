@@ -1,6 +1,6 @@
 import Controller from "sap/ui/core/mvc/Controller";
-import { Router$RouteMatchedEvent } from "sap/ui/core/routing/Router";
 import UIComponent from "sap/ui/core/UIComponent";
+import { Route$PatternMatchedEvent } from "sap/ui/core/routing/Route";
 
 /**
  * @namespace com.proallone.event.controller
@@ -8,12 +8,12 @@ import UIComponent from "sap/ui/core/UIComponent";
 export default class Event extends Controller {
   public onInit() {
     const router = UIComponent.getRouterFor(this);
-    router.attachRouteMatched(this, this.onRouteMatched);
+    router?.getRoute('RouteEvent')?.attachPatternMatched(this.onRouteMatched, this);
   }
 
-  public onRouteMatched(evt: Router$RouteMatchedEvent) {
-    const args = evt.getParameter("arguments");
-    console.log(args);
+  public onRouteMatched(evt: Route$PatternMatchedEvent) {
+    const args = evt.getParameter("arguments") as any; //todo fix
+    if(args) this.getView()?.bindElement(`/Events('${args.ID}')`)
   }
 
   public navBack() {

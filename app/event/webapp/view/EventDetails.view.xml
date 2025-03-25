@@ -7,7 +7,7 @@
             <ObjectAttribute title="Start date" text="{start_date}" />
             <ObjectAttribute title="End date" text="{end_date}" />
         </ObjectHeader>
-        <List showSeparators="Inner" items="{posts}">
+        <List id="postsList" showSeparators="Inner" items="{posts}">
             <FeedListItem sender="{title}" icon="{image_url}" senderPress="onSenderPress" iconPress="onIconPress" timestamp="{createdAt}" text="{content}" convertLinksToAnchorTags="All"/>
         </List>
         <FeedInput post="onPost" icon="test-resources/sap/m/images/dronning_victoria.jpg" class="sapUiSmallMarginTopBottom" />

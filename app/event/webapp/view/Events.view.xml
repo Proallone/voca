@@ -3,14 +3,14 @@
     xmlns="sap.m">
     <Page id="page" showHeader="false">
         <List id="ProductList" items="{/Events}">
-            <headerToolbar>
+            <!-- <headerToolbar>
                 <OverflowToolbar id="otMain">
                     <content>
                         <Title id="ttlMain" text="Events" level="H2"/>
                         <ToolbarSpacer id="tsMain" />
                     </content>
                 </OverflowToolbar>
-            </headerToolbar>
+            </headerToolbar> -->
             <StandardListItem id="sliMain" title="{name}" description="{description}" icon="{image_url}" iconDensityAware="false" iconInset="false" press="handlePress" type="Navigation"/>
         </List>
     </Page>

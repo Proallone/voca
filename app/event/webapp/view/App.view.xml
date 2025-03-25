@@ -4,26 +4,31 @@
     xmlns:tnt="sap.tnt">
     <tnt:ToolPage id="toolPage" sideExpanded="false">
         <tnt:header>
-            <tnt:ToolHeader>
-                <Button id="sideNavigationToggleButton" icon="sap-icon://menu2" type="Transparent" press="onSideNavButtonPress">
+            <tnt:ToolHeader design="Solid" height="4rem">
+                <!-- <Button id="sideNavigationToggleButton" icon="sap-icon://menu2" type="Transparent" press="onSideNavButtonPress">
                     <layoutData>
                         <OverflowToolbarLayoutData priority="NeverOverflow" />
                     </layoutData>
-                </Button>
+                </Button> -->
+                <Image src="test-resources/sap/tnt/images/SAP_Logo.png" decorative="false" press="onLogoPressed" tooltip="SAP Logo" width="80px" height="40px">
+                    <layoutData>
+                        <OverflowToolbarLayoutData priority="NeverOverflow"/>
+                    </layoutData>
+                </Image>
                 <Title text="Events" wrapping="false">
                     <layoutData>
                         <OverflowToolbarLayoutData priority="Disappear"/>
                     </layoutData>
                 </Title>
                 <ToolbarSpacer />
-                <Avatar src="test-resources/sap/tnt/images/Woman_avatar_01.png" displaySize="XS" press="onAvatarPressed" tooltip="Profile">
+                <Avatar src="test-resources/sap/m/images/dronning_victoria.jpg" displaySize="S" press="onAvatarPressed" tooltip="Profile">
                     <layoutData>
                         <OverflowToolbarLayoutData priority="NeverOverflow"/>
                     </layoutData>
                 </Avatar>
             </tnt:ToolHeader>
         </tnt:header>
-        <tnt:sideContent>
+        <!-- <tnt:sideContent>
             <tnt:SideNavigation expanded="false" itemSelect="onItemSelect">
                 <tnt:NavigationList>
                     <tnt:NavigationListItem text="Events" icon="sap-icon://calendar" enabled="true" selectable="true" key="key1"/>
@@ -34,8 +39,14 @@
                     </tnt:NavigationList>
                 </tnt:fixedItem>
             </tnt:SideNavigation>
-        </tnt:sideContent>
+        </tnt:sideContent> -->
         <tnt:mainContents>
+            <Breadcrumbs currentLocationText="Laptop" separatorStyle="GreaterThan">
+                <currentLocation>
+                    <Link text="Events" press="onPress" />
+                </currentLocation>
+                <Link press="onPress" text="Suppliers"/>
+            </Breadcrumbs>
             <App id="app"/>
         </tnt:mainContents>
     </tnt:ToolPage>

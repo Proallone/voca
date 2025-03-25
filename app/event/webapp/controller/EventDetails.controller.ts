@@ -10,10 +10,10 @@ interface IEvent {
 /**
  * @namespace com.proallone.event.controller
  */
-export default class Event extends Controller {
+export default class EventDetails extends Controller {
   public onInit() {
     const router = UIComponent.getRouterFor(this);
-    router?.getRoute('RouteEvent')?.attachPatternMatched(this.onRouteMatched, this);
+    router?.getRoute('RouteEventDetails')?.attachPatternMatched(this.onRouteMatched, this);
   }
 
   public onRouteMatched(evt: Route$PatternMatchedEvent) {

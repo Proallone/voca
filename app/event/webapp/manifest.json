@@ -102,10 +102,10 @@
           ]
         },
         {
-          "name": "RouteEvent",
+          "name": "RouteEventDetails",
           "pattern": "event/{ID}",
           "target": [
-            "TargetEvent"
+            "TargetEventDetails"
           ]
         }
       ],
@@ -114,9 +114,9 @@
           "id": "Events",
           "name": "Events"
         },
-        "TargetEvent": {
-          "id": "Event",
-          "name": "Event"
+        "TargetEventDetails": {
+          "id": "EventDetails",
+          "name": "EventDetails"
         }
       }
     },

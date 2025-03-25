@@ -14,6 +14,6 @@ export default class Events extends Controller {
     const router = UIComponent.getRouterFor(this);
     const item = evt.getSource();
     const ID: string = item.getBindingContext()?.getProperty("ID");
-    router.navTo("RouteEvent", { ID: ID });
+    router.navTo("RouteEventDetails", { ID: ID });
   }
 }

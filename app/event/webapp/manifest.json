@@ -95,10 +95,10 @@
       },
       "routes": [
         {
-          "name": "RouteMain",
+          "name": "RouteEvents",
           "pattern": ":?query:",
           "target": [
-            "TargetMain"
+            "TargetEvents"
           ]
         },
         {
@@ -110,9 +110,9 @@
         }
       ],
       "targets": {
-        "TargetMain": {
-          "id": "Main",
-          "name": "Main"
+        "TargetEvents": {
+          "id": "Events",
+          "name": "Events"
         },
         "TargetEvent": {
           "id": "Event",

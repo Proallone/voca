@@ -5,7 +5,7 @@ import { ListItemBase$PressEvent } from "sap/m/ListItemBase";
 /**
  * @namespace com.proallone.event.controller
  */
-export default class Main extends Controller {
+export default class Events extends Controller {
   public onInit() {
     console.log("init");
   }

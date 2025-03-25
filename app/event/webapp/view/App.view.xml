@@ -1,6 +1,8 @@
 <mvc:View controllerName="com.proallone.event.controller.App" displayBlock="true"
     xmlns:mvc="sap.ui.core.mvc"
-    xmlns="sap.m">
+    xmlns="sap.m"
+    xmlns:tnt="sap.tnt">
     <App id="app">
+
     </App>
 </mvc:View>

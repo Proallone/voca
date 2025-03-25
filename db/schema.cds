@@ -10,14 +10,8 @@ entity  Events : cuid , managed {
     image_url: String;
     place: String; // todo change
     host: Association to many Users;
-    posts: Composition of many EventPosts on posts.event = $self;
+    posts: Composition of many Posts on posts.event = $self;
 };
-
-entity EventPosts {
-    key post: Association to one Posts;
-    key event: Association to one Events;
-};
-
 entity Posts : cuid, managed {
     title: String;
     image_url: String;

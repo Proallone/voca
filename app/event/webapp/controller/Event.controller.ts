@@ -23,7 +23,7 @@ export default class Event extends Controller {
 
   public navBack() {
     const router = UIComponent.getRouterFor(this);
-    router.navTo("RouteMain");
+    router.navTo("RouteEvents");
   }
 
   public onPost(evt: FeedInput$PostEvent) {

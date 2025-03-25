@@ -1,11 +1,15 @@
 <mvc:View controllerName="com.proallone.event.controller.Event"
     xmlns:mvc="sap.ui.core.mvc"
     xmlns="sap.m">
-    <Page id="eventPage" title="Event" showNavButton="true" navButtonPress="navBack">
-        <ObjectHeader icon="{image_url}" iconDensityAware="false" iconAlt="Denise Smith" imageShape="Circle" responsive="true" title="Denise Smith" intro="Senior Developer" class="sapUiResponsivePadding--header">
-            <ObjectAttribute title="Name:" text="{name}" active="true" />
-            <ObjectAttribute title="Description" text="{description}" />
-            <ObjectAttribute title="Functional Area" text="Development" />
+    <Page id="eventPage" showNavButton="true" navButtonPress="navBack">
+        <ObjectHeader icon="{image_url}" iconDensityAware="false" iconAlt="Image" imageShape="Circle" responsive="true" title="{name}" intro="{description}" class="sapUiResponsivePadding--header">
+            <ObjectAttribute title="Place" text="{place}" active="true" />
+            <ObjectAttribute title="Start date" text="{start_date}" />
+            <ObjectAttribute title="End date" text="{end_date}" />
         </ObjectHeader>
+        <List showSeparators="Inner" items="{posts}">
+            <FeedListItem sender="{post/title}" icon="{post/image_url}" senderPress="onSenderPress" iconPress="onIconPress" timestamp="{post/createdAt}" text="{post/content}" convertLinksToAnchorTags="All"/>
+        </List>
+        <FeedInput post="onPost" icon="test-resources/sap/m/images/dronning_victoria.jpg" class="sapUiSmallMarginTopBottom" />
     </Page>
 </mvc:View>

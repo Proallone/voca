@@ -8,6 +8,7 @@ entity  Events : cuid , managed {
     start_date: DateTime;
     end_date : DateTime;
     image_url: String;
+    place: String; // todo change
     host: Association to many Users;
     posts: Composition of many EventPosts on posts.event = $self;
 };

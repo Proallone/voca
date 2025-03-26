@@ -15,12 +15,14 @@
     "@cap-js/sqlite": "^1",
     "@types/node": "^22.0.0",
     "cds-plugin-ui5": "^0.9.3",
+    "eslint": "^9.23.0",
     "tsx": "^4.19.3",
     "typescript": "^5"
   },
   "scripts": {
     "start": "cds-serve",
     "watch": "cds-tsx w",
+    "lint": "eslint .",
     "before:cds-watch": "cds-typer \"*\"",
     "watch-event": "cds watch --open com.proallone.event/index.html?sap-ui-xx-viewCache=false --livereload false"
   },

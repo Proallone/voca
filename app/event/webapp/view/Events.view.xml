@@ -2,7 +2,7 @@
     xmlns:mvc="sap.ui.core.mvc"
     xmlns="sap.m">
     <Page id="page" showHeader="false">
-        <List id="ProductList" items="{/Events}">
+        <List id="eventList" items="{/Events}">
             <!-- <headerToolbar>
                 <OverflowToolbar id="otMain">
                     <content>

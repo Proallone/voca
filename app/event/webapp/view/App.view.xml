@@ -45,7 +45,6 @@
                 <currentLocation>
                     <Link text="Events" press="onPress" />
                 </currentLocation>
-                <Link press="onPress" text="Suppliers"/>
             </Breadcrumbs>
             <App id="app"/>
         </tnt:mainContents>

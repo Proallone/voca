@@ -1,15 +1,21 @@
 <mvc:View controllerName="com.proallone.event.controller.EventDetails"
     xmlns:mvc="sap.ui.core.mvc"
     xmlns="sap.m">
-    <Page id="eventPage" showNavButton="true" navButtonPress="navBack">
-        <ObjectHeader icon="{image_url}" iconDensityAware="false" iconAlt="Image" imageShape="Circle" responsive="true" title="{name}" intro="{description}" class="sapUiResponsivePadding--header">
-            <ObjectAttribute title="Place" text="{place}" active="true" />
-            <ObjectAttribute title="Start date" text="{start_date}" />
-            <ObjectAttribute title="End date" text="{end_date}" />
+    <Page id="eventPage" showHeader="false">
+        <ObjectHeader id="_IDGenObjectHeader1" icon="{image_url}" iconDensityAware="false" iconAlt="Image" imageShape="Circle" responsive="true" title="{name}" intro="{description}" class="sapUiResponsivePadding--header">
+            <ObjectAttribute id="_IDGenObjectAttribute" title="Place" text="{place}" active="true" />
+            <ObjectAttribute id="_IDGenObjectAttribute1" title="Start date" text="{start_date}" />
+            <ObjectAttribute id="_IDGenObjectAttribute2" title="End date" text="{end_date}" />
         </ObjectHeader>
+        <Carousel id="_IDGenCarousel" loop="true" height="30rem" arrowsPlacement="PageIndicator">
+            <Image id="_IDGenImage2" src="{image_url}" alt="Example picture of speakers" />
+            <Image id="_IDGenImage3" src="{image_url}" alt="Example picture of USB flash drive" />
+            <Image id="_IDGenImage4" src="{image_url}" alt="Example picture of spotlight" />
+            <Image id="_IDGenImage5" src="{image_url}" alt="Example picture of screw" />
+        </Carousel>
+        <FeedInput id="_IDGenFeedInput" post="onPost" icon="test-resources/sap/m/images/dronning_victoria.jpg" class="sapUiSmallMarginTopBottom" />
         <List id="postsList" showSeparators="Inner" items="{path: 'posts', sorter: { path: 'createdAt', descending: true}}">
-            <FeedListItem sender="{title}" icon="{image_url}" senderPress="onSenderPress" iconPress="onIconPress" timestamp="{createdAt}" text="{content}" convertLinksToAnchorTags="All"/>
+            <FeedListItem id="_IDGenFeedListItem" sender="{title}" icon="{image_url}" senderPress="onSenderPress" iconPress="onIconPress" timestamp="{createdAt}" text="{content}" convertLinksToAnchorTags="All"/>
         </List>
-        <FeedInput post="onPost" icon="test-resources/sap/m/images/dronning_victoria.jpg" class="sapUiSmallMarginTopBottom" />
     </Page>
 </mvc:View>

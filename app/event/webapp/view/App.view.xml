@@ -1,33 +1,46 @@
 <mvc:View controllerName="com.proallone.event.controller.App" displayBlock="true"
     xmlns:mvc="sap.ui.core.mvc"
     xmlns="sap.m"
-    xmlns:tnt="sap.tnt">
+    xmlns:tnt="sap.tnt"
+    xmlns:core="sap.ui.core">
     <tnt:ToolPage id="toolPage" sideExpanded="false">
         <tnt:header>
-            <tnt:ToolHeader design="Solid" height="4rem">
+            <tnt:ToolHeader id="_IDGenToolHeader1" design="Solid" height="4rem">
                 <!-- <Button id="sideNavigationToggleButton" icon="sap-icon://menu2" type="Transparent" press="onSideNavButtonPress">
                     <layoutData>
                         <OverflowToolbarLayoutData priority="NeverOverflow" />
                     </layoutData>
                 </Button> -->
-                <Image src="test-resources/sap/tnt/images/SAP_Logo.png" decorative="false" press="onLogoPressed" tooltip="SAP Logo" width="80px" height="40px">
+                <Image id="_IDGenImage" src="test-resources/sap/tnt/images/SAP_Logo.png" decorative="false" press="onLogoPressed" tooltip="SAP Logo" width="80px" height="40px">
                     <layoutData>
-                        <OverflowToolbarLayoutData priority="NeverOverflow"/>
+                        <OverflowToolbarLayoutData id="_IDGenOverflowToolbarLayoutData" priority="NeverOverflow"/>
                     </layoutData>
                 </Image>
-                <Title text="Events" wrapping="false">
+                <Title id="_IDGenTitle" text="Events" wrapping="false">
                     <layoutData>
-                        <OverflowToolbarLayoutData priority="Disappear"/>
+                        <OverflowToolbarLayoutData id="_IDGenOverflowToolbarLayoutData1" priority="Disappear"/>
                     </layoutData>
                 </Title>
-                <ToolbarSpacer />
-                <Avatar src="test-resources/sap/m/images/dronning_victoria.jpg" displaySize="S" press="onAvatarPressed" tooltip="Profile">
+                <ToolbarSpacer id="_IDGenToolbarSpacer" />
+                <Avatar id="_IDGenAvatar" src="test-resources/sap/m/images/dronning_victoria.jpg" displaySize="S" press="onAvatarPressed" tooltip="Profile">
                     <layoutData>
-                        <OverflowToolbarLayoutData priority="NeverOverflow"/>
+                        <OverflowToolbarLayoutData id="_IDGenOverflowToolbarLayoutData2" priority="NeverOverflow"/>
                     </layoutData>
                 </Avatar>
             </tnt:ToolHeader>
         </tnt:header>
+        <tnt:subHeader>
+            <tnt:ToolHeader id="_IDGenToolHeader">
+                <Breadcrumbs id="_IDGenBreadcrumbs" currentLocation="Events" separatorStyle="GreaterThan">
+                    <Link id="_IDGenLink" text="Events" press="onBreadcrumbPress">
+                        <customData>
+                            <core:CustomData id="_IDGenCustomData" key="target" value="RouteEvents"/>
+                        </customData>
+                    </Link>
+
+                </Breadcrumbs>
+            </tnt:ToolHeader>
+        </tnt:subHeader>
         <!-- <tnt:sideContent>
             <tnt:SideNavigation expanded="false" itemSelect="onItemSelect">
                 <tnt:NavigationList>
@@ -41,11 +54,6 @@
             </tnt:SideNavigation>
         </tnt:sideContent> -->
         <tnt:mainContents>
-            <Breadcrumbs currentLocationText="Laptop" separatorStyle="GreaterThan">
-                <currentLocation>
-                    <Link text="Events" press="onPress" />
-                </currentLocation>
-            </Breadcrumbs>
             <App id="app"/>
         </tnt:mainContents>
     </tnt:ToolPage>

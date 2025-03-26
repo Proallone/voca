@@ -19,7 +19,7 @@
                         <FlexBox id="_IDGenFlexBox" direction="Column" class="sapUiSmallMarginBottom ">
                             <FlexBox id="_IDGenFlexBox2" justifyContent="SpaceBetween">
                                 <Title id="_IDGenTitle1" text="{name}" class="title"/>
-                                <ObjectStatus id="_IDGenObjectStatus3" text="30 attending" icon="sap-icon://person-placeholder" />
+                                <ObjectStatus id="_IDGenObjectStatus3" text="{attendeesCount} attending" icon="sap-icon://person-placeholder" />
                             </FlexBox>
                             <ObjectStatus id="_IDGenObjectStatus2" class="sapUiSmallMarginBottom" text="{start_date}" icon="sap-icon://calendar" />
                             <FormattedText id="_IDGenFormattedText" htmlText="{description}"></FormattedText>

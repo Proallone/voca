@@ -1,1 +1,14 @@
 /* Enter your custom styles here */
+
+.rounded {
+    border-radius: 20px;
+}
+
+.roundedImg {
+    border-radius: 10px;
+}
+
+.title { 
+    font-weight: 600;
+    font-size: x-large;
+}

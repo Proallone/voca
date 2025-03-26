@@ -12,6 +12,7 @@ entity  Events : cuid , managed {
     type: String;
     host: Association to many Users;
     posts: Composition of many Posts on posts.event = $self;
+    attendees: Composition of many EventAttendees on attendees.event = $self;
 };
 entity Posts : cuid, managed {
     title: String;
@@ -27,3 +28,7 @@ entity Users : cuid, managed {
     avatar_url: String;
 };
 
+entity EventAttendees {
+    key user :Association to one Users;
+    key event: Association to one Events;
+}

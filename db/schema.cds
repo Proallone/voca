@@ -18,7 +18,7 @@ entity Events : cuid, managed {
                       on posts.event = $self;
     attendees   : Composition of many EventAttendees
                       on attendees.event = $self;
-    virtual attendeesCount : Integer;
+    // virtual attendeesCount : Integer;
 };
 
 entity Posts : cuid, managed {

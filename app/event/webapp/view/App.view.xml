@@ -22,6 +22,11 @@
                     </layoutData>
                 </Title>
                 <ToolbarSpacer id="_IDGenToolbarSpacer" />
+                <SearchField width="30rem" id="searchField" class="sapUiMediumMarginEnd">
+                    <layoutData>
+                        <OverflowToolbarLayoutData id="_IDGenOverflowToolbarLayoutData3" priority="Low" group="1"/>
+                    </layoutData>
+                </SearchField>
                 <Avatar id="_IDGenAvatar" src="test-resources/sap/m/images/dronning_victoria.jpg" displaySize="S" press="onAvatarPressed" tooltip="Profile">
                     <layoutData>
                         <OverflowToolbarLayoutData id="_IDGenOverflowToolbarLayoutData2" priority="NeverOverflow"/>

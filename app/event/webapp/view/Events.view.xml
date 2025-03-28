@@ -1,6 +1,9 @@
 <mvc:View controllerName="com.proallone.event.controller.Events"
     xmlns:mvc="sap.ui.core.mvc"
-    xmlns="sap.m">
+    xmlns="sap.m"
+    xmlns:f="sap.f"
+    xmlns:grid="sap.ui.layout.cssgrid"
+    xmlns:core="sap.ui.core">
     <Page id="page" showHeader="false">
         <List id="eventList" items="{/Events}">
             <CustomListItem id="_IDGenCustomListItem1" press="handlePress" type="Active" class="sapUiSmallMargin rounded">
@@ -22,9 +25,23 @@
                             <ObjectStatus id="_IDGenObjectStatus2" class="sapUiSmallMarginBottom" text="{start_date}" icon="sap-icon://calendar" />
                             <FormattedText id="_IDGenFormattedText" htmlText="{description}"></FormattedText>
                         </FlexBox>
-                        <FlexBox id="_IDGenFlexBox4" class="sapUiResponsivePadding sapUiSmallMarginBottom" width="100%" >
+                        <f:GridList id="gridList" items="{labels}">
+                            <f:customLayout>
+                                <grid:GridBoxLayout id="_IDGenGridBoxLayout1" boxWidth="7rem"/>
+                            </f:customLayout>
+                            <f:GridListItem id="_IDGenGridListItem" type="Inactive">
+                                <FlexBox id="_IDGenFlexBox4" class="sapUiTinyMargin" justifyContent="SpaceAround" alignContent="Center">
+                                    <layoutData>
+                                        <FlexItemData id="_IDGenFlexItemData" growFactor="1" shrinkFactor="0" />
+                                    </layoutData>
+                                    <core:Icon id="_IDGenIcon1" src="{label/icon}"/>
+                                    <Text id="_IDGenText" text="{label/name}"></Text>
+                                </FlexBox>
+                            </f:GridListItem>
+                        </f:GridList>
+                        <!-- <FlexBox id="_IDGenFlexBox4" class="sapUiResponsivePadding sapUiSmallMarginBottom" width="100%">
                             <ObjectStatus id="_IDGenObjectStatus" class="sapUiTinyMarginEnd" text="{type}" icon="sap-icon://sys-enter-2" state="None" inverted="true" />
-                        </FlexBox>
+                        </FlexBox> -->
                     </FlexBox>
                 </FlexBox>
             </CustomListItem>

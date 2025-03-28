@@ -1,0 +1,8 @@
+<core:FragmentDefinition xmlns="sap.m"
+    xmlns:core="sap.ui.core">
+    <Popover id="myPopover" title="{name}" class="sapUiResponsivePadding--header sapUiResponsivePadding--footer" placement="Bottom" modal="true">
+        <Image id="_IDGenImage1" src="{image_url}" width="15em" densityAware="false" />
+        <endButton>
+        </endButton>
+    </Popover>
+</core:FragmentDefinition>

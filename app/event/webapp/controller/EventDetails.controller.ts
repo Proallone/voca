@@ -7,6 +7,9 @@ import ODataListBinding from "sap/ui/model/odata/v4/ODataListBinding";
 import Breadcrumbs from "sap/m/Breadcrumbs";
 import Link, { $LinkSettings} from "sap/m/Link";
 import { title } from "process";
+import { Button$PressEvent } from "sap/m/Button";
+import MessageBox from "sap/m/MessageBox";
+import MessageToast from "sap/m/MessageToast";
 
 interface IEvent {
   ID : string
@@ -25,18 +28,7 @@ export default class EventDetails extends Controller {
   public onRouteMatched(evt: Route$PatternMatchedEvent) {
     const args = evt.getParameter("arguments") as IEvent; //todo fix?
 
-    if(args) {
-      this.getView()?.bindElement(`/Events('${args.ID}')`)
-      // const breadcrumbs = this.byId("_IDGenBreadcrumbs") as Breadcrumbs;
-
-      // const linkSettings: $LinkSettings = {
-      //   text: "dupa",
-      // }
-
-      // const link = new Link(linkSettings)
-      // breadcrumbs.addLink(link);
-      // breadcrumbs.setCurrentLocation(link)
-    }
+    if(args) this.getView()?.bindElement(`/Events('${args.ID}')`);
 
   }
 
@@ -52,10 +44,19 @@ export default class EventDetails extends Controller {
     const content = evt.getParameter("value");
 
     //todo - to change
-    binding.create({
+    const ctx = binding.create({
       title: "placeholder",
       content: content,
       image_url: 'test-resources/sap/m/images/dronning_victoria.jpg'
     });
+
+    ctx.created()?.then(()=>{
+      MessageToast.show("Post added!");
+    })
+  }
+
+  public onAttendPress(evt: Button$PressEvent) {
+    console.log(evt);
+    
   }
 }

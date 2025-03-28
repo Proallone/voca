@@ -14,14 +14,16 @@ entity Events : cuid, managed {
     place       : String; // todo change
     type        : String;
     host        : Association to many Users;
-    posts       : Composition of many Posts
-                      on posts.event = $self;
+    comments    : Composition of many Comments
+                      on comments.event = $self;
     attendees   : Composition of many EventAttendees
                       on attendees.event = $self;
-    // virtual attendeesCount : Integer;
+    likes       : Composition of many EventLikes
+                      on likes.event = $self;
+// virtual attendeesCount : Integer;
 };
 
-entity Posts : cuid, managed {
+entity Comments : cuid, managed {
     title     : String;
     image_url : String;
     content   : String;
@@ -36,6 +38,11 @@ entity Users : cuid, managed {
 };
 
 entity EventAttendees {
+    key user  : Association to one Users;
+    key event : Association to one Events;
+}
+
+entity EventLikes {
     key user  : Association to one Users;
     key event : Association to one Events;
 }

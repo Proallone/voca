@@ -21,6 +21,8 @@ entity Events : cuid, managed {
                       on attendees.event = $self;
     likes       : Composition of many EventLikes
                       on likes.event = $self;
+    labels      : Composition of many EventLabels
+                      on labels.event = $self;
 // virtual attendeesCount : Integer;
 };
 
@@ -38,6 +40,12 @@ entity Users : cuid, managed {
     avatar_url : String;
 };
 
+
+entity Labels : cuid {
+    name : String;
+    icon : String;
+}
+
 entity EventAttendees {
     key user  : Association to one Users;
     key event : Association to one Events;
@@ -51,4 +59,9 @@ entity EventLikes {
 entity EventHosts {
     key user  : Association to one Users;
     key event : Association to one Events;
+}
+
+entity EventLabels {
+    key event : Association to one Events;
+    key label : Association to one Labels;
 }

@@ -16,7 +16,7 @@
                         <OverflowToolbarLayoutData id="_IDGenOverflowToolbarLayoutData" priority="NeverOverflow"/>
                     </layoutData>
                 </Image>
-                <Title id="_IDGenTitle" text="Events" wrapping="false">
+                <Title id="_IDGenTitle" text="Community events" wrapping="false" class="title">
                     <layoutData>
                         <OverflowToolbarLayoutData id="_IDGenOverflowToolbarLayoutData1" priority="Disappear"/>
                     </layoutData>

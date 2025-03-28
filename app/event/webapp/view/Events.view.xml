@@ -9,19 +9,21 @@
                     <FlexBox id="_IDGenFlexBox3" direction="Column" class="sapUiContentPadding" justifyContent="SpaceBetween">
                         <FlexBox id="_IDGenFlexBox" direction="Column" class="sapUiSmallMarginBottom">
                             <FlexBox id="_IDGenFlexBox2" justifyContent="SpaceBetween">
-                                <Title id="_IDGenTitle1" text="{name}" class="title"/>
+                                <FlexBox id="_IDGenFlexBox6" direction="Column">
+                                    <ObjectStatus id="_IDGenObjectStatus4" text="{place}" icon="sap-icon://map-fill" state="None" inverted="false" active="true"/>
+                                    <Title id="_IDGenTitle1" text="{name}" class="title"/>
+                                </FlexBox>
                                 <FlexBox id="_IDGenFlexBox5">
                                     <ObjectStatus id="_IDGenObjectStatus3" text="{= %{attendees}.length } attending" icon="sap-icon://company-view" class="sapUiSmallMarginEnd"/>
-                                    <ObjectStatus id="_IDGenObjectStatus1"  text="{= %{likes}.length}" icon="sap-icon://thumb-up" class="sapUiSmallMarginEnd"></ObjectStatus>
+                                    <ObjectStatus id="_IDGenObjectStatus1" text="{= %{likes}.length}" icon="sap-icon://thumb-up" class="sapUiSmallMarginEnd"></ObjectStatus>
                                     <ObjectStatus id="_IDGenObjectStatus5" text="{= %{comments}.length }" icon="sap-icon://comment" />
                                 </FlexBox>
                             </FlexBox>
                             <ObjectStatus id="_IDGenObjectStatus2" class="sapUiSmallMarginBottom" text="{start_date}" icon="sap-icon://calendar" />
                             <FormattedText id="_IDGenFormattedText" htmlText="{description}"></FormattedText>
                         </FlexBox>
-                        <FlexBox id="_IDGenFlexBox4" class="sapUiResponsivePadding sapUiSmallMarginBottom" width="100%">
+                        <FlexBox id="_IDGenFlexBox4" class="sapUiResponsivePadding sapUiSmallMarginBottom" width="100%" >
                             <ObjectStatus id="_IDGenObjectStatus" class="sapUiTinyMarginEnd" text="{type}" icon="sap-icon://sys-enter-2" state="None" inverted="true" />
-                            <ObjectStatus id="_IDGenObjectStatus4" text="{place}" icon="sap-icon://map-fill" state="None" inverted="true" />
                         </FlexBox>
                     </FlexBox>
                 </FlexBox>

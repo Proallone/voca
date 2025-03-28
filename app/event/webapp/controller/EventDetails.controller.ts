@@ -7,9 +7,11 @@ import ODataListBinding from "sap/ui/model/odata/v4/ODataListBinding";
 import Breadcrumbs from "sap/m/Breadcrumbs";
 import Link, { $LinkSettings} from "sap/m/Link";
 import { title } from "process";
-import { Button$PressEvent } from "sap/m/Button";
+import Button, { Button$PressEvent } from "sap/m/Button";
 import MessageBox from "sap/m/MessageBox";
 import MessageToast from "sap/m/MessageToast";
+import ODataContextBinding from "sap/ui/model/odata/v4/ODataContextBinding";
+import Context from "sap/ui/model/odata/v4/Context";
 
 interface IEvent {
   ID : string
@@ -37,7 +39,7 @@ export default class EventDetails extends Controller {
     router.navTo("RouteEvents");
   }
 
-  public onPost(evt: FeedInput$PostEvent) {
+  public onCommentPost(evt: FeedInput$PostEvent) {
     console.log('posted')
     const list = this.byId("postsList") as List;
     const binding = list.getBinding("items") as ODataListBinding;
@@ -51,12 +53,14 @@ export default class EventDetails extends Controller {
     });
 
     ctx.created()?.then(()=>{
-      MessageToast.show("Post added!");
+      MessageToast.show("Comment added!");
     })
   }
 
-  public onAttendPress(evt: Button$PressEvent) {
+  public onLikePress(evt: Button$PressEvent) {
     console.log(evt);
-    
+    const btn = evt.getSource() as Button;
+    const binding = this.getView()?.getBindingContext();
+    MessageToast.show("Liked!");
   }
 }

@@ -13,7 +13,8 @@ entity Events : cuid, managed {
     image_url   : String;
     place       : String; // todo change
     type        : String;
-    host        : Association to many Users;
+    hosts       : Composition of many Comments
+                      on hosts.event = $self;
     comments    : Composition of many Comments
                       on comments.event = $self;
     attendees   : Composition of many EventAttendees
@@ -43,6 +44,11 @@ entity EventAttendees {
 }
 
 entity EventLikes {
+    key user  : Association to one Users;
+    key event : Association to one Events;
+}
+
+entity EventHosts {
     key user  : Association to one Users;
     key event : Association to one Events;
 }

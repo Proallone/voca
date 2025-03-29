@@ -14,6 +14,7 @@ entity Events : cuid, managed {
     image_url   : String;
     type        : String;
     address     : Address; // todo change
+    views       : Integer default 0;
     hosts       : Composition of many Comments
                       on hosts.event = $self;
     comments    : Composition of many Comments

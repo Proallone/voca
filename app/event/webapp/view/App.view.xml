@@ -29,6 +29,8 @@
                         <OverflowToolbarLayoutData id="_IDGenOverflowToolbarLayoutData3" priority="Low" group="1"/>
                     </layoutData>
                 </SearchField>
+                <tnt:ToolHeaderUtilitySeparator id="_IDGenToolHeaderUtilitySeparator"/>
+                <ToolbarSpacer id="_IDGenToolbarSpacer1" width="1.125rem"/>
                 <Button id="_IDGenButton2" icon="sap-icon://bell" type="Transparent" tooltip="Notifications" press="onNotificationsPress">
                     <customData>
                         <BadgeCustomData id="_IDGenBadgeCustomData" key="badge" value="2" visible="true"/>
@@ -37,8 +39,7 @@
                         <OverflowToolbarLayoutData id="_IDGenOverflowToolbarLayoutData5" priority="NeverOverflow"/>
                     </layoutData>
                 </Button>
-                <tnt:ToolHeaderUtilitySeparator id="_IDGenToolHeaderUtilitySeparator"/>
-                <ToolbarSpacer id="_IDGenToolbarSpacer1" width="1.125rem"/>
+                <OverflowToolbarButton id="_IDGenOverflowToolbarButton" icon="sap-icon://grid" type="Transparent" tooltip="Actions" press="onActionsPress"/>
                 <Avatar id="_IDGenAvatar" src="test-resources/sap/m/images/dronning_victoria.jpg" displaySize="S" press="onAvatarPressed" tooltip="Profile">
                     <layoutData>
                         <OverflowToolbarLayoutData id="_IDGenOverflowToolbarLayoutData2" priority="NeverOverflow"/>
@@ -54,7 +55,6 @@
                             <core:CustomData id="_IDGenCustomData" key="target" value="RouteEvents"/>
                         </customData>
                     </Link>
-
                 </Breadcrumbs>
             </tnt:ToolHeader>
         </tnt:subHeader>

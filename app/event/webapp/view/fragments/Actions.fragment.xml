@@ -1,0 +1,14 @@
+<core:FragmentDefinition xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:l="sap.ui.layout"
+    xmlns:f="sap.ui.layout.form">
+    <Popover id="actionsPopover" class="sapUiResponsivePadding--header sapUiResponsivePadding--footer" placement="PreferredBottomOrFlip" contentMinWidth="15rem" contentHeight="15rem" title="Actions">
+        <FlexBox id="_IDGenFlexBox7" fitContainer="true" height="100%" width="100%" alignContent="Center" justifyContent="Center" alignItems="Center">
+            <Button id="_IDGenButton4" text="Add event" icon="sap-icon://add-calendar"></Button>
+        </FlexBox>
+        <!-- TODO add grid -->
+        <!-- <endButton>
+            <Button id="_IDGenButton3" icon="sap-icon://decline" iconFirst="true" press="onActionsPopoverClose"></Button>
+        </endButton> -->
+    </Popover>
+</core:FragmentDefinition>

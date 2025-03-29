@@ -4,11 +4,14 @@ import { Link$ClickEvent } from "sap/ui/webc/main/Link";
 import UIComponent from "sap/ui/core/UIComponent";
 import { Button$PressEvent } from "sap/m/Button";
 import { SearchField$SearchEvent } from "sap/m/SearchField";
+import Popover from "sap/m/Popover";
 
 /**
  * @namespace com.proallone.event.controller
  */
 export default class App extends Controller {
+  private actionsPopover: Popover;
+
   public onInit() {}
 
   public onSideNavButtonPress() {
@@ -36,4 +39,22 @@ export default class App extends Controller {
   public onEventsSearch(evt : SearchField$SearchEvent){
     console.log(evt);
   }
+
+  public async onActionsPress(evt: Button$PressEvent){
+        const src = evt.getSource();
+    
+        if (!this.actionsPopover) {
+          this.actionsPopover = (await this.loadFragment({
+            name: "com.proallone.event.view.fragments.Actions",
+          })) as Popover;
+        }
+    
+        this.actionsPopover.openBy(src);
+  }
+
+
+    public onActionsPopoverClose() {
+      const popover = this.byId("actionsPopover") as Popover;
+      popover.close();
+    }
 }

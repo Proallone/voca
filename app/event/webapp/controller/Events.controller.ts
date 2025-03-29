@@ -4,6 +4,7 @@ import { ListItemBase$PressEvent } from "sap/m/ListItemBase";
 import { Link$PressEvent } from "sap/m/Link";
 import Dialog from "sap/m/Dialog";
 import Popover from "sap/m/Popover";
+import { Button$PressEvent } from "sap/m/Button";
 
 /**
  * @namespace com.proallone.event.controller
@@ -26,11 +27,18 @@ export default class Events extends Controller {
     const src = evt.getSource();
     const bindingPath = src.getBindingContext()?.getPath();
 
-    if(!this.eventPlacePopover) {
-      this.eventPlacePopover = await this.loadFragment({ name: "com.proallone.event.view.fragments.EventPlace"}) as Popover;
-    };
+    if (!this.eventPlacePopover) {
+      this.eventPlacePopover = (await this.loadFragment({
+        name: "com.proallone.event.view.fragments.EventPlace",
+      })) as Popover;
+    }
 
-    this.eventPlacePopover.bindElement(bindingPath!)
-    this.eventPlacePopover.openBy(src)
+    this.eventPlacePopover.bindElement(bindingPath!);
+    this.eventPlacePopover.openBy(src);
+  }
+
+  public onAddressPopoverClose() {
+    const popover = this.byId("addressPopover") as Popover;
+    popover.close();
   }
 }

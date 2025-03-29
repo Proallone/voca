@@ -2,7 +2,7 @@
     xmlns:core="sap.ui.core"
     xmlns:l="sap.ui.layout"
     xmlns:f="sap.ui.layout.form">
-    <Popover id="addressPopocer" title="{name}" class="sapUiResponsivePadding--header sapUiResponsivePadding--footer" placement="Bottom" modal="true">
+    <Popover id="addressPopover" title="{name}" class="sapUiResponsivePadding--header sapUiResponsivePadding--footer" placement="Bottom" modal="true" contentMinWidth="20rem">
         <VBox id="_IDGenVBox" class="sapUiTinyMargin">
             <f:SimpleForm id="SimpleFormDisplay354" editable="false" layout="ResponsiveGridLayout" labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1" singleContainerFullSize="false">
                 <f:content>
@@ -13,5 +13,8 @@
                 </f:content>
             </f:SimpleForm>
         </VBox>
+        <endButton>
+            <Button id="_IDGenButton1" icon="sap-icon://decline" iconFirst="true" press="onAddressPopoverClose"></Button>
+        </endButton>
     </Popover>
 </core:FragmentDefinition>

@@ -10,6 +10,7 @@ import Button, { Button$PressEvent } from "sap/m/Button";
 import MessageToast from "sap/m/MessageToast";
 
 import { Link$ClickEvent } from "sap/ui/webc/main/Link";
+import ObjectStatus from "sap/m/ObjectStatus";
 
 interface IEvent {
   ID : string
@@ -51,6 +52,9 @@ export default class EventDetails extends Controller {
 
     ctx.created()?.then(()=>{
       MessageToast.show("Comment added!");
+      const t = this.byId("_IDGenObjectStatus53") as ObjectStatus;
+      const b = t.getBindingContext();
+      b?.getModel().refresh();
     })
   }
 

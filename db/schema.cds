@@ -41,8 +41,8 @@ entity Users : cuid, managed {
 };
 
 entity Labels : cuid {
-    name : String;
-    icon : String;
+    name : String(15);
+    icon : String(40);
 };
 
 entity EventAttendees {

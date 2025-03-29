@@ -21,12 +21,24 @@
                         <OverflowToolbarLayoutData id="_IDGenOverflowToolbarLayoutData1" priority="Disappear"/>
                     </layoutData>
                 </Title>
+                <tnt:ToolHeaderUtilitySeparator id="_IDGenToolHeaderUtilitySeparator2"/>
+
                 <ToolbarSpacer id="_IDGenToolbarSpacer" />
-                <SearchField width="30rem" id="searchField" class="sapUiMediumMarginEnd">
+                <SearchField width="30rem" id="searchField" class="sapUiMediumMarginEnd" search="onEventsSearch">
                     <layoutData>
                         <OverflowToolbarLayoutData id="_IDGenOverflowToolbarLayoutData3" priority="Low" group="1"/>
                     </layoutData>
                 </SearchField>
+                <Button id="_IDGenButton2" icon="sap-icon://bell" type="Transparent" tooltip="Notifications" press="onNotificationsPress">
+                    <customData>
+                        <BadgeCustomData id="_IDGenBadgeCustomData" key="badge" value="2" visible="true"/>
+                    </customData>
+                    <layoutData>
+                        <OverflowToolbarLayoutData id="_IDGenOverflowToolbarLayoutData5" priority="NeverOverflow"/>
+                    </layoutData>
+                </Button>
+                <tnt:ToolHeaderUtilitySeparator id="_IDGenToolHeaderUtilitySeparator"/>
+                <ToolbarSpacer id="_IDGenToolbarSpacer1" width="1.125rem"/>
                 <Avatar id="_IDGenAvatar" src="test-resources/sap/m/images/dronning_victoria.jpg" displaySize="S" press="onAvatarPressed" tooltip="Profile">
                     <layoutData>
                         <OverflowToolbarLayoutData id="_IDGenOverflowToolbarLayoutData2" priority="NeverOverflow"/>

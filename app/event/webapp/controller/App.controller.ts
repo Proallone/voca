@@ -2,6 +2,8 @@ import Controller from "sap/ui/core/mvc/Controller";
 import ToolPage from "sap/tnt/ToolPage";
 import { Link$ClickEvent } from "sap/ui/webc/main/Link";
 import UIComponent from "sap/ui/core/UIComponent";
+import { Button$PressEvent } from "sap/m/Button";
+import { SearchField$SearchEvent } from "sap/m/SearchField";
 
 /**
  * @namespace com.proallone.event.controller
@@ -25,5 +27,13 @@ export default class App extends Controller {
     const target: string = link.data("target");
     const router = UIComponent.getRouterFor(this);
     router.navTo(target)
+  }
+
+  public onNotificationsPress(evt: Button$PressEvent){
+    console.log("notifications pressed"); 
+  }
+
+  public onEventsSearch(evt : SearchField$SearchEvent){
+    console.log(evt);
   }
 }

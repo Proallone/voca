@@ -1,9 +1,6 @@
 import Controller from "sap/ui/core/mvc/Controller";
 import ToolPage from "sap/tnt/ToolPage";
-import { Link$ClickEvent } from "sap/ui/webc/main/Link";
-import UIComponent from "sap/ui/core/UIComponent";
 import { Button$PressEvent } from "sap/m/Button";
-import { SearchField$SearchEvent } from "sap/m/SearchField";
 import Popover from "sap/m/Popover";
 
 /**
@@ -23,13 +20,6 @@ export default class App extends Controller {
 
   public onAvatarPressed() {
     console.log("test");
-  }
-
-  public onBreadcrumbPress(evt: Link$ClickEvent) {
-    const link = evt.getSource();
-    const target: string = link.data("target");
-    const router = UIComponent.getRouterFor(this);
-    router.navTo(target)
   }
 
   public onNotificationsPress(evt: Button$PressEvent){

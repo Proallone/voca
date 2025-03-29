@@ -4,14 +4,12 @@ import { Route$PatternMatchedEvent } from "sap/ui/core/routing/Route";
 import { FeedInput$PostEvent } from "sap/m/FeedInput";
 import List from "sap/m/List";
 import ODataListBinding from "sap/ui/model/odata/v4/ODataListBinding";
-import Breadcrumbs from "sap/m/Breadcrumbs";
-import Link, { $LinkSettings} from "sap/m/Link";
-import { title } from "process";
+
 import Button, { Button$PressEvent } from "sap/m/Button";
-import MessageBox from "sap/m/MessageBox";
+
 import MessageToast from "sap/m/MessageToast";
-import ODataContextBinding from "sap/ui/model/odata/v4/ODataContextBinding";
-import Context from "sap/ui/model/odata/v4/Context";
+
+import { Link$ClickEvent } from "sap/ui/webc/main/Link";
 
 interface IEvent {
   ID : string
@@ -63,4 +61,13 @@ export default class EventDetails extends Controller {
     const binding = this.getView()?.getBindingContext();
     MessageToast.show("Liked!");
   }
+
+  public onBreadcrumbPress(evt: Link$ClickEvent) {
+    const link = evt.getSource();
+    const target: string = link.data("target");
+    const router = UIComponent.getRouterFor(this);
+    router.navTo(target)
+  }
+
+
 }

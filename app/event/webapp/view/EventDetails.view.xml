@@ -1,23 +1,92 @@
 <mvc:View controllerName="com.proallone.event.controller.EventDetails"
     xmlns:mvc="sap.ui.core.mvc"
     xmlns="sap.m"
-    xmlns:core="sap.ui.core">
-    <Page id="eventPage1" showHeader="false">
-        <ObjectHeader id="_IDGenObjectHeader1" responsive="true" title="{name}" intro="{description}" class="sapUiResponsivePadding--header">
-            <ObjectAttribute id="_IDGenObjectAttribute" title="Place" text="{address_city}" active="true" />
-            <ObjectAttribute id="_IDGenObjectAttribute1" title="Start date" text="{start_date}" />
-            <ObjectAttribute id="_IDGenObjectAttribute2" title="End date" text="{end_date}" />
-        </ObjectHeader>
-        <Carousel id="_IDGenCarousel" loop="true" height="30rem" arrowsPlacement="PageIndicator" backgroundDesign="Translucent" pageIndicatorBackgroundDesign="Translucent" pageIndicatorBorderDesign="None">
-            <Image id="_IDGenImage2" src="{image_url}" alt="Example picture of speakers" class="roundedImg"/>
-            <Image id="_IDGenImage3" src="{image_url}" alt="Example picture of USB flash drive" class="roundedImg"/>
-            <Image id="_IDGenImage4" src="{image_url}" alt="Example picture of spotlight" class="roundedImg"/>
-            <Image id="_IDGenImage5" src="{image_url}" alt="Example picture of screw" class="roundedImg"/>
-        </Carousel>
-        <Button id="_IDGenButton" icon="sap-icon://thumb-up" press="onLikePress"/>
-        <FeedInput id="_IDGenFeedInput" post="onCommentPost" icon="test-resources/sap/m/images/dronning_victoria.jpg" class="sapUiSmallMarginTopBottom" />
-        <List id="postsList" showSeparators="Inner" items="{path: 'comments', sorter: { path: 'createdAt', descending: true}}">
-            <FeedListItem id="_IDGenFeedListItem" sender="{title}" icon="{image_url}" senderPress="onSenderPress" iconPress="onIconPress" timestamp="{createdAt}" text="{content}" convertLinksToAnchorTags="All"/>
-        </List>
-    </Page>
+    xmlns:core="sap.ui.core"
+    xmlns:f="sap.f"
+    xmlns:layout="sap.ui.layout">
+    <f:DynamicPage id="dynamicPageId" headerExpanded="{/headerExpanded}" toggleHeaderOnTitleClick="{/titleClickable}">
+        <!-- DynamicPage Title -->
+        <f:title>
+            <f:DynamicPageTitle id="_IDGenDynamicPageTitle">
+                <f:heading>
+                    <FlexBox id="_IDGenFlexBox11" direction="Column">
+                        <Title id="_IDGenTitle2" text="{name}"/>
+                        <ObjectStatus id="_IDGenObjectStatus7" class="sapUiSmallMarginBottom" text="{start_date}" icon="sap-icon://calendar" />
+                    </FlexBox>
+
+                </f:heading>
+                <f:breadcrumbs>
+                    <Breadcrumbs id="_IDGenBreadcrumbs" currentLocationText="{name}" separatorStyle="GreaterThan">
+                        <Link id="_IDGenLink1" text="Events" press="onBreadcrumbPress">
+                            <customData>
+                                <core:CustomData id="_IDGenCustomData" key="target" value="RouteEvents"/>
+                            </customData>
+                        </Link>
+                    </Breadcrumbs>
+                </f:breadcrumbs>
+                <f:expandedContent>
+                    <!-- <FormattedText id="_IDGenFormattedText1" htmlText="{description}"/> -->
+                </f:expandedContent>
+                <f:snappedContent>
+                    <!-- <Label id="_IDGenLabel" text="This is a subheading"/> -->
+                </f:snappedContent>
+                <f:snappedTitleOnMobile>
+                    <!-- <Title id="_IDGenTitle3" text="This is a subheading"/> -->
+                </f:snappedTitleOnMobile>
+                <f:content>
+                    <OverflowToolbar id="_IDGenOverflowToolbar1" width="100%" design="Solid">
+                        <ToolbarSpacer id="_IDGenToolbarSpacer1" />
+                        <ObjectStatus id="_IDGenObjectStatus11" text="{= %{attendees}.length } attending" icon="sap-icon://company-view" class="sapUiSmallMarginEnd"/>
+                        <ObjectStatus id="_IDGenObjectStatus12" text="{= %{likes}.length}" icon="sap-icon://thumb-up" class="sapUiSmallMarginEnd"/>
+                        <ObjectStatus id="_IDGenObjectStatus53" text="{= %{comments}.length }" icon="sap-icon://comment" class="sapUiSmallMarginEnd" />
+                        <ObjectStatus id="_IDGenObjectStatus61" text="{views}" icon="sap-icon://show" />
+                    </OverflowToolbar>
+                </f:content>
+                <f:actions>
+                    <Button id="_IDGenButton" icon="sap-icon://thumb-up" press="onLikePress"/>
+                </f:actions>
+                <f:navigationActions>
+                </f:navigationActions>
+            </f:DynamicPageTitle>
+        </f:title>
+        <f:header>
+            <f:DynamicPageHeader id="_IDGenDynamicPageHeader" pinnable="true">
+                <FormattedText id="_IDGenFormattedText12" htmlText="{description}"/>
+                <layout:HorizontalLayout id="_IDGenHorizontalLayout" allowWrapping="true">
+                    <layout:VerticalLayout id="_IDGenVerticalLayout" class="sapUiMediumMarginEnd">
+                        <ObjectAttribute id="_IDGenObjectAttribute" title="Country" text="{address_country_code}"/>
+                        <ObjectAttribute id="_IDGenObjectAttribute1" title="City" text="{address_city}"/>
+                        <ObjectAttribute id="_IDGenObjectAttribute2" title="Address" text="{address_address}"/>
+                    </layout:VerticalLayout>
+
+                    <!-- <layout:VerticalLayout id="_IDGenVerticalLayout1">
+                        <ObjectAttribute id="_IDGenObjectAttribute3" title="Availability"/>
+                        <ObjectStatus id="_IDGenObjectStatus7" text="In Stock" state="Success" />
+                    </layout:VerticalLayout> -->
+                </layout:HorizontalLayout>
+            </f:DynamicPageHeader>
+        </f:header>
+        <f:content>
+            <FlexBox id="_IDGenFlexBox10" direction="Column">
+
+                <Carousel id="_IDGenCarousel" loop="true" height="30rem" arrowsPlacement="PageIndicator" backgroundDesign="Translucent" pageIndicatorBackgroundDesign="Translucent" pageIndicatorBorderDesign="None">
+                    <Image id="_IDGenImage2" src="{image_url}" alt="Example picture of speakers" class="roundedImg"/>
+                    <Image id="_IDGenImage3" src="{image_url}" alt="Example picture of USB flash drive" class="roundedImg"/>
+                    <Image id="_IDGenImage4" src="{image_url}" alt="Example picture of spotlight" class="roundedImg"/>
+                    <Image id="_IDGenImage5" src="{image_url}" alt="Example picture of screw" class="roundedImg"/>
+                </Carousel>
+                <List id="postsList" showSeparators="Inner" items="{path: 'comments', sorter: { path: 'createdAt', descending: true}}">
+                    <headerToolbar>
+                        <OverflowToolbar id="_IDGenOverflowToolbar2" design="Transparent" style="Clear" height="10rem">
+                            <FlexBox id="_IDGenFlexBox12" direction="Column" width="100%">
+                                <Title id="_IDGenTitle3" text="{= %{comments}.length } Comments"></Title>
+                                <FeedInput id="_IDGenFeedInput" post="onCommentPost" icon="test-resources/sap/m/images/dronning_victoria.jpg" class="sapUiSmallMarginTop" />
+                            </FlexBox>
+                        </OverflowToolbar>
+                    </headerToolbar>
+                    <FeedListItem id="_IDGenFeedListItem" class="rounded sapUiTinyMargin" sender="{title}" icon="{image_url}" senderPress="onSenderPress" iconPress="onIconPress" timestamp="{createdAt}" text="{content}" convertLinksToAnchorTags="All"/>
+                </List>
+            </FlexBox >
+        </f:content>
+    </f:DynamicPage>
 </mvc:View>

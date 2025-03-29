@@ -3,7 +3,7 @@
     xmlns="sap.m">
     <Page id="eventPage" showHeader="false">
         <ObjectHeader id="_IDGenObjectHeader1" responsive="true" title="{name}" intro="{description}" class="sapUiResponsivePadding--header">
-            <ObjectAttribute id="_IDGenObjectAttribute" title="Place" text="{place}" active="true" />
+            <ObjectAttribute id="_IDGenObjectAttribute" title="Place" text="{address_city}" active="true" />
             <ObjectAttribute id="_IDGenObjectAttribute1" title="Start date" text="{start_date}" />
             <ObjectAttribute id="_IDGenObjectAttribute2" title="End date" text="{end_date}" />
         </ObjectHeader>

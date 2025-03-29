@@ -13,7 +13,7 @@
                         <FlexBox id="_IDGenFlexBox" direction="Column" class="sapUiSmallMarginBottom">
                             <FlexBox id="_IDGenFlexBox2" justifyContent="SpaceBetween">
                                 <FlexBox id="_IDGenFlexBox6" direction="Column">
-                                    <ObjectStatus id="_IDGenObjectStatus4" text="{place}" icon="sap-icon://map-fill" state="None" inverted="false" active="true" press="onPlacePress"/>
+                                    <ObjectStatus id="_IDGenObjectStatus4" text="{address_city}" icon="sap-icon://map-fill" state="None" inverted="false" active="true" press="onPlacePress"/>
                                     <Title id="_IDGenTitle1" text="{name}" class="title"/>
                                 </FlexBox>
                                 <FlexBox id="_IDGenFlexBox5">

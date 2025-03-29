@@ -65,7 +65,7 @@ entity EventLabels {
     key label : Association to one Labels;
 };
 
-type Address {
+type Address { //todo fix
     city    : String;
     country : Country;
     address : String;

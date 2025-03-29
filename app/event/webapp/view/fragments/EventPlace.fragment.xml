@@ -1,8 +1,17 @@
 <core:FragmentDefinition xmlns="sap.m"
-    xmlns:core="sap.ui.core">
-    <Popover id="myPopover" title="{name}" class="sapUiResponsivePadding--header sapUiResponsivePadding--footer" placement="Bottom" modal="true">
-        <Image id="_IDGenImage1" src="{image_url}" width="15em" densityAware="false" />
-        <endButton>
-        </endButton>
+    xmlns:core="sap.ui.core"
+    xmlns:l="sap.ui.layout"
+    xmlns:f="sap.ui.layout.form">
+    <Popover id="addressPopocer" title="{name}" class="sapUiResponsivePadding--header sapUiResponsivePadding--footer" placement="Bottom" modal="true">
+        <VBox id="_IDGenVBox" class="sapUiTinyMargin">
+            <f:SimpleForm id="SimpleFormDisplay354" editable="false" layout="ResponsiveGridLayout" labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1" singleContainerFullSize="false">
+                <f:content>
+                    <Label id="_IDGenLabel1" text="Address" />
+                    <Text id="_IDGenText1" text="{address_address}" />
+                    <Label id="_IDGenLabel2" text="Country" />
+                    <Text id="countryText" text="{address_country_code}" />
+                </f:content>
+            </f:SimpleForm>
+        </VBox>
     </Popover>
 </core:FragmentDefinition>

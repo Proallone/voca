@@ -36,10 +36,6 @@ export default class App extends Controller {
     console.log("notifications pressed"); 
   }
 
-  public onEventsSearch(evt : SearchField$SearchEvent){
-    console.log(evt);
-  }
-
   public async onActionsPress(evt: Button$PressEvent){
         const src = evt.getSource();
     

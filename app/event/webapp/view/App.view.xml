@@ -24,13 +24,7 @@
                 <tnt:ToolHeaderUtilitySeparator id="_IDGenToolHeaderUtilitySeparator2"/>
 
                 <ToolbarSpacer id="_IDGenToolbarSpacer" />
-                <SearchField width="30rem" id="searchField" class="sapUiMediumMarginEnd" search="onEventsSearch">
-                    <layoutData>
-                        <OverflowToolbarLayoutData id="_IDGenOverflowToolbarLayoutData3" priority="Low" group="1"/>
-                    </layoutData>
-                </SearchField>
                 <tnt:ToolHeaderUtilitySeparator id="_IDGenToolHeaderUtilitySeparator"/>
-                <ToolbarSpacer id="_IDGenToolbarSpacer1" width="1.125rem"/>
                 <Button id="_IDGenButton2" icon="sap-icon://bell" type="Transparent" tooltip="Notifications" press="onNotificationsPress">
                     <customData>
                         <BadgeCustomData id="_IDGenBadgeCustomData" key="badge" value="2" visible="true"/>
@@ -47,7 +41,7 @@
                 </Avatar>
             </tnt:ToolHeader>
         </tnt:header>
-        <tnt:subHeader>
+        <!-- <tnt:subHeader>
             <tnt:ToolHeader id="_IDGenToolHeader">
                 <Breadcrumbs id="_IDGenBreadcrumbs" currentLocation="Events" separatorStyle="GreaterThan">
                     <Link id="_IDGenLink" text="Events" press="onBreadcrumbPress">
@@ -57,7 +51,8 @@
                     </Link>
                 </Breadcrumbs>
             </tnt:ToolHeader>
-        </tnt:subHeader>
+        </tnt:subHeader> -->
+        
         <!-- <tnt:sideContent>
             <tnt:SideNavigation expanded="false" itemSelect="onItemSelect">
                 <tnt:NavigationList>

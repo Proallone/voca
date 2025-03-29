@@ -1,6 +1,7 @@
 <mvc:View controllerName="com.proallone.event.controller.EventDetails"
     xmlns:mvc="sap.ui.core.mvc"
-    xmlns="sap.m">
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core">
     <Page id="eventPage1" showHeader="false">
         <ObjectHeader id="_IDGenObjectHeader1" responsive="true" title="{name}" intro="{description}" class="sapUiResponsivePadding--header">
             <ObjectAttribute id="_IDGenObjectAttribute" title="Place" text="{address_city}" active="true" />
@@ -13,7 +14,7 @@
             <Image id="_IDGenImage4" src="{image_url}" alt="Example picture of spotlight" class="roundedImg"/>
             <Image id="_IDGenImage5" src="{image_url}" alt="Example picture of screw" class="roundedImg"/>
         </Carousel>
-        <Button id="_IDGenButton" icon="sap-icon://thumb-up" press="onLikePress"></Button>
+        <Button id="_IDGenButton" icon="sap-icon://thumb-up" press="onLikePress"/>
         <FeedInput id="_IDGenFeedInput" post="onCommentPost" icon="test-resources/sap/m/images/dronning_victoria.jpg" class="sapUiSmallMarginTopBottom" />
         <List id="postsList" showSeparators="Inner" items="{path: 'comments', sorter: { path: 'createdAt', descending: true}}">
             <FeedListItem id="_IDGenFeedListItem" sender="{title}" icon="{image_url}" senderPress="onSenderPress" iconPress="onIconPress" timestamp="{createdAt}" text="{content}" convertLinksToAnchorTags="All"/>

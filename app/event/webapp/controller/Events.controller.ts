@@ -4,6 +4,10 @@ import { ListItemBase$PressEvent } from "sap/m/ListItemBase";
 import { Link$PressEvent } from "sap/m/Link";
 import Popover from "sap/m/Popover";
 import { Route$PatternMatchedEvent } from "sap/ui/core/routing/Route";
+import { SearchField$LiveChangeEvent, SearchField$SearchEvent } from "sap/m/SearchField";
+import ODataListBinding from "sap/ui/model/odata/v4/ODataListBinding";
+import Filter from "sap/ui/model/Filter";
+import FilterOperator from "sap/ui/model/FilterOperator";
 
 /**
  * @namespace com.proallone.event.controller
@@ -46,5 +50,19 @@ export default class Events extends Controller {
   public onAddressPopoverClose() {
     const popover = this.byId("addressPopover") as Popover;
     popover.close();
+  }
+
+  public onEventsSearch(evt: SearchField$LiveChangeEvent) {
+    const binding = this.byId("eventList")?.getBinding(
+      "items"
+    ) as ODataListBinding;
+    const query = evt.getParameter("newValue");
+    const aFilters: Filter[] = [];
+
+    if (query) {
+      aFilters.push(new Filter({path: "name", operator: FilterOperator.Contains, value1: query, caseSensitive: false}));
+    }
+
+    binding.filter(aFilters);
   }
 }

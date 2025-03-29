@@ -29,15 +29,14 @@ entity Events : cuid, managed {
 
 entity Comments : cuid, managed {
     title     : String;
-    image_url : String;
     content   : String;
     event     : Association to one Events;
     author    : Association to one Users;
 };
 
 entity Users : cuid, managed {
-    name       : String;
     email      : String;
+    name       : String;
     avatar_url : String;
 };
 

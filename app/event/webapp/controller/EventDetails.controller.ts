@@ -47,7 +47,6 @@ export default class EventDetails extends Controller {
     const ctx = binding.create({
       title: "placeholder",
       content: content,
-      image_url: 'test-resources/sap/m/images/dronning_victoria.jpg'
     });
 
     ctx.created()?.then(()=>{

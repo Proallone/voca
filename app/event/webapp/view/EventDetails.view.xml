@@ -84,7 +84,10 @@
                             </FlexBox>
                         </OverflowToolbar>
                     </headerToolbar>
-                    <FeedListItem id="_IDGenFeedListItem" class="rounded sapUiTinyMargin" sender="{title}" icon="{image_url}" senderPress="onSenderPress" iconPress="onIconPress" timestamp="{createdAt}" text="{content}" convertLinksToAnchorTags="All"/>
+                    <FeedListItem id="_IDGenFeedListItem" class="rounded sapUiTinyMargin" sender="{author/name}" icon="{author/avatar_url}" senderPress="onSenderPress" iconPress="onIconPress" timestamp="{createdAt}" text="{content}" convertLinksToAnchorTags="All"/>
+                    <noData>
+                        <IllustratedMessage id="_IDGenIllustratedMessage2" enableVerticalResponsiveness="true" illustrationType="sapIllus-EmptyList"/>
+                    </noData>
                 </List>
             </FlexBox >
         </f:content>

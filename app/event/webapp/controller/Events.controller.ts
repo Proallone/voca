@@ -2,9 +2,8 @@ import Controller from "sap/ui/core/mvc/Controller";
 import UIComponent from "sap/ui/core/UIComponent";
 import { ListItemBase$PressEvent } from "sap/m/ListItemBase";
 import { Link$PressEvent } from "sap/m/Link";
-import Dialog from "sap/m/Dialog";
 import Popover from "sap/m/Popover";
-import { Button$PressEvent } from "sap/m/Button";
+import { Route$PatternMatchedEvent } from "sap/ui/core/routing/Route";
 
 /**
  * @namespace com.proallone.event.controller
@@ -13,7 +12,14 @@ export default class Events extends Controller {
   protected eventPlacePopover: Popover;
 
   public onInit() {
-    console.log("init");
+    const router = UIComponent.getRouterFor(this);
+    router
+      ?.getRoute("RouteEvents")
+      ?.attachPatternMatched(this.onRouteMatched, this);
+  }
+
+  public onRouteMatched(evt: Route$PatternMatchedEvent) {
+    this.byId("eventList")?.getBinding("items")?.refresh();
   }
 
   public handlePress(evt: ListItemBase$PressEvent) {

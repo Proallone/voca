@@ -1901,6 +1901,11 @@
     url-join "4.0.1"
     ws "8.17.1"
 
+"@sap/cds-common-content@^2.1.0":
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/@sap/cds-common-content/-/cds-common-content-2.1.0.tgz#d4fa109a385a05afaaf3feed4984ca98541bea32"
+  integrity sha512-6Ck6sQDomFzA+j8EM+xGzR+l10B4R0OV3wANByHzbwrRxIhhEEnYH8JDHge2Am8J6sxBNbmm2Yn6ddTVuO+7tg==
+
 "@sap/cds-compiler@>=5.1":
   version "5.8.2"
   resolved "https://registry.yarnpkg.com/@sap/cds-compiler/-/cds-compiler-5.8.2.tgz#3294ce194b973d8d3b0661482289f1952f76bc8f"

@@ -2,7 +2,8 @@ namespace events;
 
 using {
     cuid,
-    managed
+    managed,
+    Country
 } from '@sap/cds/common';
 
 entity Events : cuid, managed {
@@ -11,8 +12,8 @@ entity Events : cuid, managed {
     start_date  : DateTime;
     end_date    : DateTime;
     image_url   : String;
-    place       : String; // todo change
     type        : String;
+    address     : Address; // todo change
     hosts       : Composition of many Comments
                       on hosts.event = $self;
     comments    : Composition of many Comments
@@ -23,7 +24,6 @@ entity Events : cuid, managed {
                       on likes.event = $self;
     labels      : Composition of many EventLabels
                       on labels.event = $self;
-// virtual attendeesCount : Integer;
 };
 
 entity Comments : cuid, managed {
@@ -40,28 +40,33 @@ entity Users : cuid, managed {
     avatar_url : String;
 };
 
-
 entity Labels : cuid {
     name : String;
     icon : String;
-}
+};
 
 entity EventAttendees {
     key user  : Association to one Users;
     key event : Association to one Events;
-}
+};
 
 entity EventLikes {
     key user  : Association to one Users;
     key event : Association to one Events;
-}
+};
 
 entity EventHosts {
     key user  : Association to one Users;
     key event : Association to one Events;
-}
+};
 
 entity EventLabels {
     key event : Association to one Events;
     key label : Association to one Labels;
-}
+};
+
+type Address {
+    city    : String;
+    country : Country;
+    address : String;
+};

@@ -6,44 +6,54 @@
     xmlns:core="sap.ui.core">
     <Page id="page" showHeader="false">
         <FlexBox id="_IDGenFlexBox9" justifyContent="Center" width="100%" class="sapUiMediumMargin">
-            <SearchField width="40rem" id="searchField" liveChange="onEventsSearch">
+            <SearchField width="40rem" id="searchField" liveChange="onEventsSearch" class="sapUiSmallMarginEnd">
                 <layoutData>
-                    <OverflowToolbarLayoutData id="_IDGenOverflowToolbarLayoutData3" priority="Low" group="1"/>
+                    <OverflowToolbarLayoutData id="_IDGenOverflowToolbarLayoutData3" priority="Low" group="1" />
                 </layoutData>
             </SearchField>
+            <Label id="_IDGenLabel" text="Labels" showColon="true" class="sapUiTinyMargin"/>
+            <MultiInput width="15rem" showClearIcon="true" id="multiInput" 
+                suggestionItems="{
+				path: '/Labels',
+				sorter: { path: 'name' }}"
+                showValueHelp="false"
+                tokenUpdate="onTokenUpdate"
+                >
+                <core:Item id="_IDGenItem" key="{ID}" text="{name}" />
+            </MultiInput>
         </FlexBox>
         <List id="eventList" items="{path: '/Events', sorter: { path: 'start_date', descending: true}}">
             <CustomListItem id="_IDGenCustomListItem1" press="handlePress" type="Active" class="sapUiSmallMargin rounded">
                 <FlexBox id="_IDGenFlexBox1" direction="Row" class="sapUiContentPadding sapUiSmallMargin">
-                    <Image id="_IDGenAvatar2" src="{image_url}" class="roundedImg" width="20rem" height="12rem"/>
+                    <Image id="_IDGenAvatar2" src="{image_url}" class="roundedImg" width="20rem" height="12rem" />
                     <FlexBox id="_IDGenFlexBox3" direction="Column" class="sapUiContentPadding" justifyContent="SpaceBetween">
                         <FlexBox id="_IDGenFlexBox" direction="Column" class="sapUiSmallMarginBottom">
                             <FlexBox id="_IDGenFlexBox2" justifyContent="SpaceBetween">
                                 <FlexBox id="_IDGenFlexBox6" direction="Column">
-                                    <ObjectStatus id="_IDGenObjectStatus4" text="{address_city}" icon="sap-icon://map-fill" state="None" inverted="false" active="true" press="onPlacePress"/>
-                                    <Title id="_IDGenTitle1" text="{name}" class="title"/>
+                                    <ObjectStatus id="_IDGenObjectStatus4" text="{address_city}" icon="sap-icon://map-fill" state="None" inverted="false" active="true" press="onPlacePress" />
+                                    <Title id="_IDGenTitle1" text="{name}" class="title" />
                                 </FlexBox>
                                 <FlexBox id="_IDGenFlexBox5">
-                                    <ObjectStatus id="_IDGenObjectStatus3" text="{= %{attendees}.length } attending" icon="sap-icon://company-view" class="sapUiSmallMarginEnd"/>
-                                    <ObjectStatus id="_IDGenObjectStatus1" text="{= %{likes}.length}" icon="sap-icon://thumb-up" class="sapUiSmallMarginEnd"/>
+                                    <ObjectStatus id="_IDGenObjectStatus3" text="{= %{attendees}.length } attending" icon="sap-icon://company-view" class="sapUiSmallMarginEnd" />
+                                    <ObjectStatus id="_IDGenObjectStatus1" text="{= %{likes}.length}" icon="sap-icon://thumb-up" class="sapUiSmallMarginEnd" />
                                     <ObjectStatus id="_IDGenObjectStatus5" text="{= %{comments}.length }" icon="sap-icon://comment" class="sapUiSmallMarginEnd" />
                                     <ObjectStatus id="_IDGenObjectStatus6" text="{views}" icon="sap-icon://show" />
                                 </FlexBox>
                             </FlexBox>
                             <ObjectStatus id="_IDGenObjectStatus2" class="sapUiSmallMarginBottom" text="{start_date}" icon="sap-icon://calendar" />
-                            <FormattedText id="_IDGenFormattedText" htmlText="{description}"/>
+                            <FormattedText id="_IDGenFormattedText" htmlText="{description}" />
                         </FlexBox>
                         <f:GridList id="gridList" items="{labels}" showNoData="false">
                             <f:customLayout>
-                                <grid:GridBoxLayout id="_IDGenGridBoxLayout1" boxWidth="7rem"/>
+                                <grid:GridBoxLayout id="_IDGenGridBoxLayout1" boxWidth="7rem" />
                             </f:customLayout>
                             <f:GridListItem id="_IDGenGridListItem" type="Inactive">
                                 <FlexBox id="_IDGenFlexBox4" class="sapUiTinyMargin" justifyContent="SpaceAround" alignContent="Center">
                                     <layoutData>
                                         <FlexItemData id="_IDGenFlexItemData" growFactor="1" shrinkFactor="0" />
                                     </layoutData>
-                                    <core:Icon id="_IDGenIcon1" src="{label/icon}"/>
-                                    <Text id="_IDGenText" text="{label/name}"/>
+                                    <core:Icon id="_IDGenIcon1" src="{label/icon}" />
+                                    <Text id="_IDGenText" text="{label/name}" />
                                 </FlexBox>
                             </f:GridListItem>
                         </f:GridList>
@@ -51,15 +61,15 @@
                 </FlexBox>
             </CustomListItem>
             <noData>
-                <IllustratedMessage id="_IDGenIllustratedMessage" enableVerticalResponsiveness="true" illustrationType="sapIllus-NoSearchResults"/>
+                <IllustratedMessage id="_IDGenIllustratedMessage" enableVerticalResponsiveness="true" illustrationType="sapIllus-NoSearchResults" />
             </noData>
         </List>
         <Toolbar id="_IDGenToolbar1" style="Standard" design="Solid" height="3rem" enabled="true">
             <FlexBox id="_IDGenFlexBox8" class="sapUiMediumMargin">
-                <Link id="_IDGenText2" text="Author" icon="sap-icon://developer-settings" href="https://github.com/Proallone" target="_blank"/>
+                <Link id="_IDGenText2" text="Author" icon="sap-icon://developer-settings" href="https://github.com/Proallone" target="_blank" />
             </FlexBox>
-            <ToolbarSpacer id="_IDGenToolbarSpacer2"/>
-            <ObjectStatus id="_IDGenObjectStatus" text="2025" class="sapUiMediumMargin"/>
+            <ToolbarSpacer id="_IDGenToolbarSpacer2" />
+            <ObjectStatus id="_IDGenObjectStatus" text="2025" class="sapUiMediumMargin" />
         </Toolbar>
     </Page>
 </mvc:View>

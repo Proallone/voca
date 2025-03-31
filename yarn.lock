@@ -945,19 +945,19 @@
   resolved "https://registry.yarnpkg.com/@cap-js/cds-types/-/cds-types-0.9.0.tgz#b3830a2b144ffb4810df9f3704242f977efa35db"
   integrity sha512-AD4WGAOOSszaleQQqheIo0hHm50zk3NejMlHsuG6cLh4EyK/kozvcx8hkWfAkUT/s11fa8OjyMhztFCy8b5DAA==
 
-"@cap-js/db-service@^1.18.0":
-  version "1.18.0"
-  resolved "https://registry.yarnpkg.com/@cap-js/db-service/-/db-service-1.18.0.tgz#bfc0c34b88c05f9c3af0de6d8444a0bf82a4642d"
-  integrity sha512-Gv0X+GZx85Op8GZ+xbkt49Nrrha68jPfV5+Uo023Xqsbv7HhoFPkI1t1IVI+isZRz04dx4MW573b0KKGEFDAFg==
+"@cap-js/db-service@^1.19.0":
+  version "1.19.0"
+  resolved "https://registry.yarnpkg.com/@cap-js/db-service/-/db-service-1.19.0.tgz#d8c3f5556da77575041cf85e6b83d6ef7741e18c"
+  integrity sha512-bhLhZNeu6vjtIoL0QuVzg43Ce4iKC4RXi3xdbAsqsqs+fPl2JgwC75ufF30b427U14yyAEodmGz+fOZfN6oQ2g==
   dependencies:
     generic-pool "^3.9.0"
 
 "@cap-js/sqlite@^1":
-  version "1.9.0"
-  resolved "https://registry.yarnpkg.com/@cap-js/sqlite/-/sqlite-1.9.0.tgz#02d0995333f89c0550087ace3e2c6d153f3760d4"
-  integrity sha512-0Ka6a7W7v5qyL8IiEjKg1oJH1AvLh/bmshHYxovmruKfyDEuEx+Kz8IARKq8oHwmzPCZVV/xXIKnpg/KWesXcA==
+  version "1.10.0"
+  resolved "https://registry.yarnpkg.com/@cap-js/sqlite/-/sqlite-1.10.0.tgz#4872ab35dbc246092cc1e228af5dbfaddfcb26f2"
+  integrity sha512-4LfBbQy/Omt7GgImwD5iIKnUsmuMIozL/XLMQjMCWryfe/RXMJBhpBW2qvZIg+tYL7ifgMrXXcbDUyKGzG+q/g==
   dependencies:
-    "@cap-js/db-service" "^1.18.0"
+    "@cap-js/db-service" "^1.19.0"
     better-sqlite3 "^11.0.0"
 
 "@colors/colors@1.5.0":
@@ -979,130 +979,130 @@
     enabled "2.0.x"
     kuler "^2.0.0"
 
-"@esbuild/aix-ppc64@0.25.1":
-  version "0.25.1"
-  resolved "https://registry.yarnpkg.com/@esbuild/aix-ppc64/-/aix-ppc64-0.25.1.tgz#c33cf6bbee34975626b01b80451cbb72b4c6c91d"
-  integrity sha512-kfYGy8IdzTGy+z0vFGvExZtxkFlA4zAxgKEahG9KE1ScBjpQnFsNOX8KTU5ojNru5ed5CVoJYXFtoxaq5nFbjQ==
+"@esbuild/aix-ppc64@0.25.2":
+  version "0.25.2"
+  resolved "https://registry.yarnpkg.com/@esbuild/aix-ppc64/-/aix-ppc64-0.25.2.tgz#b87036f644f572efb2b3c75746c97d1d2d87ace8"
+  integrity sha512-wCIboOL2yXZym2cgm6mlA742s9QeJ8DjGVaL39dLN4rRwrOgOyYSnOaFPhKZGLb2ngj4EyfAFjsNJwPXZvseag==
 
-"@esbuild/android-arm64@0.25.1":
-  version "0.25.1"
-  resolved "https://registry.yarnpkg.com/@esbuild/android-arm64/-/android-arm64-0.25.1.tgz#ea766015c7d2655164f22100d33d7f0308a28d6d"
-  integrity sha512-50tM0zCJW5kGqgG7fQ7IHvQOcAn9TKiVRuQ/lN0xR+T2lzEFvAi1ZcS8DiksFcEpf1t/GYOeOfCAgDHFpkiSmA==
+"@esbuild/android-arm64@0.25.2":
+  version "0.25.2"
+  resolved "https://registry.yarnpkg.com/@esbuild/android-arm64/-/android-arm64-0.25.2.tgz#5ca7dc20a18f18960ad8d5e6ef5cf7b0a256e196"
+  integrity sha512-5ZAX5xOmTligeBaeNEPnPaeEuah53Id2tX4c2CVP3JaROTH+j4fnfHCkr1PjXMd78hMst+TlkfKcW/DlTq0i4w==
 
-"@esbuild/android-arm@0.25.1":
-  version "0.25.1"
-  resolved "https://registry.yarnpkg.com/@esbuild/android-arm/-/android-arm-0.25.1.tgz#e84d2bf2fe2e6177a0facda3a575b2139fd3cb9c"
-  integrity sha512-dp+MshLYux6j/JjdqVLnMglQlFu+MuVeNrmT5nk6q07wNhCdSnB7QZj+7G8VMUGh1q+vj2Bq8kRsuyA00I/k+Q==
+"@esbuild/android-arm@0.25.2":
+  version "0.25.2"
+  resolved "https://registry.yarnpkg.com/@esbuild/android-arm/-/android-arm-0.25.2.tgz#3c49f607b7082cde70c6ce0c011c362c57a194ee"
+  integrity sha512-NQhH7jFstVY5x8CKbcfa166GoV0EFkaPkCKBQkdPJFvo5u+nGXLEH/ooniLb3QI8Fk58YAx7nsPLozUWfCBOJA==
 
-"@esbuild/android-x64@0.25.1":
-  version "0.25.1"
-  resolved "https://registry.yarnpkg.com/@esbuild/android-x64/-/android-x64-0.25.1.tgz#58337bee3bc6d78d10425e5500bd11370cfdfbed"
-  integrity sha512-GCj6WfUtNldqUzYkN/ITtlhwQqGWu9S45vUXs7EIYf+7rCiiqH9bCloatO9VhxsL0Pji+PF4Lz2XXCES+Q8hDw==
+"@esbuild/android-x64@0.25.2":
+  version "0.25.2"
+  resolved "https://registry.yarnpkg.com/@esbuild/android-x64/-/android-x64-0.25.2.tgz#8a00147780016aff59e04f1036e7cb1b683859e2"
+  integrity sha512-Ffcx+nnma8Sge4jzddPHCZVRvIfQ0kMsUsCMcJRHkGJ1cDmhe4SsrYIjLUKn1xpHZybmOqCWwB0zQvsjdEHtkg==
 
-"@esbuild/darwin-arm64@0.25.1":
-  version "0.25.1"
-  resolved "https://registry.yarnpkg.com/@esbuild/darwin-arm64/-/darwin-arm64-0.25.1.tgz#a46805c1c585d451aa83be72500bd6e8495dd591"
-  integrity sha512-5hEZKPf+nQjYoSr/elb62U19/l1mZDdqidGfmFutVUjjUZrOazAtwK+Kr+3y0C/oeJfLlxo9fXb1w7L+P7E4FQ==
+"@esbuild/darwin-arm64@0.25.2":
+  version "0.25.2"
+  resolved "https://registry.yarnpkg.com/@esbuild/darwin-arm64/-/darwin-arm64-0.25.2.tgz#486efe7599a8d90a27780f2bb0318d9a85c6c423"
+  integrity sha512-MpM6LUVTXAzOvN4KbjzU/q5smzryuoNjlriAIx+06RpecwCkL9JpenNzpKd2YMzLJFOdPqBpuub6eVRP5IgiSA==
 
-"@esbuild/darwin-x64@0.25.1":
-  version "0.25.1"
-  resolved "https://registry.yarnpkg.com/@esbuild/darwin-x64/-/darwin-x64-0.25.1.tgz#0643e003bb238c63fc93ddbee7d26a003be3cd98"
-  integrity sha512-hxVnwL2Dqs3fM1IWq8Iezh0cX7ZGdVhbTfnOy5uURtao5OIVCEyj9xIzemDi7sRvKsuSdtCAhMKarxqtlyVyfA==
+"@esbuild/darwin-x64@0.25.2":
+  version "0.25.2"
+  resolved "https://registry.yarnpkg.com/@esbuild/darwin-x64/-/darwin-x64-0.25.2.tgz#95ee222aacf668c7a4f3d7ee87b3240a51baf374"
+  integrity sha512-5eRPrTX7wFyuWe8FqEFPG2cU0+butQQVNcT4sVipqjLYQjjh8a8+vUTfgBKM88ObB85ahsnTwF7PSIt6PG+QkA==
 
-"@esbuild/freebsd-arm64@0.25.1":
-  version "0.25.1"
-  resolved "https://registry.yarnpkg.com/@esbuild/freebsd-arm64/-/freebsd-arm64-0.25.1.tgz#cff18da5469c09986b93e87979de5d6872fe8f8e"
-  integrity sha512-1MrCZs0fZa2g8E+FUo2ipw6jw5qqQiH+tERoS5fAfKnRx6NXH31tXBKI3VpmLijLH6yriMZsxJtaXUyFt/8Y4A==
+"@esbuild/freebsd-arm64@0.25.2":
+  version "0.25.2"
+  resolved "https://registry.yarnpkg.com/@esbuild/freebsd-arm64/-/freebsd-arm64-0.25.2.tgz#67efceda8554b6fc6a43476feba068fb37fa2ef6"
+  integrity sha512-mLwm4vXKiQ2UTSX4+ImyiPdiHjiZhIaE9QvC7sw0tZ6HoNMjYAqQpGyui5VRIi5sGd+uWq940gdCbY3VLvsO1w==
 
-"@esbuild/freebsd-x64@0.25.1":
-  version "0.25.1"
-  resolved "https://registry.yarnpkg.com/@esbuild/freebsd-x64/-/freebsd-x64-0.25.1.tgz#362fc09c2de14987621c1878af19203c46365dde"
-  integrity sha512-0IZWLiTyz7nm0xuIs0q1Y3QWJC52R8aSXxe40VUxm6BB1RNmkODtW6LHvWRrGiICulcX7ZvyH6h5fqdLu4gkww==
+"@esbuild/freebsd-x64@0.25.2":
+  version "0.25.2"
+  resolved "https://registry.yarnpkg.com/@esbuild/freebsd-x64/-/freebsd-x64-0.25.2.tgz#88a9d7ecdd3adadbfe5227c2122d24816959b809"
+  integrity sha512-6qyyn6TjayJSwGpm8J9QYYGQcRgc90nmfdUb0O7pp1s4lTY+9D0H9O02v5JqGApUyiHOtkz6+1hZNvNtEhbwRQ==
 
-"@esbuild/linux-arm64@0.25.1":
-  version "0.25.1"
-  resolved "https://registry.yarnpkg.com/@esbuild/linux-arm64/-/linux-arm64-0.25.1.tgz#aa90d5b02efc97a271e124e6d1cea490634f7498"
-  integrity sha512-jaN3dHi0/DDPelk0nLcXRm1q7DNJpjXy7yWaWvbfkPvI+7XNSc/lDOnCLN7gzsyzgu6qSAmgSvP9oXAhP973uQ==
+"@esbuild/linux-arm64@0.25.2":
+  version "0.25.2"
+  resolved "https://registry.yarnpkg.com/@esbuild/linux-arm64/-/linux-arm64-0.25.2.tgz#87be1099b2bbe61282333b084737d46bc8308058"
+  integrity sha512-gq/sjLsOyMT19I8obBISvhoYiZIAaGF8JpeXu1u8yPv8BE5HlWYobmlsfijFIZ9hIVGYkbdFhEqC0NvM4kNO0g==
 
-"@esbuild/linux-arm@0.25.1":
-  version "0.25.1"
-  resolved "https://registry.yarnpkg.com/@esbuild/linux-arm/-/linux-arm-0.25.1.tgz#dfcefcbac60a20918b19569b4b657844d39db35a"
-  integrity sha512-NdKOhS4u7JhDKw9G3cY6sWqFcnLITn6SqivVArbzIaf3cemShqfLGHYMx8Xlm/lBit3/5d7kXvriTUGa5YViuQ==
+"@esbuild/linux-arm@0.25.2":
+  version "0.25.2"
+  resolved "https://registry.yarnpkg.com/@esbuild/linux-arm/-/linux-arm-0.25.2.tgz#72a285b0fe64496e191fcad222185d7bf9f816f6"
+  integrity sha512-UHBRgJcmjJv5oeQF8EpTRZs/1knq6loLxTsjc3nxO9eXAPDLcWW55flrMVc97qFPbmZP31ta1AZVUKQzKTzb0g==
 
-"@esbuild/linux-ia32@0.25.1":
-  version "0.25.1"
-  resolved "https://registry.yarnpkg.com/@esbuild/linux-ia32/-/linux-ia32-0.25.1.tgz#6f9527077ccb7953ed2af02e013d4bac69f13754"
-  integrity sha512-OJykPaF4v8JidKNGz8c/q1lBO44sQNUQtq1KktJXdBLn1hPod5rE/Hko5ugKKZd+D2+o1a9MFGUEIUwO2YfgkQ==
+"@esbuild/linux-ia32@0.25.2":
+  version "0.25.2"
+  resolved "https://registry.yarnpkg.com/@esbuild/linux-ia32/-/linux-ia32-0.25.2.tgz#337a87a4c4dd48a832baed5cbb022be20809d737"
+  integrity sha512-bBYCv9obgW2cBP+2ZWfjYTU+f5cxRoGGQ5SeDbYdFCAZpYWrfjjfYwvUpP8MlKbP0nwZ5gyOU/0aUzZ5HWPuvQ==
 
-"@esbuild/linux-loong64@0.25.1":
-  version "0.25.1"
-  resolved "https://registry.yarnpkg.com/@esbuild/linux-loong64/-/linux-loong64-0.25.1.tgz#287d2412a5456e5860c2839d42a4b51284d1697c"
-  integrity sha512-nGfornQj4dzcq5Vp835oM/o21UMlXzn79KobKlcs3Wz9smwiifknLy4xDCLUU0BWp7b/houtdrgUz7nOGnfIYg==
+"@esbuild/linux-loong64@0.25.2":
+  version "0.25.2"
+  resolved "https://registry.yarnpkg.com/@esbuild/linux-loong64/-/linux-loong64-0.25.2.tgz#1b81aa77103d6b8a8cfa7c094ed3d25c7579ba2a"
+  integrity sha512-SHNGiKtvnU2dBlM5D8CXRFdd+6etgZ9dXfaPCeJtz+37PIUlixvlIhI23L5khKXs3DIzAn9V8v+qb1TRKrgT5w==
 
-"@esbuild/linux-mips64el@0.25.1":
-  version "0.25.1"
-  resolved "https://registry.yarnpkg.com/@esbuild/linux-mips64el/-/linux-mips64el-0.25.1.tgz#530574b9e1bc5d20f7a4f44c5f045e26f3783d57"
-  integrity sha512-1osBbPEFYwIE5IVB/0g2X6i1qInZa1aIoj1TdL4AaAb55xIIgbg8Doq6a5BzYWgr+tEcDzYH67XVnTmUzL+nXg==
+"@esbuild/linux-mips64el@0.25.2":
+  version "0.25.2"
+  resolved "https://registry.yarnpkg.com/@esbuild/linux-mips64el/-/linux-mips64el-0.25.2.tgz#afbe380b6992e7459bf7c2c3b9556633b2e47f30"
+  integrity sha512-hDDRlzE6rPeoj+5fsADqdUZl1OzqDYow4TB4Y/3PlKBD0ph1e6uPHzIQcv2Z65u2K0kpeByIyAjCmjn1hJgG0Q==
 
-"@esbuild/linux-ppc64@0.25.1":
-  version "0.25.1"
-  resolved "https://registry.yarnpkg.com/@esbuild/linux-ppc64/-/linux-ppc64-0.25.1.tgz#5d7e6b283a0b321ea42c6bc0abeb9eb99c1f5589"
-  integrity sha512-/6VBJOwUf3TdTvJZ82qF3tbLuWsscd7/1w+D9LH0W/SqUgM5/JJD0lrJ1fVIfZsqB6RFmLCe0Xz3fmZc3WtyVg==
+"@esbuild/linux-ppc64@0.25.2":
+  version "0.25.2"
+  resolved "https://registry.yarnpkg.com/@esbuild/linux-ppc64/-/linux-ppc64-0.25.2.tgz#6bf8695cab8a2b135cca1aa555226dc932d52067"
+  integrity sha512-tsHu2RRSWzipmUi9UBDEzc0nLc4HtpZEI5Ba+Omms5456x5WaNuiG3u7xh5AO6sipnJ9r4cRWQB2tUjPyIkc6g==
 
-"@esbuild/linux-riscv64@0.25.1":
-  version "0.25.1"
-  resolved "https://registry.yarnpkg.com/@esbuild/linux-riscv64/-/linux-riscv64-0.25.1.tgz#14fa0cd073c26b4ee2465d18cd1e18eea7859fa8"
-  integrity sha512-nSut/Mx5gnilhcq2yIMLMe3Wl4FK5wx/o0QuuCLMtmJn+WeWYoEGDN1ipcN72g1WHsnIbxGXd4i/MF0gTcuAjQ==
+"@esbuild/linux-riscv64@0.25.2":
+  version "0.25.2"
+  resolved "https://registry.yarnpkg.com/@esbuild/linux-riscv64/-/linux-riscv64-0.25.2.tgz#43c2d67a1a39199fb06ba978aebb44992d7becc3"
+  integrity sha512-k4LtpgV7NJQOml/10uPU0s4SAXGnowi5qBSjaLWMojNCUICNu7TshqHLAEbkBdAszL5TabfvQ48kK84hyFzjnw==
 
-"@esbuild/linux-s390x@0.25.1":
-  version "0.25.1"
-  resolved "https://registry.yarnpkg.com/@esbuild/linux-s390x/-/linux-s390x-0.25.1.tgz#e677b4b9d1b384098752266ccaa0d52a420dc1aa"
-  integrity sha512-cEECeLlJNfT8kZHqLarDBQso9a27o2Zd2AQ8USAEoGtejOrCYHNtKP8XQhMDJMtthdF4GBmjR2au3x1udADQQQ==
+"@esbuild/linux-s390x@0.25.2":
+  version "0.25.2"
+  resolved "https://registry.yarnpkg.com/@esbuild/linux-s390x/-/linux-s390x-0.25.2.tgz#419e25737ec815c6dce2cd20d026e347cbb7a602"
+  integrity sha512-GRa4IshOdvKY7M/rDpRR3gkiTNp34M0eLTaC1a08gNrh4u488aPhuZOCpkF6+2wl3zAN7L7XIpOFBhnaE3/Q8Q==
 
-"@esbuild/linux-x64@0.25.1":
-  version "0.25.1"
-  resolved "https://registry.yarnpkg.com/@esbuild/linux-x64/-/linux-x64-0.25.1.tgz#f1c796b78fff5ce393658313e8c58613198d9954"
-  integrity sha512-xbfUhu/gnvSEg+EGovRc+kjBAkrvtk38RlerAzQxvMzlB4fXpCFCeUAYzJvrnhFtdeyVCDANSjJvOvGYoeKzFA==
+"@esbuild/linux-x64@0.25.2":
+  version "0.25.2"
+  resolved "https://registry.yarnpkg.com/@esbuild/linux-x64/-/linux-x64-0.25.2.tgz#22451f6edbba84abe754a8cbd8528ff6e28d9bcb"
+  integrity sha512-QInHERlqpTTZ4FRB0fROQWXcYRD64lAoiegezDunLpalZMjcUcld3YzZmVJ2H/Cp0wJRZ8Xtjtj0cEHhYc/uUg==
 
-"@esbuild/netbsd-arm64@0.25.1":
-  version "0.25.1"
-  resolved "https://registry.yarnpkg.com/@esbuild/netbsd-arm64/-/netbsd-arm64-0.25.1.tgz#0d280b7dfe3973f111b02d5fe9f3063b92796d29"
-  integrity sha512-O96poM2XGhLtpTh+s4+nP7YCCAfb4tJNRVZHfIE7dgmax+yMP2WgMd2OecBuaATHKTHsLWHQeuaxMRnCsH8+5g==
+"@esbuild/netbsd-arm64@0.25.2":
+  version "0.25.2"
+  resolved "https://registry.yarnpkg.com/@esbuild/netbsd-arm64/-/netbsd-arm64-0.25.2.tgz#744affd3b8d8236b08c5210d828b0698a62c58ac"
+  integrity sha512-talAIBoY5M8vHc6EeI2WW9d/CkiO9MQJ0IOWX8hrLhxGbro/vBXJvaQXefW2cP0z0nQVTdQ/eNyGFV1GSKrxfw==
 
-"@esbuild/netbsd-x64@0.25.1":
-  version "0.25.1"
-  resolved "https://registry.yarnpkg.com/@esbuild/netbsd-x64/-/netbsd-x64-0.25.1.tgz#be663893931a4bb3f3a009c5cc24fa9681cc71c0"
-  integrity sha512-X53z6uXip6KFXBQ+Krbx25XHV/NCbzryM6ehOAeAil7X7oa4XIq+394PWGnwaSQ2WRA0KI6PUO6hTO5zeF5ijA==
+"@esbuild/netbsd-x64@0.25.2":
+  version "0.25.2"
+  resolved "https://registry.yarnpkg.com/@esbuild/netbsd-x64/-/netbsd-x64-0.25.2.tgz#dbbe7521fd6d7352f34328d676af923fc0f8a78f"
+  integrity sha512-voZT9Z+tpOxrvfKFyfDYPc4DO4rk06qamv1a/fkuzHpiVBMOhpjK+vBmWM8J1eiB3OLSMFYNaOaBNLXGChf5tg==
 
-"@esbuild/openbsd-arm64@0.25.1":
-  version "0.25.1"
-  resolved "https://registry.yarnpkg.com/@esbuild/openbsd-arm64/-/openbsd-arm64-0.25.1.tgz#d9021b884233673a05dc1cc26de0bf325d824217"
-  integrity sha512-Na9T3szbXezdzM/Kfs3GcRQNjHzM6GzFBeU1/6IV/npKP5ORtp9zbQjvkDJ47s6BCgaAZnnnu/cY1x342+MvZg==
+"@esbuild/openbsd-arm64@0.25.2":
+  version "0.25.2"
+  resolved "https://registry.yarnpkg.com/@esbuild/openbsd-arm64/-/openbsd-arm64-0.25.2.tgz#f9caf987e3e0570500832b487ce3039ca648ce9f"
+  integrity sha512-dcXYOC6NXOqcykeDlwId9kB6OkPUxOEqU+rkrYVqJbK2hagWOMrsTGsMr8+rW02M+d5Op5NNlgMmjzecaRf7Tg==
 
-"@esbuild/openbsd-x64@0.25.1":
-  version "0.25.1"
-  resolved "https://registry.yarnpkg.com/@esbuild/openbsd-x64/-/openbsd-x64-0.25.1.tgz#9f1dc1786ed2e2938c404b06bcc48be9a13250de"
-  integrity sha512-T3H78X2h1tszfRSf+txbt5aOp/e7TAz3ptVKu9Oyir3IAOFPGV6O9c2naym5TOriy1l0nNf6a4X5UXRZSGX/dw==
+"@esbuild/openbsd-x64@0.25.2":
+  version "0.25.2"
+  resolved "https://registry.yarnpkg.com/@esbuild/openbsd-x64/-/openbsd-x64-0.25.2.tgz#d2bb6a0f8ffea7b394bb43dfccbb07cabd89f768"
+  integrity sha512-t/TkWwahkH0Tsgoq1Ju7QfgGhArkGLkF1uYz8nQS/PPFlXbP5YgRpqQR3ARRiC2iXoLTWFxc6DJMSK10dVXluw==
 
-"@esbuild/sunos-x64@0.25.1":
-  version "0.25.1"
-  resolved "https://registry.yarnpkg.com/@esbuild/sunos-x64/-/sunos-x64-0.25.1.tgz#89aac24a4b4115959b3f790192cf130396696c27"
-  integrity sha512-2H3RUvcmULO7dIE5EWJH8eubZAI4xw54H1ilJnRNZdeo8dTADEZ21w6J22XBkXqGJbe0+wnNJtw3UXRoLJnFEg==
+"@esbuild/sunos-x64@0.25.2":
+  version "0.25.2"
+  resolved "https://registry.yarnpkg.com/@esbuild/sunos-x64/-/sunos-x64-0.25.2.tgz#49b437ed63fe333b92137b7a0c65a65852031afb"
+  integrity sha512-cfZH1co2+imVdWCjd+D1gf9NjkchVhhdpgb1q5y6Hcv9TP6Zi9ZG/beI3ig8TvwT9lH9dlxLq5MQBBgwuj4xvA==
 
-"@esbuild/win32-arm64@0.25.1":
-  version "0.25.1"
-  resolved "https://registry.yarnpkg.com/@esbuild/win32-arm64/-/win32-arm64-0.25.1.tgz#354358647a6ea98ea6d243bf48bdd7a434999582"
-  integrity sha512-GE7XvrdOzrb+yVKB9KsRMq+7a2U/K5Cf/8grVFRAGJmfADr/e/ODQ134RK2/eeHqYV5eQRFxb1hY7Nr15fv1NQ==
+"@esbuild/win32-arm64@0.25.2":
+  version "0.25.2"
+  resolved "https://registry.yarnpkg.com/@esbuild/win32-arm64/-/win32-arm64-0.25.2.tgz#081424168463c7d6c7fb78f631aede0c104373cf"
+  integrity sha512-7Loyjh+D/Nx/sOTzV8vfbB3GJuHdOQyrOryFdZvPHLf42Tk9ivBU5Aedi7iyX+x6rbn2Mh68T4qq1SDqJBQO5Q==
 
-"@esbuild/win32-ia32@0.25.1":
-  version "0.25.1"
-  resolved "https://registry.yarnpkg.com/@esbuild/win32-ia32/-/win32-ia32-0.25.1.tgz#8cea7340f2647eba951a041dc95651e3908cd4cb"
-  integrity sha512-uOxSJCIcavSiT6UnBhBzE8wy3n0hOkJsBOzy7HDAuTDE++1DJMRRVCPGisULScHL+a/ZwdXPpXD3IyFKjA7K8A==
+"@esbuild/win32-ia32@0.25.2":
+  version "0.25.2"
+  resolved "https://registry.yarnpkg.com/@esbuild/win32-ia32/-/win32-ia32-0.25.2.tgz#3f9e87143ddd003133d21384944a6c6cadf9693f"
+  integrity sha512-WRJgsz9un0nqZJ4MfhabxaD9Ft8KioqU3JMinOTvobbX6MOSUigSBlogP8QB3uxpJDsFS6yN+3FDBdqE5lg9kg==
 
-"@esbuild/win32-x64@0.25.1":
-  version "0.25.1"
-  resolved "https://registry.yarnpkg.com/@esbuild/win32-x64/-/win32-x64-0.25.1.tgz#7d79922cb2d88f9048f06393dbf62d2e4accb584"
-  integrity sha512-Y1EQdcfwMSeQN/ujR5VayLOJ1BHaK+ssyk0AEzPjC+t1lITgsnccPqFjb6V+LsTp/9Iov4ysfjxLaGJ9RPtkVg==
+"@esbuild/win32-x64@0.25.2":
+  version "0.25.2"
+  resolved "https://registry.yarnpkg.com/@esbuild/win32-x64/-/win32-x64-0.25.2.tgz#839f72c2decd378f86b8f525e1979a97b920c67d"
+  integrity sha512-kM3HKb16VIXZyIeVrM1ygYmZBKybX8N4p754bw390wGO3Tf2j4L2/WYL+4suWujpgf6GBYs3jv7TyUivdd05JA==
 
 "@eslint-community/eslint-utils@^4.2.0", "@eslint-community/eslint-utils@^4.4.0":
   version "4.5.1"
@@ -1604,22 +1604,22 @@
     "@pnpm/network.ca-file" "^1.0.1"
     config-chain "^1.1.11"
 
-"@sap-ux/adp-tooling@0.13.8":
-  version "0.13.8"
-  resolved "https://registry.yarnpkg.com/@sap-ux/adp-tooling/-/adp-tooling-0.13.8.tgz#457c74680893c61fa8c1508098104c0b5f4fd248"
-  integrity sha512-eIhqQXF9pASfigVQ2m18Kr1S44IhZ5nSVX0G3TKZRnH+IPhdLV4elcMn72Q5C4DS7YZvtj/sQBsqZTCw0s2nzA==
+"@sap-ux/adp-tooling@0.13.19":
+  version "0.13.19"
+  resolved "https://registry.yarnpkg.com/@sap-ux/adp-tooling/-/adp-tooling-0.13.19.tgz#dc6a88cc9ff28f536c06871165894ab058de7b9f"
+  integrity sha512-v9OUptwUOnlA1ZoTjT9JshXxjjhYs1/mj4WRhmcLgG3RPAW6pyeAWaPdnP7amOKt2aNg0hPu2PTBeTwhCGlhqw==
   dependencies:
-    "@sap-ux/axios-extension" "1.19.0"
-    "@sap-ux/btp-utils" "1.0.1"
+    "@sap-ux/axios-extension" "1.19.1"
+    "@sap-ux/btp-utils" "1.0.2"
     "@sap-ux/i18n" "0.2.3"
-    "@sap-ux/inquirer-common" "0.6.25"
+    "@sap-ux/inquirer-common" "0.6.31"
     "@sap-ux/logger" "0.6.0"
-    "@sap-ux/nodejs-utils" "0.1.7"
-    "@sap-ux/odata-service-writer" "0.26.7"
-    "@sap-ux/project-access" "1.29.12"
-    "@sap-ux/project-input-validator" "0.3.4"
-    "@sap-ux/system-access" "0.5.32"
-    "@sap-ux/ui5-config" "0.26.2"
+    "@sap-ux/nodejs-utils" "0.1.8"
+    "@sap-ux/odata-service-writer" "0.26.13"
+    "@sap-ux/project-access" "1.29.18"
+    "@sap-ux/project-input-validator" "0.4.0"
+    "@sap-ux/system-access" "0.5.33"
+    "@sap-ux/ui5-config" "0.26.5"
     adm-zip "0.5.10"
     ejs "3.1.10"
     i18next "23.11.2"
@@ -1630,16 +1630,16 @@
     sanitize-filename "1.6.3"
     uuid "10.0.0"
 
-"@sap-ux/axios-extension@1.19.0":
-  version "1.19.0"
-  resolved "https://registry.yarnpkg.com/@sap-ux/axios-extension/-/axios-extension-1.19.0.tgz#81f662b5686b7e76f3add77f887d4085da5c18d7"
-  integrity sha512-Jyqf/F9xmCgVzFhdj65cBQo3J8U3nbUa4qyjuJD5uKCn13UOasG3S0auEdXsj6i9O0wpSKX7UMye9Tfkn35qpA==
+"@sap-ux/axios-extension@1.19.1":
+  version "1.19.1"
+  resolved "https://registry.yarnpkg.com/@sap-ux/axios-extension/-/axios-extension-1.19.1.tgz#af59386676162b9a8236d5bf2093be3a8fc8c516"
+  integrity sha512-RayC2UDI2HcYtg+DmHgLH4PhyFJ4G24LMqDOe006LkLCmkUWtCxPKV30lUAwd5xH8KUzVLlYk8g63WlAg75Fow==
   dependencies:
-    "@sap-ux/btp-utils" "1.0.1"
+    "@sap-ux/btp-utils" "1.0.2"
     "@sap-ux/feature-toggle" "0.2.3"
     "@sap-ux/logger" "0.6.0"
     "@xmldom/xmldom" "0.8.10"
-    axios "1.7.9"
+    axios "1.8.2"
     detect-content-type "1.2.0"
     fast-xml-parser "4.4.1"
     http-proxy-agent "7.0.2"
@@ -1650,19 +1650,19 @@
     qs "6.11.0"
     xpath "0.0.33"
 
-"@sap-ux/btp-utils@1.0.1":
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/@sap-ux/btp-utils/-/btp-utils-1.0.1.tgz#18c4cddbf16ba889103d0e3d41b402743df4c56a"
-  integrity sha512-Frgabphu/pBqy8uz+ooSUlhouodayHwxm7YpwVvWfcH9nplmA5i4wPV4hts24wMSrEZRJGy4ysLY/+Obz50OZQ==
+"@sap-ux/btp-utils@1.0.2":
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/@sap-ux/btp-utils/-/btp-utils-1.0.2.tgz#16731c48a4c02a0f3e4dde9e5a0dfb7673100fa7"
+  integrity sha512-cuB7qRQoo9xBH2nm8CTyqseAzgq6YthxF5SApbcXaSbBxoGV1kFhQ18zoAEKQwSSQGjJGYm5yfYpVNi7Rb4S9A==
   dependencies:
     "@sap/bas-sdk" "3.11.2"
     "@sap/cf-tools" "3.2.2"
-    axios "1.7.4"
+    axios "1.8.2"
 
-"@sap-ux/control-property-editor-sources@npm:@sap-ux/control-property-editor@0.5.37":
-  version "0.5.37"
-  resolved "https://registry.yarnpkg.com/@sap-ux/control-property-editor/-/control-property-editor-0.5.37.tgz#6a7a4d90d8486f5ad362470f770ea1b6982bd4f9"
-  integrity sha512-pVNqVkTKjk6E5QzdheNe7FQwnqXPpo0HWJcwaQNaMKShUSACMqDS45PqeGTEdnT0ZlFIsYmHNUU2mJefruSR5A==
+"@sap-ux/control-property-editor-sources@npm:@sap-ux/control-property-editor@0.6.1":
+  version "0.6.1"
+  resolved "https://registry.yarnpkg.com/@sap-ux/control-property-editor/-/control-property-editor-0.6.1.tgz#2c6841f4479a9043cd94e0b6901523e985cdaa70"
+  integrity sha512-kKAaP/CFU/jbfVaCxOw4Hc1Z/jTzxoPIO3p31LeN60gdasKXIlWDgssOLm2OVI4lmIVZUjK/mJJc4oVwbUOo1Q==
 
 "@sap-ux/eslint-plugin-fiori-tools@^0.4.0":
   version "0.4.2"
@@ -1677,14 +1677,14 @@
   resolved "https://registry.yarnpkg.com/@sap-ux/feature-toggle/-/feature-toggle-0.2.3.tgz#12cd12b753d22a59103318f5867924167e60be71"
   integrity sha512-2pE6Fd5ldJgIr/HF5y/Qwkj86OFykSA4nckb/Cy4fwqPPCAO4adupnLLJ1KVe2O5iwxY488Mfjc4uqRaaoRT5w==
 
-"@sap-ux/fiori-generator-shared@0.9.5":
-  version "0.9.5"
-  resolved "https://registry.yarnpkg.com/@sap-ux/fiori-generator-shared/-/fiori-generator-shared-0.9.5.tgz#2294f32a48cd447e4dac206d94f9db466896ac6e"
-  integrity sha512-yMQXZ9l6E1FCe8ZGNg1PUpGWjoUkJ6hf3I8cVtk83IbiumX2P5pZS98m9AjZnofY/xsZTUnBn11xs/chdw/ORA==
+"@sap-ux/fiori-generator-shared@0.9.11":
+  version "0.9.11"
+  resolved "https://registry.yarnpkg.com/@sap-ux/fiori-generator-shared/-/fiori-generator-shared-0.9.11.tgz#a9483aa1ca651c0131a69d6746192fb4088b3fdf"
+  integrity sha512-nFo/q6vjyvBIBF2WrSfsALq9oGXpIVRwhDC48D9qAyO9eB4DIkBXYGfSUMLkte3PjIoYL33cQTxuQMrXUS6dLw==
   dependencies:
-    "@sap-ux/btp-utils" "1.0.1"
-    "@sap-ux/project-access" "1.29.12"
-    "@sap-ux/telemetry" "0.5.66"
+    "@sap-ux/btp-utils" "1.0.2"
+    "@sap-ux/project-access" "1.29.18"
+    "@sap-ux/telemetry" "0.5.72"
     "@vscode-logging/logger" "2.0.0"
     i18next "20.6.1"
     logform "2.4.0"
@@ -1707,20 +1707,20 @@
     jsonc-parser "3.2.0"
     vscode-languageserver-textdocument "1.0.11"
 
-"@sap-ux/inquirer-common@0.6.25":
-  version "0.6.25"
-  resolved "https://registry.yarnpkg.com/@sap-ux/inquirer-common/-/inquirer-common-0.6.25.tgz#965dd8fa6ca2174d8787ce93e1473fdb29b23717"
-  integrity sha512-68JXYy7ePLHPJClIQpSyqPFvb3OZ1yoCaSYsbmwJKqfz+uSwK/h4uLGgCA7C6M89h4ts0kcM0TmGUId8sk0/vQ==
+"@sap-ux/inquirer-common@0.6.31":
+  version "0.6.31"
+  resolved "https://registry.yarnpkg.com/@sap-ux/inquirer-common/-/inquirer-common-0.6.31.tgz#1f3059362601cf8879f68a7359f027d2704edfc8"
+  integrity sha512-xfgoLJ0bFDz8hGKNct1GdSxbGBWZi/wKW7LzGenWFY7uI0OZiqqpr7P9p/UISsgtObQh49W8WNbyTqp3Nc44lA==
   dependencies:
-    "@sap-ux/btp-utils" "1.0.1"
+    "@sap-ux/btp-utils" "1.0.2"
     "@sap-ux/feature-toggle" "0.2.3"
-    "@sap-ux/fiori-generator-shared" "0.9.5"
+    "@sap-ux/fiori-generator-shared" "0.9.11"
     "@sap-ux/guided-answers-helper" "0.2.1"
     "@sap-ux/logger" "0.6.0"
-    "@sap-ux/telemetry" "0.5.66"
-    "@sap-ux/ui5-info" "0.9.0"
+    "@sap-ux/telemetry" "0.5.72"
+    "@sap-ux/ui5-info" "0.9.1"
     "@sap/cf-tools" "3.2.2"
-    axios "1.7.9"
+    axios "1.8.2"
     chalk "4.1.2"
     figures "3.2.0"
     fuzzy "0.1.3"
@@ -1739,35 +1739,35 @@
     winston "3.11.0"
     winston-transport "4.7.0"
 
-"@sap-ux/mockserver-config-writer@0.8.5":
-  version "0.8.5"
-  resolved "https://registry.yarnpkg.com/@sap-ux/mockserver-config-writer/-/mockserver-config-writer-0.8.5.tgz#d4b9d2f4c8f66f71d3426864fd7468ab6283664c"
-  integrity sha512-lcUaHoAHdHoKU13cCNHgPO5jQvdeRatGwCA3SgnXAKfrY0U3dA8a4MeH9kpt8GwnP7jFlHNINjktz1iF/frWtg==
+"@sap-ux/mockserver-config-writer@0.8.11":
+  version "0.8.11"
+  resolved "https://registry.yarnpkg.com/@sap-ux/mockserver-config-writer/-/mockserver-config-writer-0.8.11.tgz#3a897109cc228bb7047b908f074ca30e731cef6c"
+  integrity sha512-wHbPf7qgUZ6GIsZ3564hFHAt/Af129S30tCLPpnKGh1Pyso+XrCSDSYpZ326Mv1JJ72n8+rfd5EP+TYFIwkitw==
   dependencies:
-    "@sap-ux/project-access" "1.29.12"
-    "@sap-ux/ui5-config" "0.26.2"
+    "@sap-ux/project-access" "1.29.18"
+    "@sap-ux/ui5-config" "0.26.5"
     i18next "20.6.1"
     mem-fs "2.1.0"
     mem-fs-editor "9.4.0"
 
-"@sap-ux/nodejs-utils@0.1.7":
-  version "0.1.7"
-  resolved "https://registry.yarnpkg.com/@sap-ux/nodejs-utils/-/nodejs-utils-0.1.7.tgz#11cfc79bc6f7ce20d6bbdc55ee449614ac85b6a5"
-  integrity sha512-0D9pKy2kAKbana58L/vbzl7JPEdwQ/1CUW/4cDY7pII3f6WHhACM/C4JHFNx0agM88i1bJMnaWRJL0bXAAdzLA==
+"@sap-ux/nodejs-utils@0.1.8":
+  version "0.1.8"
+  resolved "https://registry.yarnpkg.com/@sap-ux/nodejs-utils/-/nodejs-utils-0.1.8.tgz#063c21920957e69cbcaa52a5128738e6d88eec75"
+  integrity sha512-+SXYdKHYsPiFzzvtruGYl2sHy5Ma62OX0DXUIGfg+j/pMA4UPHr3k0NTGcKcFi3LXf+Ff+SIZk+IuA+Gmfpnvg==
   dependencies:
-    "@sap-ux/btp-utils" "1.0.1"
+    "@sap-ux/btp-utils" "1.0.2"
     fast-glob "3.3.1"
     read-pkg-up "7.0.1"
     semver "7.5.4"
 
-"@sap-ux/odata-service-writer@0.26.7":
-  version "0.26.7"
-  resolved "https://registry.yarnpkg.com/@sap-ux/odata-service-writer/-/odata-service-writer-0.26.7.tgz#e8abc8333a5ce928b973ecda394b91278fc50639"
-  integrity sha512-nX598NjHHPgCUdHj/k0HXyE3deK5WhgcLR12shRBigIfYKS/KCkUi6Il7YbyWzuyqsoK1eeJtN50LwbSrUfcKg==
+"@sap-ux/odata-service-writer@0.26.13":
+  version "0.26.13"
+  resolved "https://registry.yarnpkg.com/@sap-ux/odata-service-writer/-/odata-service-writer-0.26.13.tgz#d6009ed78071f066c8a9b58c1b7655ef95828b0f"
+  integrity sha512-8NAZpkJuQ7ucstXZW4yXGP4lyykFzWo2s/j4dg7dOiqdMgT5pFIVA11hyZ3lcTqcERnsDckU731bAMtQG+yEIA==
   dependencies:
-    "@sap-ux/mockserver-config-writer" "0.8.5"
-    "@sap-ux/project-access" "1.29.12"
-    "@sap-ux/ui5-config" "0.26.2"
+    "@sap-ux/mockserver-config-writer" "0.8.11"
+    "@sap-ux/project-access" "1.29.18"
+    "@sap-ux/ui5-config" "0.26.5"
     ejs "3.1.10"
     fast-xml-parser "4.4.1"
     i18next "20.6.1"
@@ -1776,28 +1776,29 @@
     prettify-xml "1.2.0"
     semver "7.5.4"
 
-"@sap-ux/preview-middleware@0.18.8":
-  version "0.18.8"
-  resolved "https://registry.yarnpkg.com/@sap-ux/preview-middleware/-/preview-middleware-0.18.8.tgz#64007e6a0bf982e1a40190e2a15cc733dfe351c3"
-  integrity sha512-t1v8Wll7JOeiOM4mq/1d6M7h5Nq2Q0ed7EoLfcLXTi8nG/8YDqtz4FPeKL/VICBvW87Xkz6+v/UQSTmyzCxdog==
+"@sap-ux/preview-middleware@0.19.2":
+  version "0.19.2"
+  resolved "https://registry.yarnpkg.com/@sap-ux/preview-middleware/-/preview-middleware-0.19.2.tgz#e297929b0615f440201002ceb2beacf3fbddaf62"
+  integrity sha512-Wjs7JlGV6u8ZbydRuJ/8vulsWctPk3DPsAMfZHmfl6vfdMFZqV5y7EmqnZ7DneVHwF7X2KJypaAF81n6UJjpFQ==
   dependencies:
-    "@sap-ux/adp-tooling" "0.13.8"
-    "@sap-ux/btp-utils" "1.0.1"
-    "@sap-ux/control-property-editor-sources" "npm:@sap-ux/control-property-editor@0.5.37"
+    "@sap-ux/adp-tooling" "0.13.19"
+    "@sap-ux/btp-utils" "1.0.2"
+    "@sap-ux/control-property-editor-sources" "npm:@sap-ux/control-property-editor@0.6.1"
     "@sap-ux/feature-toggle" "0.2.3"
     "@sap-ux/logger" "0.6.0"
-    "@sap-ux/project-access" "1.29.12"
+    "@sap-ux/project-access" "1.29.18"
+    "@sap-ux/system-access" "0.5.33"
     ejs "3.1.10"
     mem-fs "2.1.0"
     mem-fs-editor "9.4.0"
 
-"@sap-ux/project-access@1.29.12":
-  version "1.29.12"
-  resolved "https://registry.yarnpkg.com/@sap-ux/project-access/-/project-access-1.29.12.tgz#21f94f7323a3a1ce82b345ea5231b3ea6b03494f"
-  integrity sha512-99PCCU/xKnuBV2de2Iz450SCmsnH6fsN5EdKFg3kQFzLwopkpH06kM19LsugxWRxmvIj5iudbI56KTyLqlWoYQ==
+"@sap-ux/project-access@1.29.18":
+  version "1.29.18"
+  resolved "https://registry.yarnpkg.com/@sap-ux/project-access/-/project-access-1.29.18.tgz#2234bf359fdf142709e3fec371b68f5eca3c338a"
+  integrity sha512-wZ6RRzTlFVCrQ2/KxBi+fN7+bNxZT9C42PIqCCVZA+/uOsuy7Q1nAl2Vb7FesegMRNsRTyNuth/PxmrlefEGIg==
   dependencies:
     "@sap-ux/i18n" "0.2.3"
-    "@sap-ux/ui5-config" "0.26.2"
+    "@sap-ux/ui5-config" "0.26.5"
     fast-xml-parser "4.4.1"
     findit2 "2.2.3"
     json-parse-even-better-errors "4.0.0"
@@ -1805,11 +1806,12 @@
     mem-fs-editor "9.4.0"
     semver "7.5.4"
 
-"@sap-ux/project-input-validator@0.3.4":
-  version "0.3.4"
-  resolved "https://registry.yarnpkg.com/@sap-ux/project-input-validator/-/project-input-validator-0.3.4.tgz#7241419cf0f5609bdb73f934123da320a54d9cf5"
-  integrity sha512-aQY/rh55T2Rj9lVw3766qwpbgauwsM0u7LsoayDvnoIUUBm85hCtDOaNzyyF4HoAVHlVCdAy1hQitcrcK3ZWVg==
+"@sap-ux/project-input-validator@0.4.0":
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/@sap-ux/project-input-validator/-/project-input-validator-0.4.0.tgz#74e246781d17d9d79342897bdf6ea015feaafacb"
+  integrity sha512-/Z3UQAXBoplgxNjR4J9DE7N5edME0PHMa3+vMdD3Q75zqA7gLGGOKqoPJn80/iTcpFxcxHSZcZ5eEnD0McGw1A==
   dependencies:
+    "@sap-ux/project-access" "1.29.18"
     i18next "23.5.1"
     validate-npm-package-name "5.0.0"
 
@@ -1826,29 +1828,29 @@
   optionalDependencies:
     "@zowe/secrets-for-zowe-sdk" "8.1.2"
 
-"@sap-ux/system-access@0.5.32":
-  version "0.5.32"
-  resolved "https://registry.yarnpkg.com/@sap-ux/system-access/-/system-access-0.5.32.tgz#4ecc5d206e2b4eca9e352ba7112b54060a75e1e0"
-  integrity sha512-gqIkPAKt7td9NtvXCSPqGVfBkSpNhbVubZl6nTz7yBKUhWPEBhntcLVMzHyxFtkHgYPHTeCmsVH3r8ZxzT7jlg==
+"@sap-ux/system-access@0.5.33":
+  version "0.5.33"
+  resolved "https://registry.yarnpkg.com/@sap-ux/system-access/-/system-access-0.5.33.tgz#7553a3cc6c3685a9e6f7ae1acfe2d82b83787710"
+  integrity sha512-pgk2lA50aAolFKG2aPbzZ6hTWnIfIFJ0s/h1+XQVWyhK3re68zUQ2Ofs0qFkI4Q4iNjX599TalYSIxs+wETrwQ==
   dependencies:
-    "@sap-ux/axios-extension" "1.19.0"
-    "@sap-ux/btp-utils" "1.0.1"
+    "@sap-ux/axios-extension" "1.19.1"
+    "@sap-ux/btp-utils" "1.0.2"
     "@sap-ux/logger" "0.6.0"
     "@sap-ux/store" "1.0.0"
     prompts "2.4.2"
 
-"@sap-ux/telemetry@0.5.66":
-  version "0.5.66"
-  resolved "https://registry.yarnpkg.com/@sap-ux/telemetry/-/telemetry-0.5.66.tgz#f1c831cad7c9e24e77b473fadd29aa61d660c34b"
-  integrity sha512-VcChxQCaTUmjCa2CRkkkAkeNDFgvV1V1xFKNx9SXq8Qzz9xzZRbt298VJ+Wn7WFItf1tEYH/7rQ1LHb/3EEu0g==
+"@sap-ux/telemetry@0.5.72":
+  version "0.5.72"
+  resolved "https://registry.yarnpkg.com/@sap-ux/telemetry/-/telemetry-0.5.72.tgz#2d7cd9119c728d47bae747efe918a5d3ad23c15d"
+  integrity sha512-ueNKMYNw6iSGSbQbsw8j5/l9AECIUppw2UbjWPpyCaYZ8H4nyfVmNVnsz5p1zvqeNz4wHMLngVWu+I2poJB25w==
   dependencies:
-    "@sap-ux/btp-utils" "1.0.1"
+    "@sap-ux/btp-utils" "1.0.2"
     "@sap-ux/logger" "0.6.0"
-    "@sap-ux/project-access" "1.29.12"
+    "@sap-ux/project-access" "1.29.18"
     "@sap-ux/store" "1.0.0"
-    "@sap-ux/ui5-config" "0.26.2"
+    "@sap-ux/ui5-config" "0.26.5"
     applicationinsights "2.9.2"
-    axios "1.7.9"
+    axios "1.8.2"
     performance-now "2.1.0"
     yaml "2.3.3"
 
@@ -1859,25 +1861,25 @@
   dependencies:
     vscode-languageserver-types "3.17.2"
 
-"@sap-ux/ui5-config@0.26.2":
-  version "0.26.2"
-  resolved "https://registry.yarnpkg.com/@sap-ux/ui5-config/-/ui5-config-0.26.2.tgz#6f909f83b9b725b5e0816b0e423cd4f541a75084"
-  integrity sha512-2XdBEVKE2kIUkBLKn+pFjU6qfgd8+/CkdP4QYhcJngGSRM+rzgERiysMzNz8JHKSL1KrfE/hEW6c6FU3OsHPYw==
+"@sap-ux/ui5-config@0.26.5":
+  version "0.26.5"
+  resolved "https://registry.yarnpkg.com/@sap-ux/ui5-config/-/ui5-config-0.26.5.tgz#07d39873f9dc4f9fac725fce7debbb57b634d895"
+  integrity sha512-Q5ihhSgUesOkumZ57Cf0HBhzw0CyPaBXoSPqEUyii7nqwpJ/rqF9GCHEiHgen8YSklXYEytIrhz6GU3mdTqE9Q==
   dependencies:
     "@sap-ux/yaml" "0.16.0"
     ajv "8.17.1"
-    axios "1.7.9"
+    axios "1.8.2"
     js-yaml "4.1.0"
     lodash "4.17.21"
     semver "7.5.4"
 
-"@sap-ux/ui5-info@0.9.0":
-  version "0.9.0"
-  resolved "https://registry.yarnpkg.com/@sap-ux/ui5-info/-/ui5-info-0.9.0.tgz#425825aed5f1b79fe995623bffdbee23cbb76bfe"
-  integrity sha512-emeE4tie0viGOSPTXTV7i/ezmtWzubiHzVlxj10SXHYZX8cWAZpqThSd0+W6DnK5JxLk3zYzfOXyiuk3wCtM1Q==
+"@sap-ux/ui5-info@0.9.1":
+  version "0.9.1"
+  resolved "https://registry.yarnpkg.com/@sap-ux/ui5-info/-/ui5-info-0.9.1.tgz#fc94867ce545c84e2c50e0e1131b9b9b1fca96ce"
+  integrity sha512-AtWwELs0abNtaI1X7im3n99Ltj2yLMJBIUt7SskP32D++rbUEZ7Fjb2EdpTLeEVzBHZ3QYo1ghnzQJ0yGWVyfg==
   dependencies:
     "@sap-ux/logger" "0.6.0"
-    axios "1.7.9"
+    axios "1.8.2"
     semver "7.5.4"
 
 "@sap-ux/yaml@0.16.0":
@@ -1929,9 +1931,9 @@
     yaml "^2.2.2"
 
 "@sap/cds@^8":
-  version "8.8.3"
-  resolved "https://registry.yarnpkg.com/@sap/cds/-/cds-8.8.3.tgz#f0059cb3045b237a1004940e1d711188e2ce9ca3"
-  integrity sha512-4OuQ1LTwFQYveMsPivyIfGN7kWIipB8kcG37ddGCrk0lNSv+dNBPpC1nUeOvCbFh0b0lu+shPpuqjQjCyR3pag==
+  version "8.9.0"
+  resolved "https://registry.yarnpkg.com/@sap/cds/-/cds-8.9.0.tgz#a914389503fa34700da7556f4f9d83653a9bfb2d"
+  integrity sha512-OZc5u9DTjx0a/MTy49AY5inOSSCMXhTPjYgfz8U4p5E0BiUkeX7jVkU9dqY5Ae14X3WmK3jd8KFZyTc2Nk6zaQ==
   dependencies:
     "@sap/cds-compiler" ">=5.1"
     "@sap/cds-fiori" "^1"
@@ -1948,11 +1950,11 @@
     url "0.11.4"
 
 "@sap/ux-ui5-tooling@1":
-  version "1.17.0"
-  resolved "https://registry.yarnpkg.com/@sap/ux-ui5-tooling/-/ux-ui5-tooling-1.17.0.tgz#f68c10d0fa9acf6f3e324f26929d57dd52fa933b"
-  integrity sha512-k9Pq3T3CmWHHaZkof9d044AvW3RzJ2OntB1RWAV1AsDvQQ9y3hzRTJA1nSGfr6XvJGYFUw3ilGNxNCMYAefJYA==
+  version "1.17.1"
+  resolved "https://registry.yarnpkg.com/@sap/ux-ui5-tooling/-/ux-ui5-tooling-1.17.1.tgz#4a6b143dd9e139d80946aaf571a9519f2e944a81"
+  integrity sha512-RTyAgDjHdfnlboOYEVGS9M5P09Rl3ynRdvDujcBbMjR4OzMuk8EJ1lqoduebaKA+qvb3iDzizaPqqFPFe3+Rsw==
   dependencies:
-    "@sap-ux/preview-middleware" "0.18.8"
+    "@sap-ux/preview-middleware" "0.19.2"
     "@ui5/fs" "3.0.4"
     connect-livereload "0.6.1"
     debug "4.3.7"
@@ -2155,9 +2157,9 @@
   integrity sha512-Klz949h02Gz2uZCMGwDUSDS1YBlTdDDgbWHi+81l29tQALUtvz4rAYi5uoVhE5Lagoq6DeqAUlbrHvW/mXDgdQ==
 
 "@types/node@^22.0.0":
-  version "22.13.13"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-22.13.13.tgz#5e7d110fb509b0d4a43fbf48fa9d6e0f83e1b1e7"
-  integrity sha512-ClsL5nMwKaBRwPcCvH8E7+nU4GxHVx1axNvMZTFHMEfNI7oahimt26P5zjVCRrjiIWj6YFXfE1v3dEp94wLcGQ==
+  version "22.13.14"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-22.13.14.tgz#70d84ec91013dcd2ba2de35532a5a14c2b4cc912"
+  integrity sha512-Zs/Ollc1SJ8nKUAgc7ivOEdIBM8JAKgrqqUYi2J997JuKO7/tpQC+WCetQ1sypiKCQWHdvdg9wBNpUPEWZae7w==
   dependencies:
     undici-types "~6.20.0"
 
@@ -2767,19 +2769,10 @@ at-least-node@^1.0.0:
   resolved "https://registry.yarnpkg.com/at-least-node/-/at-least-node-1.0.0.tgz#602cd4b46e844ad4effc92a8011a3c46e0238dc2"
   integrity sha512-+q/t7Ekv1EDY2l6Gda6LLiX14rU9TV20Wa3ofeQmwPFZbOMo9DXrLbOjFaaclkXKWidIaopwAObQDqwWtGUjqg==
 
-axios@1.7.4:
-  version "1.7.4"
-  resolved "https://registry.yarnpkg.com/axios/-/axios-1.7.4.tgz#4c8ded1b43683c8dd362973c393f3ede24052aa2"
-  integrity sha512-DukmaFRnY6AzAALSH4J2M3k6PkaC+MfaAGdEERRWcC9q3/TWQwLpHR8ZRLKTdQ3aBDL64EdluRDjJqKw+BPZEw==
-  dependencies:
-    follow-redirects "^1.15.6"
-    form-data "^4.0.0"
-    proxy-from-env "^1.1.0"
-
-axios@1.7.9:
-  version "1.7.9"
-  resolved "https://registry.yarnpkg.com/axios/-/axios-1.7.9.tgz#d7d071380c132a24accda1b2cfc1535b79ec650a"
-  integrity sha512-LhLcE7Hbiryz8oMDdDptSrWowmB4Bl6RCt6sIJKpRB4XtVf0iEgewX3au/pJqm+Py1kCASkb/FFKjxQaLtxJvw==
+axios@1.8.2:
+  version "1.8.2"
+  resolved "https://registry.yarnpkg.com/axios/-/axios-1.8.2.tgz#fabe06e241dfe83071d4edfbcaa7b1c3a40f7979"
+  integrity sha512-ls4GYBm5aig9vWx8AWDSGLpnpDQRtWAfrjU+EuytuODrFBkqesN2RkOQCBzrA1RQNHw1SmRMSDDDSwzNAYQ6Rg==
   dependencies:
     follow-redirects "^1.15.6"
     form-data "^4.0.0"
@@ -3599,7 +3592,7 @@ debug@2.6.9:
   dependencies:
     ms "2.0.0"
 
-debug@4, debug@^4.1.0, debug@^4.1.1, debug@^4.3.1, debug@^4.3.2, debug@^4.3.4, debug@^4.3.5, debug@^4.3.6:
+debug@4, debug@^4.1.0, debug@^4.1.1, debug@^4.3.1, debug@^4.3.2, debug@^4.3.4, debug@^4.3.5, debug@^4.3.6, debug@^4.4.0:
   version "4.4.0"
   resolved "https://registry.yarnpkg.com/debug/-/debug-4.4.0.tgz#2b3f2aea2ffeb776477460267377dc8710faba8a"
   integrity sha512-6WTZ/IxCY/T6BALoZHaE4ctp9xm+Z5kY/pzYaCHRFeyVhojxlrm+46y68HA6hr0TcwEssoxNiDEUJQjfPZ/RYA==
@@ -3679,7 +3672,7 @@ delayed-stream@~1.0.0:
   resolved "https://registry.yarnpkg.com/delayed-stream/-/delayed-stream-1.0.0.tgz#df3ae199acadfb7d440aaae0b29e2272b24ec619"
   integrity sha512-ZySD7Nf91aLB0RxL4KGrKHBXl7Eds1DAmEdcoVawXnLD7SDhpNgtuII2aAkg7a7QS41jxPSZ17p4VdGnMHk3MQ==
 
-depd@2.0.0:
+depd@2.0.0, depd@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/depd/-/depd-2.0.0.tgz#b696163cc757560d09cf22cc8fad1571b79e76df"
   integrity sha512-g7nH6P6dyDioJogAAGprGpCtVImJhpPk/roCzdb3fIh61/s/nPsfR6onyMwkCAR/OlC3yBC0lESvUoQEAssIrw==
@@ -3822,9 +3815,9 @@ ejs@3.1.10, ejs@^3.1.6:
     jake "^10.8.5"
 
 electron-to-chromium@^1.5.73:
-  version "1.5.123"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.5.123.tgz#fae5bdba0ba27045895176327aa79831aba0790c"
-  integrity sha512-refir3NlutEZqlKaBLK0tzlVLe5P2wDKS7UQt/3SpibizgsRAPOsqQC3ffw1nlv3ze5gjRQZYHoPymgVZkplFA==
+  version "1.5.128"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.5.128.tgz#8ea537b369c32527b3cc47df7973bffe5d3c2980"
+  integrity sha512-bo1A4HH/NS522Ws0QNFIzyPcyUUNV/yyy70Ho1xqfGYzPUme2F/xr4tlEOuM6/A538U1vDA7a4XfCd1CKRegKQ==
 
 emitter-listener@^1.0.1, emitter-listener@^1.1.1:
   version "1.1.2"
@@ -3937,35 +3930,35 @@ es-set-tostringtag@^2.1.0:
     hasown "^2.0.2"
 
 esbuild@~0.25.0:
-  version "0.25.1"
-  resolved "https://registry.yarnpkg.com/esbuild/-/esbuild-0.25.1.tgz#a16b8d070b6ad4871935277bda6ccfe852e3fa2f"
-  integrity sha512-BGO5LtrGC7vxnqucAe/rmvKdJllfGaYWdyABvyMoXQlfYMb2bbRuReWR5tEGE//4LcNJj9XrkovTqNYRFZHAMQ==
+  version "0.25.2"
+  resolved "https://registry.yarnpkg.com/esbuild/-/esbuild-0.25.2.tgz#55a1d9ebcb3aa2f95e8bba9e900c1a5061bc168b"
+  integrity sha512-16854zccKPnC+toMywC+uKNeYSv+/eXkevRAfwRD/G9Cleq66m8XFIrigkbvauLLlCfDL45Q2cWegSg53gGBnQ==
   optionalDependencies:
-    "@esbuild/aix-ppc64" "0.25.1"
-    "@esbuild/android-arm" "0.25.1"
-    "@esbuild/android-arm64" "0.25.1"
-    "@esbuild/android-x64" "0.25.1"
-    "@esbuild/darwin-arm64" "0.25.1"
-    "@esbuild/darwin-x64" "0.25.1"
-    "@esbuild/freebsd-arm64" "0.25.1"
-    "@esbuild/freebsd-x64" "0.25.1"
-    "@esbuild/linux-arm" "0.25.1"
-    "@esbuild/linux-arm64" "0.25.1"
-    "@esbuild/linux-ia32" "0.25.1"
-    "@esbuild/linux-loong64" "0.25.1"
-    "@esbuild/linux-mips64el" "0.25.1"
-    "@esbuild/linux-ppc64" "0.25.1"
-    "@esbuild/linux-riscv64" "0.25.1"
-    "@esbuild/linux-s390x" "0.25.1"
-    "@esbuild/linux-x64" "0.25.1"
-    "@esbuild/netbsd-arm64" "0.25.1"
-    "@esbuild/netbsd-x64" "0.25.1"
-    "@esbuild/openbsd-arm64" "0.25.1"
-    "@esbuild/openbsd-x64" "0.25.1"
-    "@esbuild/sunos-x64" "0.25.1"
-    "@esbuild/win32-arm64" "0.25.1"
-    "@esbuild/win32-ia32" "0.25.1"
-    "@esbuild/win32-x64" "0.25.1"
+    "@esbuild/aix-ppc64" "0.25.2"
+    "@esbuild/android-arm" "0.25.2"
+    "@esbuild/android-arm64" "0.25.2"
+    "@esbuild/android-x64" "0.25.2"
+    "@esbuild/darwin-arm64" "0.25.2"
+    "@esbuild/darwin-x64" "0.25.2"
+    "@esbuild/freebsd-arm64" "0.25.2"
+    "@esbuild/freebsd-x64" "0.25.2"
+    "@esbuild/linux-arm" "0.25.2"
+    "@esbuild/linux-arm64" "0.25.2"
+    "@esbuild/linux-ia32" "0.25.2"
+    "@esbuild/linux-loong64" "0.25.2"
+    "@esbuild/linux-mips64el" "0.25.2"
+    "@esbuild/linux-ppc64" "0.25.2"
+    "@esbuild/linux-riscv64" "0.25.2"
+    "@esbuild/linux-s390x" "0.25.2"
+    "@esbuild/linux-x64" "0.25.2"
+    "@esbuild/netbsd-arm64" "0.25.2"
+    "@esbuild/netbsd-x64" "0.25.2"
+    "@esbuild/openbsd-arm64" "0.25.2"
+    "@esbuild/openbsd-x64" "0.25.2"
+    "@esbuild/sunos-x64" "0.25.2"
+    "@esbuild/win32-arm64" "0.25.2"
+    "@esbuild/win32-ia32" "0.25.2"
+    "@esbuild/win32-x64" "0.25.2"
 
 escalade@^3.1.1, escalade@^3.2.0:
   version "3.2.0"
@@ -6004,12 +5997,11 @@ minizlib@^2.1.1, minizlib@^2.1.2:
     yallist "^4.0.0"
 
 minizlib@^3.0.1:
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/minizlib/-/minizlib-3.0.1.tgz#46d5329d1eb3c83924eff1d3b858ca0a31581012"
-  integrity sha512-umcy022ILvb5/3Djuu8LWeqUa8D68JaBzlttKeMWen48SjabqS3iY5w/vzeMzMUNhLDifyhbOwKDSznB1vvrwg==
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/minizlib/-/minizlib-3.0.2.tgz#f33d638eb279f664439aa38dc5f91607468cb574"
+  integrity sha512-oG62iEk+CYt5Xj2YqI5Xi9xWUeZhDI8jjQmC5oThVH5JGCTgIjr7ciJDzC7MBzYd//WvR1OTmP5Q38Q8ShQtVA==
   dependencies:
-    minipass "^7.0.4"
-    rimraf "^5.0.5"
+    minipass "^7.1.2"
 
 mkdirp-classic@^0.5.2, mkdirp-classic@^0.5.3:
   version "0.5.3"
@@ -7270,7 +7262,7 @@ rimraf@^2.6.2, rimraf@^2.6.3:
   dependencies:
     glob "^7.1.3"
 
-rimraf@^5.0.5, rimraf@^5.0.7, rimraf@^5.0.9:
+rimraf@^5.0.7, rimraf@^5.0.9:
   version "5.0.10"
   resolved "https://registry.yarnpkg.com/rimraf/-/rimraf-5.0.10.tgz#23b9843d3dc92db71f96e1a2ce92e39fd2a8221c"
   integrity sha512-l0OE8wL34P4nJH/H2ffoaniAokM2qSmrtXHmlpvYr5AVVX8msAyW0l8NVJFDxlSK4u3Uh/f41cQheDVdnYijwQ==
@@ -7278,10 +7270,12 @@ rimraf@^5.0.5, rimraf@^5.0.7, rimraf@^5.0.9:
     glob "^10.3.7"
 
 router@^2.0.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/router/-/router-2.1.0.tgz#f256ca2365afb4d386ba4f7a9ee0aa0827c962fa"
-  integrity sha512-/m/NSLxeYEgWNtyC+WtNHCF7jbGxOibVWKnn+1Psff4dJGOfoXP+MuC/f2CwSmyiHdOIzYnYFp4W6GxWfekaLA==
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/router/-/router-2.2.0.tgz#019be620b711c87641167cc79b99090f00b146ef"
+  integrity sha512-nLTrUKm2UyiL7rlhapu/Zl45FwNgkZGaCpZbIHajDYgwlJCOzLSk+cIPAnsEqV955GjILJnKbdQC1nVPz+gAYQ==
   dependencies:
+    debug "^4.4.0"
+    depd "^2.0.0"
     is-promise "^4.0.0"
     parseurl "^1.3.3"
     path-to-regexp "^8.0.0"
@@ -8650,9 +8644,9 @@ yaml@2.3.3:
   integrity sha512-zw0VAJxgeZ6+++/su5AFoqBbZbrEakwu+X0M5HmcwUiBL7AzcuPKjj5we4xfQLp78LkEMpD0cOnUhmgOVy3KdQ==
 
 yaml@^2.2.2:
-  version "2.7.0"
-  resolved "https://registry.yarnpkg.com/yaml/-/yaml-2.7.0.tgz#aef9bb617a64c937a9a748803786ad8d3ffe1e98"
-  integrity sha512-+hSoy/QHluxmC9kCIJyL/uyFmLmc+e5CFR5Wa+bpIhIj85LVb9ZH2nVnqrHoSvKogwODv0ClqZkmiSSaIH5LTA==
+  version "2.7.1"
+  resolved "https://registry.yarnpkg.com/yaml/-/yaml-2.7.1.tgz#44a247d1b88523855679ac7fa7cda6ed7e135cf6"
+  integrity sha512-10ULxpnOCQXxJvBgxsn9ptjq6uviG/htZKk9veJGhlqn3w/DxQ631zFF+nlQXLwmImeS5amR2dl2U8sg6U9jsQ==
 
 yargs-parser@^21.1.1:
   version "21.1.1"

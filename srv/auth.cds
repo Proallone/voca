@@ -10,3 +10,7 @@ annotate EventsService.Events with @(restrict: [
         grant: ['like'], to: 'user'
     }
 ]);
+
+
+// annotate EventsService.Events with @(require: ['authenticated-user']);
+

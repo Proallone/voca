@@ -43,7 +43,7 @@
                     </OverflowToolbar>
                 </f:content>
                 <f:actions>
-                    <Button id="_IDGenButton" icon="sap-icon://thumb-up" press="onLikePress"/>
+                    <Button id="_IDGenButton" icon="sap-icon://thumb-up" binding="{/like(...)}" press="onLikePress"/>
                 </f:actions>
                 <f:navigationActions>
                 </f:navigationActions>

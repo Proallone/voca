@@ -8,10 +8,17 @@ export class EventsService extends cds.ApplicationService {
     this.on(like, async (req) => {
       const [ID] = req.params;
       const { id } = req.user;
-      const user = await SELECT.one.from(Users).columns("ID").where({email: id});
-      await INSERT({user_ID: user?.ID, event_ID : ID}).into(EventLikes); // user must not be null
-    })
- 
+      const user = await SELECT.one
+        .from(Users)
+        .columns("ID")
+        .where({ email: id });
+      if (user)
+        return await INSERT({ user_ID: user?.ID, event_ID: ID }).into(
+          EventLikes
+        );
+      return req.error(404, "User not found!");
+    });
+
     this.on("READ", Event, async (req, next) => {
       const [ID] = req.params;
       await UPDATE(Events, ID).with({ views: { "+=": 1 } });

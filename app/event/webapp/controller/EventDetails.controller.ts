@@ -11,6 +11,7 @@ import MessageToast from "sap/m/MessageToast";
 
 import { Link$ClickEvent } from "sap/ui/webc/main/Link";
 import ObjectStatus from "sap/m/ObjectStatus";
+import ODataContextBinding from "sap/ui/model/odata/v4/ODataContextBinding";
 
 interface IEvent {
   ID : string
@@ -58,10 +59,16 @@ export default class EventDetails extends Controller {
     })
   }
 
-  public onLikePress(evt: Button$PressEvent) {
+  public async onLikePress(evt: Button$PressEvent) {
     console.log(evt);
     const btn = evt.getSource() as Button;
     const binding = this.getView()?.getBindingContext();
+
+    const oModel = this.getView()?.getModel();
+
+    const oAction = oModel?.bindContext('EventsService.like(...)', binding!) as ODataContextBinding;
+    
+    await oAction.invoke()
     MessageToast.show("Liked!");
   }
 

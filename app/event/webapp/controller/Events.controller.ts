@@ -80,24 +80,32 @@ export default class Events extends Controller {
 
   public onTokenUpdate(evt: MultiInput$TokenUpdateEvent) {
     const input = evt.getSource() as MultiInput;
-    const tokens = input.getTokens();
+    const removed = evt.getParameter("removedTokens");
+    let tokens = input.getTokens();
+    const aFilters: Filter[] = [];
+      
+    if (removed?.length) tokens = tokens.filter( t=> t.getKey() !== removed[0].getKey())
+  
     const binding = this.byId("eventList")?.getBinding(
       "items"
     ) as ODataListBinding;
 
-    const aFilters: Filter[] = [];
 
-    tokens.map((t) =>
+    tokens.forEach((t) =>
       aFilters.push(
         new Filter({
-          path: "labels/label_ID",
-          operator: FilterOperator.Contains,
-          value1: t.getKey(),
+          path: 'labels',
+          operator: FilterOperator.Any,
+          variable: 'labels',
+          condition: new Filter({
+            path: 'labels/label_ID',
+            operator: FilterOperator.EQ,
+            value1: t.getKey()
+          })
         })
       )
     );
 
-    const combined = new Filter({ filters: aFilters, and: true });
-    binding.filter(combined);
+    binding.filter(new Filter({ filters: aFilters, and: true }));
   }
 }

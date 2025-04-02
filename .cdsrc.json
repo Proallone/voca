@@ -3,9 +3,13 @@
         "auth": {
             "kind": "mocked",
             "users": {
-                "23084022-9971-407a-9470-6d42d4c9844e": {
+                "john@mail.com": {
                     "password": "123",
                     "roles": ["user"]
+                },
+                "host" : {
+                    "password": "321",
+                    "roles": ["host"]
                 }
             }
         }

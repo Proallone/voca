@@ -3,7 +3,10 @@ using {sap.common as cm} from '@sap/cds-common-content';
 
 
 service EventsService {
-    entity Events as projection on evt.Events;
+    entity Events as projection on evt.Events 
+    actions{
+        action like();
+    };
     entity Comments as projection on evt.Comments;
     entity Users    as projection on evt.Users;
     entity Labels   as projection on evt.Labels;

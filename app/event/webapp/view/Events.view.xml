@@ -18,6 +18,7 @@
 				sorter: { path: 'name' }}"
                 showValueHelp="false"
                 tokenUpdate="onTokenUpdate"
+                placeholder="Search for labels"
                 >
                 <core:Item id="_IDGenItem" key="{ID}" text="{name}" />
             </MultiInput>

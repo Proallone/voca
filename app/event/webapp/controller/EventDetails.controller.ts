@@ -14,9 +14,8 @@ import ObjectStatus from "sap/m/ObjectStatus";
 import ODataContextBinding from "sap/ui/model/odata/v4/ODataContextBinding";
 
 interface IEvent {
-  ID : string
-};
-
+  ID: string;
+}
 
 /**
  * @namespace com.proallone.event.controller
@@ -24,14 +23,15 @@ interface IEvent {
 export default class EventDetails extends Controller {
   public onInit() {
     const router = UIComponent.getRouterFor(this);
-    router?.getRoute('RouteEventDetails')?.attachPatternMatched(this.onRouteMatched, this);
+    router
+      ?.getRoute("RouteEventDetails")
+      ?.attachPatternMatched(this.onRouteMatched, this);
   }
 
   public onRouteMatched(evt: Route$PatternMatchedEvent) {
     const args = evt.getParameter("arguments") as IEvent; //todo fix?
 
-    if(args) this.getView()?.bindElement(`/Events('${args.ID}')`);
-
+    if (args) this.getView()?.bindElement(`/Events('${args.ID}')`);
   }
 
   public navBack() {
@@ -40,7 +40,7 @@ export default class EventDetails extends Controller {
   }
 
   public onCommentPost(evt: FeedInput$PostEvent) {
-    console.log('posted')
+    console.log("posted");
     const list = this.byId("postsList") as List;
     const binding = list.getBinding("items") as ODataListBinding;
     const content = evt.getParameter("value");
@@ -51,33 +51,40 @@ export default class EventDetails extends Controller {
       content: content,
     });
 
-    ctx.created()?.then(()=>{
+    ctx.created()?.then(() => {
       MessageToast.show("Comment added!");
       const t = this.byId("_IDGenObjectStatus53") as ObjectStatus;
       const b = t.getBindingContext();
       b?.getModel().refresh();
-    })
+    });
   }
 
   public async onLikePress(evt: Button$PressEvent) {
-    console.log(evt);
-    const btn = evt.getSource() as Button;
     const binding = this.getView()?.getBindingContext();
-
     const oModel = this.getView()?.getModel();
-
-    const oAction = oModel?.bindContext('EventsService.like(...)', binding!) as ODataContextBinding;
-    
-    await oAction.invoke()
-    MessageToast.show("Liked!");
+    const oAction = oModel?.bindContext(
+      "EventsService.like(...)",
+      binding!
+    ) as ODataContextBinding;
+    oAction
+      .invoke()
+      .then(() => {
+        oModel?.refresh(); //todo not optimal, change?
+        MessageToast.show("Liked!");
+      })
+      .catch((error: Error) => {
+        if (error.message.includes("exists")) {
+          MessageToast.show("Already liked!");
+        } else {
+          MessageToast.show("Something went wrong!");
+        }
+      });
   }
 
   public onBreadcrumbPress(evt: Link$ClickEvent) {
     const link = evt.getSource();
     const target: string = link.data("target");
     const router = UIComponent.getRouterFor(this);
-    router.navTo(target)
+    router.navTo(target);
   }
-
-
 }

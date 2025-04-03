@@ -11,5 +11,9 @@ service EventsService {
     entity Users    as projection on evt.Users;
     entity Labels   as projection on evt.Labels;
     entity Country  as projection on cm.Countries;
+
+    event EventCreated {
+        event_ID: UUID;
+    }
 // entity EventAttendees as projection on evt.EventAttendees;
 };

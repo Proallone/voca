@@ -11,14 +11,14 @@
                     <OverflowToolbarLayoutData id="_IDGenOverflowToolbarLayoutData3" priority="Low" group="1" />
                 </layoutData>
             </SearchField>
-            <Label id="_IDGenLabel" text="Labels" showColon="true" class="sapUiTinyMargin"/>
+            <Label id="_IDGenLabel" text="{i18n>txtLabels}" showColon="true" class="sapUiTinyMargin"/>
             <MultiInput width="15rem" showClearIcon="true" id="multiInput" 
                 suggestionItems="{
 				path: '/Labels',
 				sorter: { path: 'name' }}"
                 showValueHelp="false"
                 tokenUpdate="onTokenUpdate"
-                placeholder="Search for labels"
+                placeholder="{i18n>txtSearchLabels}"
                 >
                 <core:Item id="_IDGenItem" key="{ID}" text="{name}" />
             </MultiInput>
@@ -67,7 +67,7 @@
         </List>
         <Toolbar id="_IDGenToolbar1" style="Standard" design="Solid" height="3rem" enabled="true">
             <FlexBox id="_IDGenFlexBox8" class="sapUiMediumMargin">
-                <Link id="_IDGenText2" text="Author" icon="sap-icon://developer-settings" href="https://github.com/Proallone" target="_blank" />
+                <Link id="_IDGenText2" text="{i18n>txtAuthor}" icon="sap-icon://developer-settings" href="https://github.com/Proallone" target="_blank" />
             </FlexBox>
             <ToolbarSpacer id="_IDGenToolbarSpacer2" />
             <ObjectStatus id="_IDGenObjectStatus" text="2025" class="sapUiMediumMargin" />

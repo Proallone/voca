@@ -11,12 +11,12 @@
                         <OverflowToolbarLayoutData priority="NeverOverflow" />
                     </layoutData>
                 </Button> -->
-                <Image id="_IDGenImage" src="test-resources/sap/tnt/images/SAP_Logo.png" decorative="false" press="onLogoPressed" tooltip="SAP Logo" width="80px" height="40px">
+                <Image id="_IDGenImage" src="test-resources/sap/tnt/images/SAP_Logo.png" decorative="false" press="onLogoPressed" tooltip="{i18n>tlpEventsLogo}" width="80px" height="40px">
                     <layoutData>
                         <OverflowToolbarLayoutData id="_IDGenOverflowToolbarLayoutData" priority="NeverOverflow"/>
                     </layoutData>
                 </Image>
-                <Title id="_IDGenTitle" text="Community events" wrapping="false" class="title">
+                <Title id="_IDGenTitle" text="{i18n>ttlEventsTitle}" wrapping="false" class="title">
                     <layoutData>
                         <OverflowToolbarLayoutData id="_IDGenOverflowToolbarLayoutData1" priority="Disappear"/>
                     </layoutData>
@@ -25,7 +25,7 @@
 
                 <ToolbarSpacer id="_IDGenToolbarSpacer" />
                 <tnt:ToolHeaderUtilitySeparator id="_IDGenToolHeaderUtilitySeparator"/>
-                <Button id="_IDGenButton2" icon="sap-icon://bell" type="Transparent" tooltip="Notifications" press="onNotificationsPress">
+                <Button id="_IDGenButton2" icon="sap-icon://bell" type="Transparent" tooltip="{i18n>tlpNotifications}" press="onNotificationsPress">
                     <customData>
                         <BadgeCustomData id="_IDGenBadgeCustomData" key="badge" value="2" visible="true"/>
                     </customData>
@@ -33,8 +33,8 @@
                         <OverflowToolbarLayoutData id="_IDGenOverflowToolbarLayoutData5" priority="NeverOverflow"/>
                     </layoutData>
                 </Button>
-                <OverflowToolbarButton id="_IDGenOverflowToolbarButton" icon="sap-icon://grid" type="Transparent" tooltip="Actions" press="onActionsPress"/>
-                <Avatar id="_IDGenAvatar" src="test-resources/sap/m/images/dronning_victoria.jpg" displaySize="S" press="onAvatarPressed" tooltip="Profile">
+                <OverflowToolbarButton id="_IDGenOverflowToolbarButton" icon="sap-icon://grid" type="Transparent" tooltip="{i18n>tlpActions}" press="onActionsPress"/>
+                <Avatar id="_IDGenAvatar" src="test-resources/sap/m/images/dronning_victoria.jpg" displaySize="S" press="onAvatarPressed" tooltip="{i18n>tlpProfile}">
                     <layoutData>
                         <OverflowToolbarLayoutData id="_IDGenOverflowToolbarLayoutData2" priority="NeverOverflow"/>
                     </layoutData>

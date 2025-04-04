@@ -6,7 +6,7 @@ import {
   EventLikes,
   EventCreated,
 } from "#cds-models/EventsService";
-import MailingService, { sentEventEmails} from "#cds-models/MailingService";
+import MailingService, { sendEventEmails} from "#cds-models/MailingService";
 export class EventsService extends cds.ApplicationService {
   init() {
     const { like } = Event.actions;
@@ -42,7 +42,7 @@ export class EventsService extends cds.ApplicationService {
       console.info(`New event with ID ${eventID} created!`);
 
       const mailService = await cds.connect.to(MailingService);
-      const res : Boolean = await mailService.send(sentEventEmails, { eventID: eventID })
+      const res : Boolean = await mailService.send(sendEventEmails, { eventID: eventID })
 
     });
 

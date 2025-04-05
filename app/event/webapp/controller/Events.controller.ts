@@ -1,18 +1,14 @@
 import Controller from "sap/ui/core/mvc/Controller";
 import UIComponent from "sap/ui/core/UIComponent";
-import { ListItemBase$PressEvent } from "sap/m/ListItemBase";
-import { Link$PressEvent } from "sap/m/Link";
+import { type ListItemBase$PressEvent } from "sap/m/ListItemBase";
+import { type Link$PressEvent } from "sap/m/Link";
 import Popover from "sap/m/Popover";
-import { Route$PatternMatchedEvent } from "sap/ui/core/routing/Route";
-import {
-  SearchField$LiveChangeEvent,
-  SearchField$SearchEvent,
-} from "sap/m/SearchField";
+import { type Route$PatternMatchedEvent } from "sap/ui/core/routing/Route";
+import { type SearchField$LiveChangeEvent } from "sap/m/SearchField";
 import ODataListBinding from "sap/ui/model/odata/v4/ODataListBinding";
 import Filter from "sap/ui/model/Filter";
 import FilterOperator from "sap/ui/model/FilterOperator";
-import MultiInput, { MultiInput$TokenUpdateEvent } from "sap/m/MultiInput";
-import Token from "sap/m/Token";
+import MultiInput, { type MultiInput$TokenUpdateEvent } from "sap/m/MultiInput";
 
 /**
  * @namespace com.proallone.event.controller
@@ -83,25 +79,25 @@ export default class Events extends Controller {
     const removed = evt.getParameter("removedTokens");
     let tokens = input.getTokens();
     const aFilters: Filter[] = [];
-      
-    if (removed?.length) tokens = tokens.filter( t=> t.getKey() !== removed[0].getKey())
-  
+
+    if (removed?.length)
+      tokens = tokens.filter((t) => t.getKey() !== removed[0].getKey());
+
     const binding = this.byId("eventList")?.getBinding(
       "items"
     ) as ODataListBinding;
 
-
     tokens.forEach((t) =>
       aFilters.push(
         new Filter({
-          path: 'labels',
+          path: "labels",
           operator: FilterOperator.Any,
-          variable: 'labels',
+          variable: "labels",
           condition: new Filter({
-            path: 'labels/label_ID',
+            path: "labels/label_ID",
             operator: FilterOperator.EQ,
-            value1: t.getKey()
-          })
+            value1: t.getKey(),
+          }),
         })
       )
     );

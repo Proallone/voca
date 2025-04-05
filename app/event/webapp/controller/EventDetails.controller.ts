@@ -1,17 +1,16 @@
 import Controller from "sap/ui/core/mvc/Controller";
 import UIComponent from "sap/ui/core/UIComponent";
-import { Route$PatternMatchedEvent } from "sap/ui/core/routing/Route";
-import { FeedInput$PostEvent } from "sap/m/FeedInput";
-import List from "sap/m/List";
-import ODataListBinding from "sap/ui/model/odata/v4/ODataListBinding";
+import type { Route$PatternMatchedEvent } from "sap/ui/core/routing/Route";
+import type { FeedInput$PostEvent } from "sap/m/FeedInput";
+import type ODataListBinding from "sap/ui/model/odata/v4/ODataListBinding";
+import type List from "sap/m/List";
 
-import Button, { Button$PressEvent } from "sap/m/Button";
+import type { Button$PressEvent } from "sap/m/Button";
 
 import MessageToast from "sap/m/MessageToast";
-
-import { Link$ClickEvent } from "sap/ui/webc/main/Link";
+import { type Link$ClickEvent } from "sap/ui/webc/main/Link";
 import ObjectStatus from "sap/m/ObjectStatus";
-import ODataContextBinding from "sap/ui/model/odata/v4/ODataContextBinding";
+import type ODataContextBinding from "sap/ui/model/odata/v4/ODataContextBinding";
 
 interface IEvent {
   ID: string;

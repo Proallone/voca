@@ -39,7 +39,8 @@ export class EventsService extends cds.ApplicationService {
 
     this.on(EventCreated, async (req) => {
       const eventID: string = req.data;
-      console.info(`New event with ID ${eventID} created!`);
+      const hostID: string = req.user.id;
+      console.info(`New ${eventID} hosted by ${hostID}!`);
 
       const mailService = await cds.connect.to(MailingService);
       const res : Boolean = await mailService.send(sendEventEmails, { eventID: eventID })

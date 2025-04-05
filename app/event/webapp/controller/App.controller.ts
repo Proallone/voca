@@ -1,6 +1,6 @@
 import Controller from "sap/ui/core/mvc/Controller";
 import ToolPage from "sap/tnt/ToolPage";
-import { Button$PressEvent } from "sap/m/Button";
+import { type Button$PressEvent } from "sap/m/Button";
 import Popover from "sap/m/Popover";
 import UIComponent from "sap/ui/core/UIComponent";
 

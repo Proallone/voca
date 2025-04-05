@@ -5,25 +5,27 @@
     xmlns:grid="sap.ui.layout.cssgrid"
     xmlns:core="sap.ui.core">
     <Page id="page" showHeader="false">
-        <FlexBox id="_IDGenFlexBox9" justifyContent="Center" width="100%" class="sapUiMediumMargin">
-            <SearchField width="40rem" id="searchField" liveChange="onEventsSearch" class="sapUiSmallMarginEnd">
-                <layoutData>
-                    <OverflowToolbarLayoutData id="_IDGenOverflowToolbarLayoutData3" priority="Low" group="1" />
-                </layoutData>
-            </SearchField>
-            <Label id="_IDGenLabel" text="{i18n>txtLabels}" showColon="true" class="sapUiTinyMargin"/>
-            <MultiInput width="15rem" showClearIcon="true" id="multiInput" 
-                suggestionItems="{
-				path: '/Labels',
-				sorter: { path: 'name' }}"
-                showValueHelp="false"
-                tokenUpdate="onTokenUpdate"
-                placeholder="{i18n>txtSearchLabels}"
-                >
-                <core:Item id="_IDGenItem" key="{ID}" text="{name}" />
-            </MultiInput>
-        </FlexBox>
-        <List id="eventList" items="{path: '/Events', sorter: { path: 'start_date', descending: true}}">
+        <List id="eventList" items="{path: '/Events', sorter: { path: 'start_date', descending: true}}" growing="true" growingThreshold="10" growingScrollToLoad="true" sticky="HeaderToolbar">
+            <headerToolbar>
+                <OverflowToolbar id="_IDGenOverflowToolbar" design="Solid" height="6rem">
+                    <FlexBox id="_IDGenFlexBox9" width="100%" class="sapUiMediumMargin" alignContent="Center" alignItems="Center">
+                        <Title id="_IDGenTitle4" text="{= ${}} Events" class="sapUiSmallMarginEnd"/>
+                        <FlexBox id="_IDGenFlexBox13" justifyContent="End">
+                            <SearchField width="40rem" id="searchField" liveChange="onEventsSearch" class="sapUiSmallMarginEnd">
+                                <layoutData>
+                                    <OverflowToolbarLayoutData id="_IDGenOverflowToolbarLayoutData3" priority="Low" group="1" />
+                                </layoutData>
+                            </SearchField>
+                            <Label id="_IDGenLabel" text="{i18n>txtLabels}" showColon="true" class="sapUiTinyMargin"/>
+                            <MultiInput width="15rem" showClearIcon="true" id="multiInput" suggestionItems="{
+                            path: '/Labels',
+                            sorter: { path: 'name' }}" showValueHelp="false" tokenUpdate="onTokenUpdate" placeholder="{i18n>txtSearchLabels}">
+                                <core:Item id="_IDGenItem" key="{ID}" text="{name}" />
+                            </MultiInput>
+                        </FlexBox>
+                    </FlexBox>
+                </OverflowToolbar>
+            </headerToolbar>
             <CustomListItem id="_IDGenCustomListItem1" press="handlePress" type="Active" class="sapUiSmallMargin rounded">
                 <FlexBox id="_IDGenFlexBox1" direction="Row" class="sapUiContentPadding sapUiSmallMargin">
                     <Image id="_IDGenAvatar2" src="{image_url}" class="roundedImg" width="20rem" height="12rem" />

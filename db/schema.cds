@@ -35,9 +35,11 @@ entity Comments : cuid, managed {
 };
 
 entity Users : cuid, managed {
-    email      : String;
+    email      : String @mandatory;
     name       : String;
     avatar_url : String;
+    email_subscription: Boolean default true; // TODO change
+    //TODO  notifications: Association to ...Address
 };
 
 entity Labels : cuid {

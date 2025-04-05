@@ -6,10 +6,11 @@ import {
   EventLikes,
   EventCreated,
 } from "#cds-models/EventsService";
-
+import MailingService, { sendEventEmails} from "#cds-models/MailingService";
 export class EventsService extends cds.ApplicationService {
   init() {
     const { like } = Event.actions;
+
 
     this.on(like, async (req) => {
       const [eventID] = req.params;
@@ -36,10 +37,13 @@ export class EventsService extends cds.ApplicationService {
       return next();
     });
 
-    this.on(EventCreated, (req) => {
-      const ID: string = req.data;
-      console.info(`New event with ID ${ID} created!`);
-      //TODO add implementation? maybe mailing? notification?
+    this.on(EventCreated, async (req) => {
+      const eventID: string = req.data;
+      console.info(`New event with ID ${eventID} created!`);
+
+      const mailService = await cds.connect.to(MailingService);
+      const res : Boolean = await mailService.send(sendEventEmails, { eventID: eventID })
+
     });
 
     return super.init();

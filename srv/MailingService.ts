@@ -11,8 +11,8 @@ export class MailingService extends cds.ApplicationService {
   constructor(name: string, model: csn.CSN, options: ServiceOptions) {
     super(name, model, options);
     this.transporter = nodemailer.createTransport({
-      host: process.env.smtp_host!,
-      port: Number(process.env.smtp_port!),
+      host: process.env.smtp_host,
+      port: Number(process.env.smtp_port),
     });
   }
 

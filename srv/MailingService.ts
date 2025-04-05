@@ -1,8 +1,8 @@
 import cds from "@sap/cds";
 import nodemailer from "nodemailer";
 import { sendEventEmails, Event, Users } from "#cds-models/MailingService";
-const fs = require("fs").promises;
-const path = require("path");
+import { promises as fs } from "fs";
+import path from "path";
 
 export class MailingService extends cds.ApplicationService {
   init() {
@@ -17,12 +17,13 @@ export class MailingService extends cds.ApplicationService {
       const { eventID } = req.data;
       const event = await SELECT.one(Event, eventID!);
       const users = await SELECT.from(Users).columns("email");
-      const templatePath = path.join(__dirname, "templates", "new_event.html");
-      const htmlTemplate = await fs.readFile(templatePath, "utf8");
+      const templatePath = path.join(__dirname, "mails", "new_event.html");
+      const htmlTemplate = await this.readEmailTemplate(templatePath);
 
       const compiledHtml = htmlTemplate
-        .replace("{{eventName}}", event?.name)
-        .replace("{{eventDate}}", new Date(event?.start_date!).toDateString());
+        .replace("{{eventName}}", event?.name!)
+        .replace("{{eventDate}}", new Date(event?.start_date!).toDateString())
+        .replace("{{eventImageURL}}", event?.image_url!);
 
       for (const user of users) {
         transporter.sendMail({
@@ -39,5 +40,9 @@ export class MailingService extends cds.ApplicationService {
     });
 
     return super.init();
+  }
+
+  private async readEmailTemplate(path: string) {
+    return await fs.readFile(path, "utf8");
   }
 }

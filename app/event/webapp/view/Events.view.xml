@@ -27,7 +27,7 @@
             <CustomListItem id="_IDGenCustomListItem1" press="handlePress" type="Active" class="sapUiSmallMargin rounded">
                 <FlexBox id="_IDGenFlexBox1" direction="Row" class="sapUiContentPadding sapUiSmallMargin">
                     <Image id="_IDGenAvatar2" src="{image_url}" class="roundedImg" width="20rem" height="12rem" />
-                    <FlexBox id="_IDGenFlexBox3" direction="Column" class="sapUiContentPadding" justifyContent="SpaceBetween">
+                    <FlexBox id="_IDGenFlexBox3" direction="Column" class="sapUiContentPadding" justifyContent="SpaceBetween" fitContainer="true" width="100%">
                         <FlexBox id="_IDGenFlexBox" direction="Column" class="sapUiSmallMarginBottom">
                             <FlexBox id="_IDGenFlexBox2" justifyContent="SpaceBetween">
                                 <FlexBox id="_IDGenFlexBox6" direction="Column">

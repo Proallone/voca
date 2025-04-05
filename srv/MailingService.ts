@@ -1,16 +1,28 @@
-import cds from "@sap/cds";
+import cds, { ServiceImpl, csn } from "@sap/cds";
 import nodemailer from "nodemailer";
 import { sendEventEmails, Event, Users } from "#cds-models/MailingService";
-import { promises as fs } from "fs";
+import { promises } from "fs";
 import path from "path";
+import Mail from "nodemailer/lib/mailer";
 
+type ServiceOptions = {
+  kind: string;
+  impl: string | ServiceImpl;
+};
 export class MailingService extends cds.ApplicationService {
-  init() {
-    const { stmp_host, smtp_port } = process.env;
+  private smtp_host: string;
+  private smtp_port: number;
 
+  constructor(name: string, model: csn.CSN, options: ServiceOptions) {
+    super(name, model, options);
+    this.smtp_host = process.env.smtp_host!;
+    this.smtp_port = Number(process.env.smtp_port!);
+  }
+
+  init() {
     const transporter = nodemailer.createTransport({
-      host: stmp_host,
-      port: Number(smtp_port),
+      host: this.smtp_host,
+      port: this.smtp_port,
     }); //TODO replace with destination
 
     this.on(sendEventEmails, async (req) => {
@@ -32,7 +44,7 @@ export class MailingService extends cds.ApplicationService {
           subject: `Event ${event?.name} is happening on ${new Date(
             event?.start_date!
           ).toDateString()}!`,
-          html: compiledHtml
+          html: compiledHtml,
         });
       }
 
@@ -43,6 +55,8 @@ export class MailingService extends cds.ApplicationService {
   }
 
   private async readEmailTemplate(path: string) {
-    return await fs.readFile(path, "utf8");
+    return await promises.readFile(path, "utf8");
   }
+
+  private sendEmailToUsers(users: Users, email: Mail) {}
 }

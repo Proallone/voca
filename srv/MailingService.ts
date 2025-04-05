@@ -1,30 +1,26 @@
-import cds, { ServiceImpl, csn } from "@sap/cds";
+import cds, { type csn } from "@sap/cds";
 import nodemailer from "nodemailer";
 import { sendEventEmails, Event, Users } from "#cds-models/MailingService";
 import { promises } from "fs";
 import path from "path";
 import Mail from "nodemailer/lib/mailer";
-
-type ServiceOptions = {
-  kind: string;
-  impl: string | ServiceImpl;
-};
+import type { ServiceOptions } from "./types/Service";
 export class MailingService extends cds.ApplicationService {
   private smtp_host: string;
   private smtp_port: number;
+  private transporter: nodemailer.Transporter;
 
   constructor(name: string, model: csn.CSN, options: ServiceOptions) {
     super(name, model, options);
     this.smtp_host = process.env.smtp_host!;
     this.smtp_port = Number(process.env.smtp_port!);
+    this.transporter = nodemailer.createTransport({
+      host: this.smtp_host,
+      port: this.smtp_port,
+    });
   }
 
   init() {
-    const transporter = nodemailer.createTransport({
-      host: this.smtp_host,
-      port: this.smtp_port,
-    }); //TODO replace with destination
-
     this.on(sendEventEmails, async (req) => {
       const { eventID } = req.data;
       const event = await SELECT.one(Event, eventID!);
@@ -38,7 +34,7 @@ export class MailingService extends cds.ApplicationService {
         .replace("{{eventImageURL}}", event?.image_url!);
 
       for (const user of users) {
-        transporter.sendMail({
+        this.transporter.sendMail({
           from: "sender@events.com",
           to: user.email!,
           subject: `Event ${event?.name} is happening on ${new Date(
@@ -58,5 +54,9 @@ export class MailingService extends cds.ApplicationService {
     return await promises.readFile(path, "utf8");
   }
 
-  private sendEmailToUsers(users: Users, email: Mail) {}
+  private sendEmailToUsers(users: Users, email: Mail) {
+    for (const user of users) {
+      this.transporter.sendMail(email);
+    }
+  }
 }

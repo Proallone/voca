@@ -5,6 +5,8 @@ import { promises } from "fs";
 import path from "path";
 import type { ServiceOptions } from "./types/Service";
 import { MailOptions } from "nodemailer/lib/json-transport";
+// TODO consider using worker for sending emails
+
 export class MailingService extends cds.ApplicationService {
   private transporter: nodemailer.Transporter;
 
@@ -24,12 +26,14 @@ export class MailingService extends cds.ApplicationService {
       const templatePath = path.join(__dirname, "mails", "new_event.html");
       const htmlTemplate = await this.readEmailTemplate(templatePath);
 
-      const compiledHtml = htmlTemplate
-        .replace("{{eventName}}", event?.name!)
-        .replace("{{eventDate}}", new Date(event?.start_date!).toDateString())
-        .replace("{{eventImageURL}}", event?.image_url!);
-
       for (const user of users) {
+
+        const compiledHtml = htmlTemplate
+          .replace("{{userName}}", user.name!)
+          .replace("{{eventName}}", event?.name!)
+          .replace("{{eventDate}}", new Date(event?.start_date!).toDateString())
+          .replace("{{eventImageURL}}", event?.image_url!);
+
         const mail: MailOptions = {
           from: "sender@events.com",
           to: user.email!,

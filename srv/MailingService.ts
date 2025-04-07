@@ -22,6 +22,9 @@ export class MailingService extends cds.ApplicationService {
     this.on(sendEventEmails, async (req) => {
       const { eventID } = req.data;
       const event = await SELECT.one(Event, eventID!);
+
+      if(!event) return req.error(500, "Something went wrong!");
+
       const users = await this.getEmailSubscribers();
       const templatePath = path.join(__dirname, "mails", "new_event.html");
       const htmlTemplate = await this.readEmailTemplate(templatePath);
@@ -30,9 +33,9 @@ export class MailingService extends cds.ApplicationService {
 
         const compiledHtml = htmlTemplate
           .replace("{{userName}}", user.name!)
-          .replace("{{eventName}}", event?.name!)
-          .replace("{{eventDate}}", new Date(event?.start_date!).toDateString())
-          .replace("{{eventImageURL}}", event?.image_url!);
+          .replaceAll("{{eventName}}", event.name!)
+          .replace("{{eventDate}}", new Date(event.start_date!).toDateString())
+          .replace("{{eventImageURL}}", event.image_url!);
 
         const mail: MailOptions = {
           from: "sender@events.com",

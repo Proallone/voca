@@ -7,6 +7,7 @@ import type { ServiceOptions } from "./types/Service";
 import { MailOptions } from "nodemailer/lib/json-transport";
 // TODO consider using worker for sending emails
 
+import { performance } from "perf_hooks";
 export class MailingService extends cds.ApplicationService {
   private transporter: nodemailer.Transporter;
 
@@ -20,17 +21,19 @@ export class MailingService extends cds.ApplicationService {
 
   init() {
     this.on(sendEventEmails, async (req) => {
+      const start = performance.now();
       const { eventID } = req.data;
       const event = await SELECT.one(Event, eventID!);
 
-      if(!event) return req.error(500, "Something went wrong!");
+      if (!event) return req.error(500, "Something went wrong!");
 
       const users = await this.getEmailSubscribers();
       const templatePath = path.join(__dirname, "mails", "new_event.html");
       const htmlTemplate = await this.readEmailTemplate(templatePath);
 
-      for (const user of users) {
+      const proms: Promise<any>[] = [];
 
+      for (const user of users) {
         const compiledHtml = htmlTemplate
           .replace("{{userName}}", user.name!)
           .replaceAll("{{eventName}}", event.name!)
@@ -46,15 +49,13 @@ export class MailingService extends cds.ApplicationService {
           html: compiledHtml,
         };
 
-        try {
-          await this.transporter.sendMail(mail);
-          console.log(`New event ${event?.ID} sent to ${user.email}`);
-        } catch (err) {
-          // TODO better handling
-          console.error(err);
-        }
+        proms.push(this.transporter.sendMail(mail));
       }
+      
+      await Promise.all(proms);
 
+      const end = performance.now();
+      console.log(`Time taken ${(end - start) / 1000}s`);
       return true;
     });
 

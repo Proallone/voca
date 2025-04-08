@@ -13,6 +13,11 @@
     font-size: x-large;
 }
 
+.bigger {
+    font-size: large;
+    font-weight: 400;
+}
+
 /* .myCustomSF .sapMSFF, .sapMSFB{
     border-radius: 30px;
     height: 3rem;

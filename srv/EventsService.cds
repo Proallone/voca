@@ -6,6 +6,7 @@ service EventsService {
     entity Events as projection on evt.Events 
     actions{
         action like();
+        action attend();
     };
     entity Comments as projection on evt.Comments;
     entity Users    as projection on evt.Users;

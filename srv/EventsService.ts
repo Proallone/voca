@@ -5,11 +5,12 @@ import {
   Users,
   EventLikes,
   EventCreated,
+  EventAttendees,
 } from "#cds-models/EventsService";
 import MailingService, { sendEventEmails} from "#cds-models/MailingService";
 export class EventsService extends cds.ApplicationService {
   init() {
-    const { like } = Event.actions;
+    const { like, attend } = Event.actions;
 
 
     this.on(like, async (req) => {
@@ -24,6 +25,21 @@ export class EventsService extends cds.ApplicationService {
 
       return await INSERT({ user_ID: user?.ID, event_ID: eventID }).into(
         EventLikes
+      );
+    });
+
+    this.on(attend, async (req)=> {
+      const [eventID] = req.params;
+      const { id: userEmail } = req.user;
+      const user = await SELECT.one
+      .from(Users)
+      .columns("ID")
+      .where({ email: userEmail });
+
+      if (!user) return req.error(404, "User not found!");
+
+      return await INSERT({ user_ID: user?.ID, event_ID: eventID }).into(
+       EventAttendees
       );
     });
 

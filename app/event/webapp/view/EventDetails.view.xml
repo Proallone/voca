@@ -1,24 +1,52 @@
-<mvc:View controllerName="com.proallone.event.controller.EventDetails"
+<mvc:View
+    controllerName="com.proallone.event.controller.EventDetails"
     xmlns:mvc="sap.ui.core.mvc"
     xmlns="sap.m"
     xmlns:core="sap.ui.core"
     xmlns:f="sap.f"
-    xmlns:layout="sap.ui.layout">
-    <f:DynamicPage id="dynamicPageId" headerExpanded="{/headerExpanded}" toggleHeaderOnTitleClick="{/titleClickable}">
+    xmlns:layout="sap.ui.layout"
+>
+    <f:DynamicPage
+        id="dynamicPageId"
+        headerExpanded="{/headerExpanded}"
+        toggleHeaderOnTitleClick="{/titleClickable}"
+    >
         <f:title>
             <f:DynamicPageTitle id="_IDGenDynamicPageTitle">
                 <f:heading>
-                    <FlexBox id="_IDGenFlexBox11" direction="Column">
-                        <Title id="_IDGenTitle2" text="{name}"/>
-                        <ObjectStatus id="_IDGenObjectStatus7" class="sapUiSmallMarginBottom" text="{start_date}" icon="sap-icon://calendar" />
+                    <FlexBox
+                        id="_IDGenFlexBox11"
+                        direction="Column"
+                    >
+                        <Title
+                            id="_IDGenTitle2"
+                            text="{name}"
+                        />
+                        <ObjectStatus
+                            id="_IDGenObjectStatus7"
+                            class="sapUiSmallMarginBottom"
+                            text="{start_date}"
+                            icon="sap-icon://calendar"
+                        />
                     </FlexBox>
-
                 </f:heading>
                 <f:breadcrumbs>
-                    <Breadcrumbs id="_IDGenBreadcrumbs" currentLocationText="{name}" separatorStyle="GreaterThan">
-                        <Link id="_IDGenLink1" text="{i18>txtEvents}" press="onBreadcrumbPress">
+                    <Breadcrumbs
+                        id="_IDGenBreadcrumbs"
+                        currentLocationText="{name}"
+                        separatorStyle="GreaterThan"
+                    >
+                        <Link
+                            id="_IDGenLink1"
+                            text="{i18n>txtEvents}"
+                            press="onBreadcrumbPress"
+                        >
                             <customData>
-                                <core:CustomData id="_IDGenCustomData" key="target" value="RouteEvents"/>
+                                <core:CustomData
+                                    id="_IDGenCustomData"
+                                    key="target"
+                                    value="RouteEvents"
+                                />
                             </customData>
                         </Link>
                     </Breadcrumbs>
@@ -33,56 +61,201 @@
                     <!-- <Title id="_IDGenTitle3" text="This is a subheading"/> -->
                 </f:snappedTitleOnMobile>
                 <f:content>
-                    <OverflowToolbar id="_IDGenOverflowToolbar1" width="100%" design="Solid">
+                    <OverflowToolbar
+                        id="_IDGenOverflowToolbar1"
+                        width="100%"
+                        design="Solid"
+                    >
                         <ToolbarSpacer id="_IDGenToolbarSpacer1" />
-                        <ObjectStatus id="_IDGenObjectStatus11" text="{= %{attendees}.length } attending" icon="sap-icon://company-view" class="sapUiSmallMarginEnd"/>
-                        <ObjectStatus id="_IDGenObjectStatus12" text="{= %{likes}.length}" icon="sap-icon://thumb-up" class="sapUiSmallMarginEnd"/>
-                        <ObjectStatus id="_IDGenObjectStatus53" text="{= %{comments}.length }" icon="sap-icon://comment" class="sapUiSmallMarginEnd" />
-                        <ObjectStatus id="_IDGenObjectStatus61" text="{views}" icon="sap-icon://show" />
+                        <ObjectStatus
+                            id="_IDGenObjectStatus12"
+                            text="{= %{likes}.length}"
+                            icon="sap-icon://thumb-up"
+                            class="sapUiSmallMarginEnd"
+                        />
+                        <ObjectStatus
+                            id="_IDGenObjectStatus53"
+                            text="{= %{comments}.length }"
+                            icon="sap-icon://comment"
+                            class="sapUiSmallMarginEnd"
+                        />
+                        <ObjectStatus
+                            id="_IDGenObjectStatus61"
+                            text="{views}"
+                            icon="sap-icon://show"
+                        />
                     </OverflowToolbar>
                 </f:content>
                 <f:actions>
-                    <Button id="_IDGenButton" icon="sap-icon://thumb-up" binding="{/like(...)}" press="onLikePress"/>
+                    <Button
+                        id="_IDGenButton3"
+                        icon="sap-icon://add-employee"
+                        text="Attend the event!"
+                        binding="{/attend(...)}"
+                        press="onAttendPress"
+                        type="Emphasized"
+                    />
+                    <Button
+                        id="_IDGenButton"
+                        icon="sap-icon://thumb-up"
+                        binding="{/like(...)}"
+                        press="onLikePress"
+                    />
                 </f:actions>
-                <f:navigationActions>
-                </f:navigationActions>
+                <f:navigationActions />
             </f:DynamicPageTitle>
         </f:title>
         <f:header>
-            <f:DynamicPageHeader id="_IDGenDynamicPageHeader" pinnable="true">
-                <FormattedText id="_IDGenFormattedText12" htmlText="{description}"/>
-                <layout:HorizontalLayout id="_IDGenHorizontalLayout" allowWrapping="true">
-                    <layout:VerticalLayout id="_IDGenVerticalLayout" class="sapUiMediumMarginEnd">
-                        <ObjectAttribute id="_IDGenObjectAttribute" title="{i18n>ttlCountry}" text="{address_country_code}"/>
-                        <ObjectAttribute id="_IDGenObjectAttribute1" title="{i18n>ttlCity}" text="{address_city}"/>
-                        <ObjectAttribute id="_IDGenObjectAttribute2" title="{i18n>ttlAddress}" text="{address_address}"/>
+            <f:DynamicPageHeader
+                id="_IDGenDynamicPageHeader"
+                pinnable="true"
+            >
+            <FlexBox direction="Column">
+                <ObjectStatus
+                    id="_IDGenObjectStatus11"
+                    text="{= %{attendees}.length } attending"
+                    icon="sap-icon://company-view"
+                    class="sapUiSmallMarginEnd bigger"
+                    
+                />
+                <f:AvatarGroup
+                    id="_IDGenAvatarGroup1"
+                    groupType="Group"
+                    avatarDisplaySize="XS"
+                    press="onAttendeesPress"
+                    items="{path: 'attendees'}"
+                >
+                    <f:AvatarGroupItem
+                        id="_IDGenAvatarGroupItem"
+                        initials="HH"
+                        fallbackIcon="{user/avatar_url}"
+                        src="{user/avatar_url}"
+                    />
+                </f:AvatarGroup>
+            </FlexBox>
+                <FormattedText
+                    id="_IDGenFormattedText12"
+                    class="sapUiMediumMarginTop"
+                    htmlText="{description}"
+                />
+                <layout:HorizontalLayout
+                    id="_IDGenHorizontalLayout"
+                    allowWrapping="true"
+                >
+                    <layout:VerticalLayout
+                        id="_IDGenVerticalLayout"
+                        class="sapUiMediumMarginEnd"
+                    >
+                        <ObjectAttribute
+                            id="_IDGenObjectAttribute"
+                            title="{i18n>ttlCountry}"
+                            text="{address_country_code}"
+                        />
+                        <ObjectAttribute
+                            id="_IDGenObjectAttribute1"
+                            title="{i18n>ttlCity}"
+                            text="{address_city}"
+                        />
+                        <ObjectAttribute
+                            id="_IDGenObjectAttribute2"
+                            title="{i18n>ttlAddress}"
+                            text="{address_address}"
+                        />
                     </layout:VerticalLayout>
                 </layout:HorizontalLayout>
             </f:DynamicPageHeader>
         </f:header>
         <f:content>
-            <FlexBox id="_IDGenFlexBox10" direction="Column">
-                <Carousel id="_IDGenCarousel" loop="true" height="30rem" arrowsPlacement="PageIndicator" backgroundDesign="Translucent" pageIndicatorBackgroundDesign="Translucent" pageIndicatorBorderDesign="None">
-                    <Image id="_IDGenImage2" src="{image_url}" alt="{i18n>txtAltEventImage}" class="roundedImg"/>
-                    <Image id="_IDGenImage3" src="{image_url}" alt="{i18n>txtAltEventImage}" class="roundedImg"/>
-                    <Image id="_IDGenImage4" src="{image_url}" alt="{i18n>txtAltEventImage}" class="roundedImg"/>
-                    <Image id="_IDGenImage5" src="{image_url}" alt="{i18n>txtAltEventImage}" class="roundedImg"/>
+            <FlexBox
+                id="_IDGenFlexBox10"
+                direction="Column"
+            >
+                <Carousel
+                    id="_IDGenCarousel"
+                    loop="true"
+                    height="30rem"
+                    arrowsPlacement="PageIndicator"
+                    backgroundDesign="Translucent"
+                    pageIndicatorBackgroundDesign="Translucent"
+                    pageIndicatorBorderDesign="None"
+                >
+                    <Image
+                        id="_IDGenImage2"
+                        src="{image_url}"
+                        alt="{i18n>txtAltEventImage}"
+                        class="roundedImg"
+                    />
+                    <Image
+                        id="_IDGenImage3"
+                        src="{image_url}"
+                        alt="{i18n>txtAltEventImage}"
+                        class="roundedImg"
+                    />
+                    <Image
+                        id="_IDGenImage4"
+                        src="{image_url}"
+                        alt="{i18n>txtAltEventImage}"
+                        class="roundedImg"
+                    />
+                    <Image
+                        id="_IDGenImage5"
+                        src="{image_url}"
+                        alt="{i18n>txtAltEventImage}"
+                        class="roundedImg"
+                    />
                 </Carousel>
-                <List id="postsList" showSeparators="Inner" items="{path: 'comments', sorter: { path: 'createdAt', descending: true}}">
+                <List
+                    id="postsList"
+                    showSeparators="Inner"
+                    items="{path: 'comments', sorter: { path: 'createdAt', descending: true}}"
+                >
                     <headerToolbar>
-                        <OverflowToolbar id="_IDGenOverflowToolbar2" design="Transparent" style="Clear" height="10rem">
-                            <FlexBox id="_IDGenFlexBox12" direction="Column" width="100%">
-                                <Title id="_IDGenTitle3" text="{= %{comments}.length } Comments"></Title>
-                                <FeedInput id="_IDGenFeedInput" post="onCommentPost" icon="test-resources/sap/m/images/dronning_victoria.jpg" class="sapUiSmallMarginTop" />
+                        <OverflowToolbar
+                            id="_IDGenOverflowToolbar2"
+                            design="Transparent"
+                            style="Clear"
+                            height="10rem"
+                        >
+                            <FlexBox
+                                id="_IDGenFlexBox12"
+                                direction="Column"
+                                width="100%"
+                            >
+                                <Title
+                                    id="_IDGenTitle3"
+                                    text="{= %{comments}.length } Comments"
+                                />
+                                <FeedInput
+                                    id="_IDGenFeedInput"
+                                    post="onCommentPost"
+                                    icon="test-resources/sap/m/images/dronning_victoria.jpg"
+                                    class="sapUiSmallMarginTop"
+                                />
                             </FlexBox>
                         </OverflowToolbar>
                     </headerToolbar>
-                    <FeedListItem id="_IDGenFeedListItem" class="rounded sapUiTinyMargin" sender="{author/name}" icon="{author/avatar_url}" senderPress="onSenderPress" iconPress="onIconPress" timestamp="{createdAt}" text="{content}" convertLinksToAnchorTags="All"/>
+                    <FeedListItem
+                        id="_IDGenFeedListItem"
+                        class="rounded sapUiTinyMargin"
+                        sender="{author/name}"
+                        icon="{author/avatar_url}"
+                        senderPress="onSenderPress"
+                        iconPress="onIconPress"
+                        timestamp="{createdAt}"
+                        text="{content}"
+                        convertLinksToAnchorTags="All"
+                    />
                     <noData>
-                        <IllustratedMessage id="_IDGenIllustratedMessage2" enableVerticalResponsiveness="true" illustrationType="sapIllus-EmptyList" title="{i18n>ttlNoComments}" description="{i18n>txtNoComments}"/>
+                        <IllustratedMessage
+                            id="_IDGenIllustratedMessage2"
+                            enableVerticalResponsiveness="true"
+                            illustrationType="sapIllus-EmptyList"
+                            title="{i18n>ttlNoComments}"
+                            description="{i18n>txtNoComments}"
+                        />
                     </noData>
                 </List>
-            </FlexBox >
+            </FlexBox>
         </f:content>
     </f:DynamicPage>
 </mvc:View>

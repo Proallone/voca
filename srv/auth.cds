@@ -7,7 +7,7 @@ annotate EventsService.Events with @(restrict: [
         to   : 'host'
     },
     {
-        grant: ['like'], to: 'user'
+        grant: ['like', 'attend'], to: 'user'
     }
 ]);
 

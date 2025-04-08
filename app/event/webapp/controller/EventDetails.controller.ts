@@ -11,6 +11,8 @@ import MessageToast from "sap/m/MessageToast";
 import { type Link$ClickEvent } from "sap/ui/webc/main/Link";
 import ObjectStatus from "sap/m/ObjectStatus";
 import type ODataContextBinding from "sap/ui/model/odata/v4/ODataContextBinding";
+import { AvatarGroup$PressEvent } from "sap/f/AvatarGroup";
+import Dialog from "sap/m/Dialog";
 
 interface IEvent {
   ID: string;
@@ -20,6 +22,9 @@ interface IEvent {
  * @namespace com.proallone.event.controller
  */
 export default class EventDetails extends Controller {
+  protected eventAttendeesDialog: Dialog;
+
+
   public onInit() {
     const router = UIComponent.getRouterFor(this);
     router
@@ -78,6 +83,47 @@ export default class EventDetails extends Controller {
           MessageToast.show("Something went wrong!");
         }
       });
+  }
+
+  public onAttendPress() {
+    const binding = this.getView()?.getBindingContext();
+    const oModel = this.getView()?.getModel();
+    const oAction = oModel?.bindContext(
+      "EventsService.attend(...)",
+      binding!
+    ) as ODataContextBinding;
+    oAction
+      .invoke()
+      .then(() => {
+        oModel?.refresh(); //todo not optimal, change?
+        MessageToast.show("Success!");
+      })
+      .catch((error: Error) => {
+        if (error.message.includes("exists")) {
+          MessageToast.show("Already attending!");
+        } else {
+          MessageToast.show("Something went wrong!");
+        }
+      });
+  }
+
+  public async onAttendeesPress(evt: AvatarGroup$PressEvent) {
+    const src = evt.getSource();
+    const bindingPath = src.getBindingContext()?.getPath();
+
+    if (!this.eventAttendeesDialog) {
+      this.eventAttendeesDialog = (await this.loadFragment({
+        name: "com.proallone.event.view.fragments.EventAttendees",
+      })) as Dialog;
+    }
+
+    this.eventAttendeesDialog.bindElement(bindingPath!);
+    this.eventAttendeesDialog.open()
+  }
+
+  public onEventAttendeesClose(evt: Button$PressEvent) {
+    const dialog = evt.getSource().getParent() as Dialog;
+    dialog.close();
   }
 
   public onBreadcrumbPress(evt: Link$ClickEvent) {

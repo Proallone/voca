@@ -21,7 +21,6 @@ export class MailingService extends cds.ApplicationService {
 
   init() {
     this.on(sendEventEmails, async (req) => {
-      const start = performance.now();
       const { eventID } = req.data;
       const event = await SELECT.one(Event, eventID!);
 
@@ -31,7 +30,7 @@ export class MailingService extends cds.ApplicationService {
       const templatePath = path.join(__dirname, "mails", "new_event.html");
       const htmlTemplate = await this.readEmailTemplate(templatePath);
 
-      const proms: Promise<any>[] = [];
+      const emails: Promise<MailOptions>[] = [];
 
       for (const user of users) {
         const compiledHtml = htmlTemplate
@@ -49,14 +48,16 @@ export class MailingService extends cds.ApplicationService {
           html: compiledHtml,
         };
 
-        proms.push(this.transporter.sendMail(mail));
+        emails.push(this.transporter.sendMail(mail));
       }
       
-      await Promise.all(proms);
-
-      const end = performance.now();
-      console.log(`Time taken ${(end - start) / 1000}s`);
-      return true;
+      try {
+        await Promise.all(emails);
+        return true;
+      } catch (err) {
+        console.error(`An error occured during email sending...`, err); //todo better handling required
+        return false;
+      }
     });
 
     return super.init();

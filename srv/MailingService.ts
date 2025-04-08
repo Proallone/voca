@@ -30,27 +30,8 @@ export class MailingService extends cds.ApplicationService {
       const templatePath = path.join(__dirname, "mails", "new_event.html");
       const htmlTemplate = await this.readEmailTemplate(templatePath);
 
-      const emails: Promise<MailOptions>[] = [];
+      const emails = this.prepareEmails(users, event, htmlTemplate);
 
-      for (const user of users) {
-        const compiledHtml = htmlTemplate
-          .replace("{{userName}}", user.name!)
-          .replaceAll("{{eventName}}", event.name!)
-          .replace("{{eventDate}}", new Date(event.start_date!).toDateString())
-          .replace("{{eventImageURL}}", event.image_url!);
-
-        const mail: MailOptions = {
-          from: "sender@events.com",
-          to: user.email!,
-          subject: `Event ${event?.name} is happening on ${new Date(
-            event?.start_date!
-          ).toDateString()}!`,
-          html: compiledHtml,
-        };
-
-        emails.push(this.transporter.sendMail(mail));
-      }
-      
       try {
         await Promise.all(emails);
         return true;
@@ -61,6 +42,30 @@ export class MailingService extends cds.ApplicationService {
     });
 
     return super.init();
+  }
+
+  private prepareEmails(users: Users, event: Event, template: string) {
+    const emails: Promise<MailOptions>[] = [];
+
+    for (const user of users) {
+      const compiledHtml = template
+        .replace("{{userName}}", user.name!)
+        .replaceAll("{{eventName}}", event.name!)
+        .replace("{{eventDate}}", new Date(event.start_date!).toDateString())
+        .replace("{{eventImageURL}}", event.image_url!);
+
+      const mail: MailOptions = {
+        from: "sender@events.com",
+        to: user.email!,
+        subject: `Event ${event?.name} is happening on ${new Date(
+          event?.start_date!
+        ).toDateString()}!`,
+        html: compiledHtml,
+      };
+
+      emails.push(this.transporter.sendMail(mail));
+    }
+    return emails;
   }
 
   private async readEmailTemplate(path: string) {

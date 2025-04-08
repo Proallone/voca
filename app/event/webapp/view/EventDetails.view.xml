@@ -110,7 +110,7 @@
                 id="_IDGenDynamicPageHeader"
                 pinnable="true"
             >
-            <FlexBox direction="Column">
+            <FlexBox id="_IDGenFlexBox14" direction="Column">
                 <ObjectStatus
                     id="_IDGenObjectStatus11"
                     text="{= %{attendees}.length } attending"
@@ -127,7 +127,7 @@
                 >
                     <f:AvatarGroupItem
                         id="_IDGenAvatarGroupItem"
-                        initials="HH"
+                        initials="{= %{user/name}.split(' ')[0].split('')[0] + %{user/name}.split(' ')[1].split('')[0]}"
                         fallbackIcon="{user/avatar_url}"
                         src="{user/avatar_url}"
                     />

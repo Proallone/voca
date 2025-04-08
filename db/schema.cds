@@ -28,18 +28,19 @@ entity Events : cuid, managed {
 };
 
 entity Comments : cuid, managed {
-    title     : String;
-    content   : String;
-    event     : Association to one Events;
-    author    : Association to one Users;
+    title   : String;
+    content : String;
+    event   : Association to one Events;
+    author  : Association to one Users;
 };
 
 entity Users : cuid, managed {
-    email      : String @mandatory;
-    name       : String;
-    avatar_url : String;
-    email_subscription: Boolean default true; // TODO change
-    //TODO  notifications: Association to ...Address
+    email              : String @mandatory;
+    name               : String;
+    avatar_url         : String;
+    email_subscription : Boolean default true; // TODO change
+    notifications      : Composition of many Notifications
+                             on notifications.user = $self;
 };
 
 entity Labels : cuid {
@@ -65,6 +66,14 @@ entity EventHosts {
 entity EventLabels {
     key event : Association to one Events;
     key label : Association to one Labels;
+};
+
+entity Notifications: cuid, managed {
+    title: String(30);
+    description: String(200);
+    type: String; //todo change to enum
+    viewed: Boolean default False;
+    user : Association to one Users;
 };
 
 type Address { //todo fix

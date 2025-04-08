@@ -2,7 +2,8 @@
     xmlns:mvc="sap.ui.core.mvc"
     xmlns="sap.m"
     xmlns:tnt="sap.tnt"
-    xmlns:core="sap.ui.core">
+    xmlns:core="sap.ui.core"
+    core:require="{formatter: 'com/proallone/event/model/Formatter'}">
     <tnt:ToolPage id="toolPage" sideExpanded="false">
         <tnt:header>
             <tnt:ToolHeader id="_IDGenToolHeader1" design="Solid" height="4rem">
@@ -27,7 +28,7 @@
                 <tnt:ToolHeaderUtilitySeparator id="_IDGenToolHeaderUtilitySeparator"/>
                 <Button id="_IDGenButton2" icon="sap-icon://bell" type="Transparent" tooltip="{i18n>tlpNotifications}" press="onNotificationsPress">
                     <customData>
-                        <BadgeCustomData id="_IDGenBadgeCustomData" key="badge" value="2" visible="true"/>
+                        <BadgeCustomData id="_IDGenBadgeCustomData" key="badge" value="{path : 'notifications',  formatter: 'formatter.countNotViewedNotifications'}" visible="true"/>
                     </customData>
                     <layoutData>
                         <OverflowToolbarLayoutData id="_IDGenOverflowToolbarLayoutData5" priority="NeverOverflow"/>

@@ -21,6 +21,7 @@
                         id="_IDGenAvatar1"
                         src="{user/avatar_url}"
                         class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom"
+                        initials="{= %{user/name}.split(' ')[0].split('')[0] + %{user/name}.split(' ')[1].split('')[0]}"
                     />
                     <FlexBox
                         id="_IDGenVBox1"

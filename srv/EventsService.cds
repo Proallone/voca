@@ -11,6 +11,7 @@ service EventsService {
     entity Comments as projection on evt.Comments;
     entity Users    as projection on evt.Users;
     entity Labels   as projection on evt.Labels;
+    entity Notifications as projection on evt.Notifications;
     entity Country  as projection on cm.Countries;
 
     event EventCreated {

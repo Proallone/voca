@@ -17,7 +17,7 @@ export class NotificationService extends cds.ApplicationService {
             for( const user of users){
                 newNotif.push({
                      title: `New event ${event?.name}`,
-                     description: "TEST DESC NOTIF",
+                     description: `${event?.description}`,
                      user_ID: user.ID,
                      type: "Notification"
                 } as Notification)

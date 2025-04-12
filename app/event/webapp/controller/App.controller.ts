@@ -6,9 +6,9 @@ import UIComponent from "sap/ui/core/UIComponent";
 import ToolHeader from "sap/tnt/ToolHeader";
 import Dialog from "sap/m/Dialog";
 import ListItemBase, { ListItemBase$PressEvent } from "sap/m/ListItemBase";
-import ListItem from "sap/ui/core/ListItem";
-import ContextBinding from "sap/ui/model/ContextBinding";
 import Context from "sap/ui/model/odata/v4/Context";
+import Form from "sap/ui/layout/form/Form";
+import ODataListBinding from "sap/ui/model/odata/v4/ODataListBinding";
 
 /**
  * @namespace com.proallone.event.controller
@@ -16,6 +16,7 @@ import Context from "sap/ui/model/odata/v4/Context";
 export default class App extends Controller {
   private actionsPopover: Popover;
   private notificationsDialog: Dialog;
+  private newEventDialog: Dialog;
 
   public onInit() {
     const toolHeader = this.byId("_IDGenToolHeader1") as ToolHeader;
@@ -80,5 +81,34 @@ export default class App extends Controller {
   public onLogoPressed() {
     const router = UIComponent.getRouterFor(this);
     router.navTo("RouteEvents");
+  }
+
+  public async onNewEventPress(evt: Button$PressEvent) {
+
+    if (!this.newEventDialog) {
+      this.newEventDialog = (await this.loadFragment({
+        name: "com.proallone.event.view.fragments.NewEvent",
+      })) as Dialog;
+    }
+
+    this.newEventDialog.open();
+  }
+
+  public onNewEventClose(evt: Button$PressEvent){
+    const dialog = this.byId("_IDGenDialog2") as Dialog;
+    dialog.close();
+  }
+
+  public onNewEventCreate(){
+    //TODO MESS
+    const form = this.byId("newEventForm") as Form;
+
+    const ctx = form.getBindingContext() as Context;
+
+    const model = this.getView()?.getModel();
+    const binding = model?.bindList('/Events') as ODataListBinding;
+    binding.create({
+      name: "TEST"
+    });
   }
 }

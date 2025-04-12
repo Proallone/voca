@@ -8,6 +8,7 @@ import {
   EventAttendees,
 } from "#cds-models/EventsService";
 import MailingService, { sendEventEmails} from "#cds-models/MailingService";
+import NotificationService, { sendNotification } from "#cds-models/NotificationService";
 export class EventsService extends cds.ApplicationService {
   init() {
     const { like, attend } = Event.actions;
@@ -60,6 +61,9 @@ export class EventsService extends cds.ApplicationService {
 
       const mailService = await cds.connect.to(MailingService);
       const res : Boolean = await mailService.send(sendEventEmails, { eventID: eventID })
+
+      const notificationService = await cds.connect.to(NotificationService);
+      const resNotif : Boolean = await notificationService.send(sendNotification, { eventID: eventID })
 
     });
 

@@ -39,6 +39,7 @@ entity Users : cuid, managed {
     name               : String;
     avatar_url         : String;
     email_subscription : Boolean default true; // TODO change
+    notification_subscription: Boolean default true;
     notifications      : Composition of many Notifications
                              on notifications.user = $self;
 };

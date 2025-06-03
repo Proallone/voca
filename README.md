@@ -1,3 +1,17 @@
+# This is a WIP project
+
+Out of curiosity I decided to spin up a small eventing application for personal usage using CAP and UI5. 
+Here are some screenshots from current state.
+
+![Events app - welcome screen](./images/Events-main.png "Welcome screen")
+
+![Events app - event details](./images/Events-details1.png.png "Event detail page")
+
+![Events app - events notifications](./images/Events-details2.png "Event notifications")
+
+
+Apart from what you can see - application supports sending emails :)
+
 # Getting Started
 
 Welcome to your new project.

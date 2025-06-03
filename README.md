@@ -5,7 +5,7 @@ Here are some screenshots from current state.
 
 ![Events app - welcome screen](./images/Events-main.png "Welcome screen")
 
-![Events app - event details](./images/Events-details1.png.png "Event detail page")
+![Events app - event details](./images/Events-details1.png "Event detail page")
 
 ![Events app - events notifications](./images/Events-details2.png "Event notifications")
 

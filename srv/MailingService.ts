@@ -18,7 +18,7 @@ export class MailingService extends cds.ApplicationService {
     });
   }
 
-  init() {
+  async init() {
     this.on(sendEventEmails, async (req) => {
       const { eventID } = req.data;
       const event = await SELECT.one(Event, eventID!);

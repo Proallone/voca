@@ -3,7 +3,7 @@ import { sendNotification, Users, Notification, Notifications, Events } from "#c
 
 export class NotificationService extends cds.ApplicationService {
 
-    init() {
+    async init() {
 
         this.on(sendNotification, async (req) => {
             const { eventID } = req.data;

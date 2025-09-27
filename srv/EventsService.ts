@@ -2,46 +2,32 @@ import cds from "@sap/cds";
 import {
   Events,
   Event,
-  Users,
-  EventLikes,
   EventCreated,
-  EventAttendees,
 } from "#cds-models/EventsService";
-import MailingService, { sendEventEmails } from "#cds-models/MailingService";
-import NotificationService, { sendNotification } from "#cds-models/NotificationService";
+import MailingService from "#cds-models/MailingService";
+import NotificationService from "#cds-models/NotificationService";
+import { EventsHandler } from "./handlers/EventsHandler";
 export class EventsService extends cds.ApplicationService {
-  init() {
+  async init() {
     const { like, attend } = Event.actions;
+    const mailingService = await cds.connect.to(MailingService);
+    const notificationService = await cds.connect.to(NotificationService);
 
+
+    const handler = new EventsHandler(mailingService, notificationService);
 
     this.on(like, async (req) => {
-      const [eventID] = req.params;
+      const [event] = req.params;
       const { id: userEmail } = req.user;
-      const user = await SELECT.one
-        .from(Users)
-        .columns("ID")
-        .where({ email: userEmail });
-
-      if (!user) return req.error(404, "User not found!");
-
-      return await INSERT({ user_ID: user?.ID, event_ID: eventID }).into(
-        EventLikes
-      );
+      await handler.likeHandler(event.ID, userEmail);
+      return req.info(201, `Event with ID ${event.ID} liked successfully by ${userEmail}`);
     });
 
     this.on(attend, async (req) => {
-      const [eventID] = req.params;
+      const [event] = req.params;
       const { id: userEmail } = req.user;
-      const user = await SELECT.one
-        .from(Users)
-        .columns("ID")
-        .where({ email: userEmail });
-
-      if (!user) return req.error(404, "User not found!");
-
-      return await INSERT({ user_ID: user?.ID, event_ID: eventID }).into(
-        EventAttendees
-      );
+      await handler.attendHandler(event.ID, userEmail);
+      return req.info(201, `Event with ID ${event.ID} attended successfully by ${userEmail}`);
     });
 
     this.after("CREATE", Events, async (res) => {
@@ -49,21 +35,18 @@ export class EventsService extends cds.ApplicationService {
     });
 
     this.on("READ", Event, async (req, next) => {
-      const [ID] = req.params;
-      await UPDATE(Events, ID).with({ views: { "+=": 1 } });
+      const [event] = req.params;
+      if (event) {
+        await handler.eventReadHandler(event.ID);
+      }
       return next();
     });
 
     this.on(EventCreated, async (req) => {
       const eventID: string = req.data;
       const hostID: string = req.user.id;
-      console.info(`New ${eventID} hosted by ${hostID}!`);
-
-      const mailService = await cds.connect.to(MailingService);
-      const res: Boolean = await mailService.send(sendEventEmails, { eventID: eventID })
-
-      const notificationService = await cds.connect.to(NotificationService);
-      const resNotif: Boolean = await notificationService.send(sendNotification, { eventID: eventID })
+      await handler.eventCreatedHandler(eventID);
+      return req.info(201, `Event with ID ${eventID} created successfully by ${hostID}`);
 
     });
 

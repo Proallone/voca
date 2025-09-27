@@ -7,7 +7,9 @@ service EventsService {
         actions {
             action like();
             action attend();
+            function generateIcs() returns Binary;
         };
+        
 
     entity Comments      as projection on evt.Comments;
     entity Users         as projection on evt.Users;

@@ -15,6 +15,21 @@
       "skipFiles": [
         "<node_internals>/**"
       ]
+    },
+     {
+      "name": "cds watch",
+      "request": "launch",
+      "type": "node",
+      "cwd": "${workspaceFolder}",
+      "runtimeExecutable": "cds",
+      "args": [
+        "watch",
+        "--with-mocks",
+        "--in-memory?"
+      ],
+      "skipFiles": [
+        "<node_internals>/**"
+      ]
     }
   ]
 }

@@ -10,7 +10,7 @@ import { EventsHandler } from "./handlers/EventsHandler";
 
 export class EventsService extends cds.ApplicationService {
   async init() {
-    const { like, attend } = Event.actions;
+    const { like, attend, generateIcs } = Event.actions;
 
     const logger = cds.log(this.name);
 
@@ -30,6 +30,15 @@ export class EventsService extends cds.ApplicationService {
       const { id: userEmail } = req.user;
       await handler.attendHandler(event.ID, userEmail);
       return req.info(201, `Event with ID ${event.ID} attended successfully by ${userEmail}`);
+    });
+
+    this.on(generateIcs, async (req) => {
+      const [event] = req.params;
+      const ics = await handler.generateIcsHandler(event.ID);
+      //TODO fix this....
+      req.res.setHeader('Content-Type', 'text/calendar; charset=utf-8'); 
+      req.res.setHeader('Content-Disposition', `attachment; filename="event_${event.ID}.ics"`);
+      return ics;
     });
 
     this.after("CREATE", Events, async (res) => {

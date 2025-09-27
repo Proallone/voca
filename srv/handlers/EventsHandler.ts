@@ -5,6 +5,8 @@ import { EventAttendees, EventLikes, Events, Users } from "#cds-models/EventsSer
 import { sendEventEmails } from "#cds-models/MailingService";
 import { sendNotification } from "#cds-models/NotificationService";
 import type { log } from "@sap/cds";
+import path from "path";
+import { compileTemplate } from "../utils/compileTemplate";
 
 export class EventsHandler {
     constructor(private readonly logger: typeof log.Logger, private readonly mailingService: CDSService<MailingService>, private readonly notificationService: CDSService<NotificationService>) { }
@@ -41,6 +43,22 @@ export class EventsHandler {
         await INSERT({ user_ID: user?.ID, event_ID: eventID }).into(
             EventAttendees
         );
+    }
+
+    public generateIcsHandler = async (eventID: string) => {
+        const filePath = path.join(path.resolve(__dirname, "../"), "templates/calendars", `event.ics.hbs`);
+        const template = compileTemplate(filePath);
+        const data = {
+            uid: "12345@example.com",
+            dtstamp: "20250927T120000Z",
+            dtstart: "20251001T090000Z",
+            dtend: "20251001T100000Z",
+            summary: "Team Meeting",
+            description: "Discuss Q4 roadmap",
+            location: "Conference Room A"
+        };
+        const ics = template(data);
+        return ics;
     }
 
     public eventReadHandler = async (eventID: string) => {

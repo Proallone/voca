@@ -1,11 +1,9 @@
-
 import type { log } from "@sap/cds";
 import { Event, Users } from "#cds-models/EventsService";
 import { MailOptions } from "nodemailer/lib/json-transport";
 import { Transporter } from "nodemailer";
 import path from "path";
-import Handlebars from "handlebars";
-import fs from "fs";
+import { compileTemplate } from "../utils/compileTemplate";
 
 export class MailingHandler {
     constructor(private readonly logger: typeof log.Logger, private readonly transporter: Transporter) { }
@@ -15,7 +13,8 @@ export class MailingHandler {
         if (!event) throw new Error(`Event ${eventID} not found`);
 
         const users = await this.getEmailSubscribers();
-        const template = this.compileTemplate("new_event")
+        const filePath = path.join(path.resolve(__dirname, "../"), "templates/emails", `new_event.hbs`);
+        const template = compileTemplate(filePath);
 
         const emails = this.prepareEmails(users, event, template);
 
@@ -59,11 +58,4 @@ export class MailingHandler {
             .columns("name", "email")
             .where({ email_subscription: true });
     }
-
-    private compileTemplate = (name: string) => {
-        const filePath = path.join(path.resolve(__dirname, "../"), "templates/emails", `${name}.hbs`);
-        const source = fs.readFileSync(filePath, "utf-8");
-        return Handlebars.compile(source);
-    };
-
 }

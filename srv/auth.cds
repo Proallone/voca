@@ -12,7 +12,8 @@ annotate EventsService.Events with @(restrict: [
     {
         grant: [
             'like',
-            'attend'
+            'attend',
+            'generateIcs'
         ],
         to   : 'user'
     }

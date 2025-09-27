@@ -9,7 +9,7 @@ export class NotificationHandler {
 
     public sendNewEventNotificationHandler = async (eventID: string) => {
         const users = await SELECT.from(Users).where({ notification_subscription: true });
-        const event = await SELECT.one.from(Events).where({event_ID: eventID});
+        const event = await SELECT.one.from(Events).where({ID: eventID});
 
         const newNotif: Notification[] = [];
 

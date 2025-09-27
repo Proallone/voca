@@ -1,5 +1,7 @@
 # This is a WIP project
 
+**Voca** - from vocare, meaning "to call, summon, invite."
+
 Out of curiosity I decided to spin up a small eventing application for personal usage using CAP and UI5. 
 Here are some screenshots from current state.
 

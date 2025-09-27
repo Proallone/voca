@@ -1,30 +1,18 @@
 import cds from "@sap/cds";
-import { sendNotification, Users, Notification, Notifications, Events } from "#cds-models/NotificationService";
+import { sendNotification } from "#cds-models/NotificationService";
+import { NotificationHandler } from "./handlers/NotificationHandler";
 
 export class NotificationService extends cds.ApplicationService {
 
     async init() {
+        const logger = cds.log(this.name);
+
+        const handler = new NotificationHandler(logger);
 
         this.on(sendNotification, async (req) => {
             const { eventID } = req.data;
-
-            const users = await SELECT.from(Users).where({ notification_subscription: true });
-            const event = await SELECT.one.from(Events, eventID!);
-
-            const newNotif: Notification[] = [];
-
-            //TODO this is a placeholder
-            for (const user of users) {
-                newNotif.push({
-                    title: `New event ${event?.name}`,
-                    description: `${event?.description}`,
-                    user_ID: user.ID,
-                    type: "Notification"
-                } as Notification)
-            };
-
-            await INSERT.into(Notifications).entries(newNotif);
-            return true;
+            await handler.sendNewEventNotificationHandler(eventID!!);
+            return req.info(200, `Notifications sent for event ID ${eventID}`);
         });
 
         return super.init();

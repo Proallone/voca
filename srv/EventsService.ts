@@ -7,14 +7,16 @@ import {
 import MailingService from "#cds-models/MailingService";
 import NotificationService from "#cds-models/NotificationService";
 import { EventsHandler } from "./handlers/EventsHandler";
+
 export class EventsService extends cds.ApplicationService {
   async init() {
     const { like, attend } = Event.actions;
+
+    const logger = cds.log(this.name);
+
     const mailingService = await cds.connect.to(MailingService);
     const notificationService = await cds.connect.to(NotificationService);
-
-
-    const handler = new EventsHandler(mailingService, notificationService);
+    const handler = new EventsHandler(logger, mailingService, notificationService);
 
     this.on(like, async (req) => {
       const [event] = req.params;
@@ -36,7 +38,7 @@ export class EventsService extends cds.ApplicationService {
 
     this.on("READ", Event, async (req, next) => {
       const [event] = req.params;
-      if (event) {
+      if (event) { //if entire entity is read then this is undefined
         await handler.eventReadHandler(event.ID);
       }
       return next();
@@ -44,10 +46,8 @@ export class EventsService extends cds.ApplicationService {
 
     this.on(EventCreated, async (req) => {
       const eventID: string = req.data;
-      const hostID: string = req.user.id;
+      // const hostID: string = req.user.id;
       await handler.eventCreatedHandler(eventID);
-      return req.info(201, `Event with ID ${eventID} created successfully by ${hostID}`);
-
     });
 
     return super.init();

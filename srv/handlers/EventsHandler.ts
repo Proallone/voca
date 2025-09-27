@@ -4,9 +4,10 @@ import type { CDSService } from "../types/Service";
 import { EventAttendees, EventLikes, Events, Users } from "#cds-models/EventsService";
 import { sendEventEmails } from "#cds-models/MailingService";
 import { sendNotification } from "#cds-models/NotificationService";
+import type { log } from "@sap/cds";
 
 export class EventsHandler {
-    constructor(private readonly mailingService: CDSService<MailingService>, private readonly notificationService: CDSService<NotificationService>) { }
+    constructor(private readonly logger: typeof log.Logger, private readonly mailingService: CDSService<MailingService>, private readonly notificationService: CDSService<NotificationService>) { }
 
     public likeHandler = async (eventID: string, userEmail: string) => {
         const user = await SELECT.one
@@ -49,5 +50,6 @@ export class EventsHandler {
     public eventCreatedHandler = async (eventID: string) => {
         await this.mailingService.send(sendEventEmails, { eventID: eventID });
         await this.notificationService.send(sendNotification, { eventID: eventID });
+        this.logger.log(`Notifications and emails sent for new event ${eventID}`);
     }
 }

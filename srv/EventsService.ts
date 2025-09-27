@@ -7,7 +7,7 @@ import {
   EventCreated,
   EventAttendees,
 } from "#cds-models/EventsService";
-import MailingService, { sendEventEmails} from "#cds-models/MailingService";
+import MailingService, { sendEventEmails } from "#cds-models/MailingService";
 import NotificationService, { sendNotification } from "#cds-models/NotificationService";
 export class EventsService extends cds.ApplicationService {
   init() {
@@ -29,18 +29,18 @@ export class EventsService extends cds.ApplicationService {
       );
     });
 
-    this.on(attend, async (req)=> {
+    this.on(attend, async (req) => {
       const [eventID] = req.params;
       const { id: userEmail } = req.user;
       const user = await SELECT.one
-      .from(Users)
-      .columns("ID")
-      .where({ email: userEmail });
+        .from(Users)
+        .columns("ID")
+        .where({ email: userEmail });
 
       if (!user) return req.error(404, "User not found!");
 
       return await INSERT({ user_ID: user?.ID, event_ID: eventID }).into(
-       EventAttendees
+        EventAttendees
       );
     });
 
@@ -60,10 +60,10 @@ export class EventsService extends cds.ApplicationService {
       console.info(`New ${eventID} hosted by ${hostID}!`);
 
       const mailService = await cds.connect.to(MailingService);
-      const res : Boolean = await mailService.send(sendEventEmails, { eventID: eventID })
+      const res: Boolean = await mailService.send(sendEventEmails, { eventID: eventID })
 
       const notificationService = await cds.connect.to(NotificationService);
-      const resNotif : Boolean = await notificationService.send(sendNotification, { eventID: eventID })
+      const resNotif: Boolean = await notificationService.send(sendNotification, { eventID: eventID })
 
     });
 

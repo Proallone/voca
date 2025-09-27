@@ -7,7 +7,6 @@ import type { ServiceOptions } from "./types/Service";
 import { MailOptions } from "nodemailer/lib/json-transport";
 // TODO consider using worker for sending emails
 
-import { performance } from "perf_hooks";
 export class MailingService extends cds.ApplicationService {
   private transporter: nodemailer.Transporter;
 

@@ -35,11 +35,11 @@ export class EventsService extends cds.ApplicationService {
 
     this.on(generateIcs, async (_req) => {
       const req = _req as ExpressRequest; 
-      const [event] = req.params;
-      const ics = await handler.generateIcsHandler(event.ID);
-      req.res.setHeader('Content-Type', 'text/calendar; charset=utf-8');
-      req.res.setHeader('Content-Disposition', `attachment; filename="event_${event.ID}.ics"`);
-      return ics;
+      const { res, params } = req;
+      const ics = await handler.generateIcsHandler(params[0].ID);
+      res.setHeader('Content-Type', 'text/calendar; charset=utf-8');
+      res.setHeader('Content-Disposition', `attachment; filename="event_${params[0].ID}.ics"`);
+      return res.send(ics); //? we send as a plain express response to omit cds context property (breaks the response content)
     });
 
     this.after("CREATE", Events, async (res) => {

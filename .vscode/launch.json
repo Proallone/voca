@@ -21,11 +21,9 @@
       "request": "launch",
       "type": "node",
       "cwd": "${workspaceFolder}",
-      "runtimeExecutable": "cds",
+      "runtimeExecutable": "yarn",
       "args": [
-        "watch",
-        "--with-mocks",
-        "--in-memory?"
+        "watch"
       ],
       "skipFiles": [
         "<node_internals>/**"

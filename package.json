@@ -1,8 +1,8 @@
 {
-  "name": "events-app",
+  "name": "voca",
   "version": "1.0.0",
-  "description": "A simple CAP project.",
-  "repository": "<Add your repository here>",
+  "description": "Voca - SAPUI5 & SAP Cloud Application Programming Model that brings your events to life!",
+  "repository": "https://github.com/Proallone/voca",
   "license": "UNLICENSED",
   "private": true,
   "dependencies": {

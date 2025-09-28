@@ -1,3 +1,4 @@
+import type { ExpressRequest } from "./types/Service";
 import cds from "@sap/cds";
 import {
   Events,
@@ -32,11 +33,11 @@ export class EventsService extends cds.ApplicationService {
       return req.info(201, `Event with ID ${event.ID} attended successfully by ${userEmail}`);
     });
 
-    this.on(generateIcs, async (req) => {
+    this.on(generateIcs, async (_req) => {
+      const req = _req as ExpressRequest; 
       const [event] = req.params;
       const ics = await handler.generateIcsHandler(event.ID);
-      //TODO fix this....
-      req.res.setHeader('Content-Type', 'text/calendar; charset=utf-8'); 
+      req.res.setHeader('Content-Type', 'text/calendar; charset=utf-8');
       req.res.setHeader('Content-Disposition', `attachment; filename="event_${event.ID}.ics"`);
       return ics;
     });

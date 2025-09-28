@@ -48,14 +48,15 @@ export class EventsHandler {
     public generateIcsHandler = async (eventID: string) => {
         const filePath = path.join(path.resolve(__dirname, "../"), "templates/calendars", `event.ics.hbs`);
         const template = compileTemplate(filePath);
+        const event = await SELECT.one.from(Events).where({ID: eventID})
         const data = {
-            uid: "12345@example.com",
-            dtstamp: "20250927T120000Z",
-            dtstart: "20251001T090000Z",
-            dtend: "20251001T100000Z",
-            summary: "Team Meeting",
-            description: "Discuss Q4 roadmap",
-            location: "Conference Room A"
+            uid: "12345@example.com", //TODO fixme
+            dtstamp: event?.createdAt,
+            dtstart: event?.start_date,
+            dtend: event?.end_date,
+            summary: event?.name,
+            description: event?.description,
+            location: `${event?.address_country}, ${event?.address_city}, ${event?.address_address}`
         };
         const ics = template(data);
         return ics;

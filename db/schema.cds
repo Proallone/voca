@@ -7,7 +7,7 @@ using {
 } from '@sap/cds/common';
 
 entity Events : cuid, managed {
-    name        : String;
+    name        : String @assert.notNull;
     description : String;
     start_date  : DateTime;
     end_date    : DateTime;

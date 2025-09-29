@@ -1,18 +1,19 @@
 import Controller from "sap/ui/core/mvc/Controller";
 import UIComponent from "sap/ui/core/UIComponent";
+import MessageToast from "sap/m/MessageToast";
+import ObjectStatus from "sap/m/ObjectStatus";
+import { URLHelper } from "sap/m/library"
 import type { Route$PatternMatchedEvent } from "sap/ui/core/routing/Route";
 import type { FeedInput$PostEvent } from "sap/m/FeedInput";
 import type ODataListBinding from "sap/ui/model/odata/v4/ODataListBinding";
 import type List from "sap/m/List";
-
+import type {  Link$ClickEvent } from "sap/ui/webc/main/Link";
+import type ODataModel from "sap/ui/model/odata/v4/ODataModel";
 import type { Button$PressEvent } from "sap/m/Button";
-
-import MessageToast from "sap/m/MessageToast";
-import { type Link$ClickEvent } from "sap/ui/webc/main/Link";
-import ObjectStatus from "sap/m/ObjectStatus";
 import type ODataContextBinding from "sap/ui/model/odata/v4/ODataContextBinding";
-import { AvatarGroup$PressEvent } from "sap/f/AvatarGroup";
-import Dialog from "sap/m/Dialog";
+import type { AvatarGroup$PressEvent } from "sap/f/AvatarGroup";
+import type Dialog from "sap/m/Dialog";
+
 
 interface IEvent {
   ID: string;
@@ -105,6 +106,12 @@ export default class EventDetails extends Controller {
           MessageToast.show("Something went wrong!");
         }
       });
+  }
+
+  public onGenerateIcsPress() {
+    const binding = this.getView()?.getBindingContext();     
+    const model = binding?.getModel() as ODataModel;        
+    URLHelper.redirect(`${model.getServiceUrl().slice(0, -1)}${binding?.getPath()}/generateIcs`, true);
   }
 
   public async onAttendeesPress(evt: AvatarGroup$PressEvent) {

@@ -101,6 +101,13 @@
                         binding="{/like(...)}"
                         press="onLikePress"
                     />
+                    <Button 
+                        id="_IDGenButton9"
+                        icon="sap-icon://add-calendar"
+                        text="Add to calendar"
+                        binding="{/generateIcs(...)}"
+                        press="onGenerateIcsPress"
+                    />
                 </f:actions>
                 <f:navigationActions />
             </f:DynamicPageTitle>

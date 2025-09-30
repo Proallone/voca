@@ -8,6 +8,7 @@ import {
 import MailingService from "#cds-models/MailingService";
 import NotificationService from "#cds-models/NotificationService";
 import { EventsHandler } from "./handlers/EventsHandler";
+import { HttpStatus } from "./common/http";
 
 export class EventsService extends cds.ApplicationService {
   async init() {
@@ -23,14 +24,14 @@ export class EventsService extends cds.ApplicationService {
       const [event] = req.params;
       const { id: userEmail } = req.user;
       await handler.likeHandler(event.ID, userEmail);
-      return req.info(201, `Event with ID ${event.ID} liked successfully by ${userEmail}`);
+      return req.info(HttpStatus.CREATED, `Event with ID ${event.ID} liked successfully by ${userEmail}`);
     });
 
     this.on(attend, async (req) => {
       const [event] = req.params;
       const { id: userEmail } = req.user;
       await handler.attendHandler(event.ID, userEmail);
-      return req.info(201, `Event with ID ${event.ID} attended successfully by ${userEmail}`);
+      return req.info(HttpStatus.CREATED, `Event with ID ${event.ID} attended successfully by ${userEmail}`);
     });
 
     this.on(generateIcs, async (_req) => {

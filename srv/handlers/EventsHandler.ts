@@ -1,7 +1,12 @@
 import type MailingService from "#cds-models/MailingService";
 import type NotificationService from "#cds-models/NotificationService";
 import type { CDSService } from "../types/Service";
-import { EventAttendees, EventLikes, Events, Users } from "#cds-models/EventsService";
+import {
+  EventAttendees,
+  EventLikes,
+  Events,
+  Users,
+} from "#cds-models/EventsService";
 import { sendEventEmails } from "#cds-models/MailingService";
 import { sendNotification } from "#cds-models/NotificationService";
 import type { log } from "@sap/cds";
@@ -9,66 +14,93 @@ import path from "path";
 import { compileTemplate } from "../utils/compileTemplate";
 
 export class EventsHandler {
-    constructor(private readonly logger: typeof log.Logger, private readonly mailingService: CDSService<MailingService>, private readonly notificationService: CDSService<NotificationService>) { }
+  constructor(
+    private readonly logger: typeof log.Logger,
+    private readonly mailingService: CDSService<MailingService>,
+    private readonly notificationService: CDSService<NotificationService>
+  ) {}
 
-    public likeHandler = async (eventID: string, userEmail: string) => {
-        const user = await SELECT.one
-            .from(Users)
-            .columns("ID")
-            .where({ email: userEmail });
+  public likeHandler = async (eventID: string, userEmail: string) => {
+    const user = await SELECT.one
+      .from(Users)
+      .columns("ID")
+      .where({ email: userEmail });
 
-        if (!user) throw new Error("User not found"); //TODO add better error types
+    if (!user) throw new Error("User not found"); //TODO add better error types
 
-        const alreadyLiked = await SELECT.one.from(EventLikes).where({ event_ID: eventID, user_ID: user.ID });
+    const alreadyLiked = await SELECT.one
+      .from(EventLikes)
+      .where({ event_ID: eventID, user_ID: user.ID });
 
-        if (alreadyLiked) throw new Error("Event already liked"); //TODO add better error types
+    if (alreadyLiked) throw new Error("Event already liked"); //TODO add better error types
 
-        await INSERT({ user_ID: user?.ID, event_ID: eventID }).into(
-            EventLikes
-        );
-    }
+    await INSERT({ user_ID: user?.ID, event_ID: eventID }).into(EventLikes);
+  };
 
-    public attendHandler = async (eventID: string, userEmail: string) => {
-        const user = await SELECT.one
-            .from(Users)
-            .columns("ID")
-            .where({ email: userEmail });
+  public attendHandler = async (eventID: string, userEmail: string) => {
+    const user = await SELECT.one
+      .from(Users)
+      .columns("ID")
+      .where({ email: userEmail });
 
-        if (!user) throw new Error("User not found"); //TODO add better error types
+    if (!user) throw new Error("User not found"); //TODO add better error types
 
-        const alreadyAttending = await SELECT.one.from(EventAttendees).where({ event_ID: eventID, user_ID: user.ID });
+    const alreadyAttending = await SELECT.one
+      .from(EventAttendees)
+      .where({ event_ID: eventID, user_ID: user.ID });
 
-        if (alreadyAttending) throw new Error("Event already attended"); //TODO add better error types
+    if (alreadyAttending) throw new Error("Event already attended"); //TODO add better error types
 
-        await INSERT({ user_ID: user?.ID, event_ID: eventID }).into(
-            EventAttendees
-        );
-    }
+    await INSERT({ user_ID: user?.ID, event_ID: eventID }).into(EventAttendees);
+  };
 
-    public generateIcsHandler = async (eventID: string) => {
-        const filePath = path.join(path.resolve(__dirname, "../"), "templates/calendars", `event.ics.hbs`);
-        const template = compileTemplate(filePath);
-        const event = await SELECT.one.from(Events).where({ID: eventID}); //todo add expand for country name
-        const data = {
-            uid: `${event?.ID}@voca.com`,
-            dtstamp: event?.createdAt,
-            dtstart: event?.start_date,
-            dtend: event?.end_date,
-            summary: event?.name,
-            description: event?.description,
-            location: `${[event?.address_address, event?.address_city, event?.address_country?.name].join(', ')}`
-        };
-        const ics = template(data);
-        return ics;
-    }
+  public generateIcsHandler = async (eventID: string) => {
+    const filePath = path.join(
+      path.resolve(__dirname, "../"),
+      "templates/calendars",
+      `event.ics.hbs`
+    );
+    const template = compileTemplate(filePath);
+    const event = await SELECT.one
+      .from(Events)
+      .columns((e) => {
+        e.ID,
+          e.createdAt,
+          e.start_date,
+          e.end_date,
+          e.name,
+          e.description,
+          e.address_address,
+          e.address_city,
+          e.address_country.name
+      })
+      .where({ ID: eventID }); //todo add expand for country name
+    const data = {
+      uid: `${event?.ID}@voca.com`,
+      dtstamp: event?.createdAt,
+      dtstart: event?.start_date,
+      dtend: event?.end_date,
+      summary: event?.name,
+      description: event?.description,
+      location: `${[
+        event?.address_address,
+        event?.address_city,
+        event?.address_country?.name, //TODO fix
+      ].join(", ")}`,
+    };
+    const ics = template(data);
+    return ics;
+  };
 
-    public eventReadHandler = async (eventID: string) => {
-        await UPDATE(Events).with({ views: { "+=": 1 } }).where({ ID: eventID });
-    }
+  public eventReadHandler = async (eventID: string) => {
+    await UPDATE(Events)
+      .with({ views: { "+=": 1 } })
+      .where({ ID: eventID });
+  };
 
-    public eventCreatedHandler = async (eventID: string) => {
-        await this.mailingService.send(sendEventEmails, { eventID: eventID });
-        await this.notificationService.send(sendNotification, { eventID: eventID });
-        this.logger.log(`Notifications and emails sent for new event ${eventID}`);
-    }
+  public eventCreatedHandler = async (eventID: string) => {
+    await this.mailingService.send(sendEventEmails, { eventID: eventID });
+    await this.notificationService.send(sendNotification, { eventID: eventID });
+    this.logger.log(`Notifications and emails sent for new event ${eventID}`);
+  };
 }

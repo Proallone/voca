@@ -1,5 +1,5 @@
 <mvc:View
-    controllerName="com.proallone.event.controller.EventDetails"
+    controllerName="com.proallone.voca.controller.EventDetails"
     xmlns:mvc="sap.ui.core.mvc"
     xmlns="sap.m"
     xmlns:core="sap.ui.core"

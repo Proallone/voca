@@ -1,7 +1,7 @@
 {
   "_version": "1.65.0",
   "sap.app": {
-    "id": "com.proallone.event",
+    "id": "com.proallone.voca",
     "type": "application",
     "i18n": "i18n/i18n.properties",
     "applicationVersion": {
@@ -59,7 +59,7 @@
       "i18n": {
         "type": "sap.ui.model.resource.ResourceModel",
         "settings": {
-          "bundleName": "com.proallone.event.i18n.i18n",
+          "bundleName": "com.proallone.voca.i18n.i18n",
           "supportedLocales": [
             "en"
           ],
@@ -91,7 +91,7 @@
         "transition": "slide",
         "type": "View",
         "viewType": "XML",
-        "path": "com.proallone.event.view"
+        "path": "com.proallone.voca.view"
       },
       "routes": [
         {
@@ -121,7 +121,7 @@
       }
     },
     "rootView": {
-      "viewName": "com.proallone.event.view.App",
+      "viewName": "com.proallone.voca.view.App",
       "type": "XML",
       "id": "App"
     }

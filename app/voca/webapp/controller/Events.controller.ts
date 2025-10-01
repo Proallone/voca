@@ -11,7 +11,7 @@ import FilterOperator from "sap/ui/model/FilterOperator";
 import MultiInput, { type MultiInput$TokenUpdateEvent } from "sap/m/MultiInput";
 
 /**
- * @namespace com.proallone.event.controller
+ * @namespace com.proallone.voca.controller
  */
 export default class Events extends Controller {
   protected eventPlacePopover: Popover;
@@ -40,7 +40,7 @@ export default class Events extends Controller {
 
     if (!this.eventPlacePopover) {
       this.eventPlacePopover = (await this.loadFragment({
-        name: "com.proallone.event.view.fragments.EventPlace",
+        name: "com.proallone.voca.view.fragments.EventPlace",
       })) as Popover;
     }
 

@@ -1,4 +1,4 @@
-<mvc:View controllerName="com.proallone.event.controller.Events"
+<mvc:View controllerName="com.proallone.voca.controller.Events"
     xmlns:mvc="sap.ui.core.mvc"
     xmlns="sap.m"
     xmlns:f="sap.f"

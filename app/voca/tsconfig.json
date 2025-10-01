@@ -11,7 +11,7 @@
     "outDir": "./dist",
     "baseUrl": "./",
     "paths": {
-      "com/proallone/event/*": [
+      "com/proallone/voca/*": [
         "./webapp/*"
       ]
     },

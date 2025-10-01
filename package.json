@@ -34,7 +34,7 @@
     "watch": "cds-tsx w",
     "lint": "eslint .",
     "before:cds-watch": "cds-typer \"*\"",
-    "watch-event": "cds watch --open com.proallone.event/index.html?sap-ui-xx-viewCache=false --livereload false"
+    "watch-event": "cds watch --open com.proallone.voca/index.html?sap-ui-xx-viewCache=false --livereload false"
   },
   "imports": {
     "#cds-models/*": "./@cds-models/*/index.js"

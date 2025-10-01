@@ -11,7 +11,7 @@ import Form from "sap/ui/layout/form/Form";
 import ODataListBinding from "sap/ui/model/odata/v4/ODataListBinding";
 
 /**
- * @namespace com.proallone.event.controller
+ * @namespace com.proallone.voca.controller
  */
 export default class App extends Controller {
   private actionsPopover: Popover;
@@ -41,7 +41,7 @@ export default class App extends Controller {
 
     if (!this.notificationsDialog) {
       this.notificationsDialog = (await this.loadFragment({
-        name: "com.proallone.event.view.fragments.Notifications",
+        name: "com.proallone.voca.view.fragments.Notifications",
       })) as Dialog;
     }
 
@@ -54,7 +54,7 @@ export default class App extends Controller {
 
     if (!this.actionsPopover) {
       this.actionsPopover = (await this.loadFragment({
-        name: "com.proallone.event.view.fragments.Actions",
+        name: "com.proallone.voca.view.fragments.Actions",
       })) as Popover;
     }
 
@@ -87,7 +87,7 @@ export default class App extends Controller {
 
     if (!this.newEventDialog) {
       this.newEventDialog = (await this.loadFragment({
-        name: "com.proallone.event.view.fragments.NewEvent",
+        name: "com.proallone.voca.view.fragments.NewEvent",
       })) as Dialog;
     }
 

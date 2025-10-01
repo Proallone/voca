@@ -20,7 +20,7 @@ interface IEvent {
 }
 
 /**
- * @namespace com.proallone.event.controller
+ * @namespace com.proallone.voca.controller
  */
 export default class EventDetails extends Controller {
   protected eventAttendeesDialog: Dialog;
@@ -120,7 +120,7 @@ export default class EventDetails extends Controller {
 
     if (!this.eventAttendeesDialog) {
       this.eventAttendeesDialog = (await this.loadFragment({
-        name: "com.proallone.event.view.fragments.EventAttendees",
+        name: "com.proallone.voca.view.fragments.EventAttendees",
       })) as Dialog;
     }
 

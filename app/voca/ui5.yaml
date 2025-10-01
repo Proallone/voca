@@ -2,7 +2,7 @@
 
 specVersion: "3.1"
 metadata:
-  name: com.proallone.event
+  name: com.proallone.voca
 type: application
 server:
   customMiddleware:

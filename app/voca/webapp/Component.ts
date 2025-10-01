@@ -2,7 +2,7 @@ import BaseComponent from "sap/ui/core/UIComponent";
 import { createDeviceModel } from "./model/models";
 
 /**
- * @namespace com.proallone.event
+ * @namespace com.proallone.voca
  */
 export default class Component extends BaseComponent {
 

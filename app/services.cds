@@ -1,2 +1,1 @@
-
-using from './event/annotations';
+using from './voca/annotations';

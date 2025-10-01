@@ -1,9 +1,9 @@
-<mvc:View controllerName="com.proallone.event.controller.App" displayBlock="true"
+<mvc:View controllerName="com.proallone.voca.controller.App" displayBlock="true"
     xmlns:mvc="sap.ui.core.mvc"
     xmlns="sap.m"
     xmlns:tnt="sap.tnt"
     xmlns:core="sap.ui.core"
-    core:require="{formatter: 'com/proallone/event/model/Formatter'}">
+    core:require="{formatter: 'com/proallone/voca/model/Formatter'}">
     <tnt:ToolPage id="toolPage" sideExpanded="false">
         <tnt:header>
             <tnt:ToolHeader id="_IDGenToolHeader1" design="Solid" height="4rem">

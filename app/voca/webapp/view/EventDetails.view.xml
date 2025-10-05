@@ -23,7 +23,12 @@
                     </Breadcrumbs>
                 </f:breadcrumbs>
                 <f:expandedContent>
-                    <!-- <FormattedText id="_IDGenFormattedText1" htmlText="{description}"/> -->
+                    <FlexBox id="_IDGenFlexBox14" direction="Column">
+                        <ObjectStatus id="_IDGenObjectStatus11" text="{= %{attendees}.length } attending" icon="sap-icon://company-view" class="sapUiSmallMarginEnd bigger" />
+                        <f:AvatarGroup id="_IDGenAvatarGroup1" groupType="Group" avatarDisplaySize="XS" press="onAttendeesPress" items="{path: 'attendees'}">
+                            <f:AvatarGroupItem id="_IDGenAvatarGroupItem" initials="{= %{user/name}.split(' ')[0].split('')[0] + %{user/name}.split(' ')[1].split('')[0]}" fallbackIcon="{user/avatar_url}" src="{user/avatar_url}" />
+                        </f:AvatarGroup>
+                    </FlexBox>
                 </f:expandedContent>
                 <f:snappedContent>
                     <!-- <Label id="_IDGenLabel" text="This is a subheading"/> -->
@@ -49,12 +54,6 @@
         </f:title>
         <f:header>
             <f:DynamicPageHeader id="_IDGenDynamicPageHeader" pinnable="true">
-                <FlexBox id="_IDGenFlexBox14" direction="Column">
-                    <ObjectStatus id="_IDGenObjectStatus11" text="{= %{attendees}.length } attending" icon="sap-icon://company-view" class="sapUiSmallMarginEnd bigger" />
-                    <f:AvatarGroup id="_IDGenAvatarGroup1" groupType="Group" avatarDisplaySize="XS" press="onAttendeesPress" items="{path: 'attendees'}">
-                        <f:AvatarGroupItem id="_IDGenAvatarGroupItem" initials="{= %{user/name}.split(' ')[0].split('')[0] + %{user/name}.split(' ')[1].split('')[0]}" fallbackIcon="{user/avatar_url}" src="{user/avatar_url}" />
-                    </f:AvatarGroup>
-                </FlexBox>
                 <FlexBox id="_IDGenFlexBox16" direction="Row" justifyContent="Start" alignContent="Center">
                     <Image id="_IDGenImage1" src="{image_url}" height="100px" alt="{i18n>txtAltEventImage}" class="roundedImg" />
                     <FlexBox id="_IDGenFlexBox17" direction="Column" class="sapUiMediumMarginBegin" justifyContent="Start" alignContent="Start">

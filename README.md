@@ -1,6 +1,6 @@
 # This is a WIP project
 
-**Voca** - from vocare, meaning "to call, summon, invite."
+> **Voca** - from vocare, meaning "to call, summon, invite."
 
 Out of curiosity I decided to spin up a small eventing application for personal usage using CAP and UI5. 
 Here are some screenshots from current state.
@@ -12,7 +12,7 @@ Here are some screenshots from current state.
 ![Events app - events notifications](./images/Events-details2.png "Event notifications")
 
 
-Apart from what you can see - application supports sending emails :)
+Apart from what you can see - application supports sending emails and in-app notifications.
 
 # Getting Started
 

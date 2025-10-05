@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Voca - SAPUI5 & SAP Cloud Application Programming Model that brings your events to life!",
   "repository": "https://github.com/Proallone/voca",
-  "license": "UNLICENSED",
+  "license": "MIT",
   "private": true,
   "dependencies": {
     "@sap/cds": "^9.0.3",
@@ -15,8 +15,8 @@
   },
   "devDependencies": {
     "@cap-js/cds-typer": ">=0.1",
-    "@cap-js/cds-types": "^0.14.0",
-    "@cap-js/sqlite": "^2.0.1",
+    "@cap-js/cds-types": "^0.15.0",
+    "@cap-js/sqlite": "^2.0.3",
     "@sap-ux/eslint-plugin-fiori-tools": "^0.6.0",
     "@sapui5/types": "^1.139.0",
     "@types/express": "^5.0.3",
